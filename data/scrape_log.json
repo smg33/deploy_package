@@ -1,0 +1,255 @@
+{
+  "run_at": "2026-09-03T20:35:21.661309+00:00",
+  "stores": {
+    "Nike": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 8%",
+      "RebatesMe": "OK: 40%",
+      "Rakuten": "OK: 6%"
+    },
+    "Old Navy": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 4%",
+      "RebatesMe": "OK: 40%",
+      "Rakuten": "OK: 10%"
+    },
+    "Lululemon": {
+      "Rakuten": "OK: 2%"
+    },
+    "ASOS": {
+      "TopCashback": "FETCH_FAILED - kept previous value",
+      "RebatesMe": "OK: 40%",
+      "Rakuten": "OK: 2%"
+    },
+    "Best Buy": {
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "BeFrugal": "OK: 3%",
+      "Rakuten": "OK: 10%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Dell": {
+      "BeFrugal": "OK: 3%"
+    },
+    "Samsung": {
+      "BeFrugal": "OK: 3%",
+      "Rakuten": "OK: 2%",
+      "TopCashback": "OK: 2%"
+    },
+    "Sephora": {
+      "Rakuten": "OK: 2%",
+      "TopCashback": "OK: 4%",
+      "BeFrugal": "OK: 3%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Ulta Beauty": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 4%",
+      "RebatesMe": "OK: 40%",
+      "Rakuten": "OK: 10%"
+    },
+    "Target": {
+      "TopCashback": "OK: 2%",
+      "Rakuten": "OK: 1%"
+    },
+    "Walmart": {
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "BeFrugal": "OK: 3%"
+    },
+    "Wayfair": {
+      "RebatesMe": "OK: 40%",
+      "Capital One Shopping": "PARSE_FAILED - kept previous value",
+      "Rakuten": "OK: 3.5%",
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "BeFrugal": "OK: 3%",
+      "Mr Rebates": "PARSE_FAILED - kept previous value"
+    },
+    "Home Depot": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "RebatesMe": "OK: 40%"
+    },
+    "Expedia": {
+      "RebatesMe": "OK: 40%",
+      "BeFrugal": "OK: 3%",
+      "Capital One Shopping": "PARSE_FAILED - kept previous value",
+      "Rakuten": "OK: 6%",
+      "Mr Rebates": "PARSE_FAILED - kept previous value",
+      "TopCashback": "PARSE_FAILED - kept previous value"
+    },
+    "Booking.com": {
+      "RebatesMe": "OK: 40%"
+    },
+    "eBay": {
+      "TopCashback": "PARSE_FAILED - kept previous value"
+    },
+    "Kohl's": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 2%"
+    },
+    "Macy's": {
+      "BeFrugal": "OK: 3%",
+      "RebatesMe": "OK: 40%",
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "Rakuten": "OK: 4%"
+    },
+    "Priceline": {
+      "Rakuten": "OK: 8%",
+      "TopCashback": "PARSE_FAILED - kept previous value"
+    },
+    "Hotels.com": {
+      "Rakuten": "OK: 10%",
+      "TopCashback": "FETCH_FAILED - kept previous value",
+      "Mr Rebates": "PARSE_FAILED - kept previous value"
+    },
+    "Etsy": {
+      "Rakuten": "OK: 2%"
+    },
+    "CVS": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "FETCH_FAILED - kept previous value",
+      "Rakuten": "OK: 3%"
+    },
+    "Zappos": {
+      "Rakuten": "OK: 10%"
+    },
+    "Marriott Bonvoy": {
+      "TopCashback": "FETCH_FAILED - kept previous value"
+    },
+    "Temu": {
+      "RebatesMe": "OK: 40%"
+    },
+    "Skechers": {
+      "TopCashback": "OK: 8%"
+    },
+    "Walgreens": {
+      "TopCashback": "OK: 4%",
+      "BeFrugal": "OK: 3%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Nordstrom": {
+      "TopCashback": "OK: 2.4%",
+      "Rakuten": "OK: 2%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Gap": {
+      "RebatesMe": "OK: 40%",
+      "TopCashback": "OK: 4%"
+    },
+    "PetSmart": {
+      "BeFrugal": "OK: 3%",
+      "Rakuten": "OK: 2%",
+      "TopCashback": "OK: 4%"
+    },
+    "Chewy": {
+      "TopCashback": "OK: 1%"
+    },
+    "Viator": {
+      "Rakuten": "OK: 15%",
+      "TopCashback": "PARSE_FAILED - kept previous value"
+    },
+    "Kiehl's": {
+      "RebatesMe": "OK: 40%"
+    },
+    "Zulily": {
+      "RebatesMe": "OK: 40%"
+    },
+    "Alo": {
+      "Rakuten": "OK: 10%",
+      "Mr Rebates": "PARSE_FAILED - kept previous value",
+      "TopCashback": "FETCH_FAILED - kept previous value"
+    },
+    "Athleta": {
+      "RebatesMe": "OK: 40%",
+      "TopCashback": "OK: 4%"
+    },
+    "StubHub": {
+      "Mr Rebates": "PARSE_FAILED - kept previous value",
+      "TopCashback": "OK: 10%"
+    },
+    "Vineyard Vines": {
+      "RebatesMe": "OK: 40%"
+    },
+    "Banana Republic": {
+      "RebatesMe": "OK: 40%"
+    },
+    "Bergdorf Goodman": {
+      "BeFrugal": "OK: 3%",
+      "RebatesMe": "OK: 40%",
+      "Rakuten": "OK: 10%"
+    },
+    "Farfetch": {
+      "Rakuten": "OK: 2%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Shopbop": {
+      "RebatesMe": "OK: 40%",
+      "TopCashback": "OK: 3%",
+      "Mr Rebates": "PARSE_FAILED - kept previous value"
+    },
+    "Net-a-Porter": {
+      "Mr Rebates": "PARSE_FAILED - kept previous value"
+    },
+    "DVF": {
+      "Rakuten": "OK: 10%",
+      "RebatesMe": "OK: 40%",
+      "TopCashback": "FETCH_FAILED - kept previous value"
+    },
+    "Dick's Sporting Goods": {
+      "Rakuten": "OK: 10%"
+    },
+    "The North Face": {
+      "Rakuten": "OK: 10%"
+    },
+    "Patagonia": {
+      "Rakuten": "OK: 2%"
+    },
+    "JanSport": {
+      "Rakuten": "OK: 3%"
+    },
+    "Scheels": {
+      "Rakuten": "OK: 3%",
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "PARSE_FAILED - kept previous value"
+    },
+    "Apple": {
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "Rakuten": "OK: 2%"
+    },
+    "Adidas": {
+      "TopCashback": "PARSE_FAILED - kept previous value",
+      "Rakuten": "OK: 4%",
+      "RebatesMe": "OK: 40%",
+      "BeFrugal": "OK: 3%"
+    },
+    "Staples": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 4%",
+      "Rakuten": "OK: 4%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Neiman Marcus": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 2%",
+      "Rakuten": "OK: 10%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Saks Fifth Avenue": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 5%",
+      "Rakuten": "OK: 10%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Ann Taylor": {
+      "BeFrugal": "OK: 3%",
+      "Rakuten": "OK: 10%",
+      "TopCashback": "OK: 1%",
+      "RebatesMe": "OK: 40%"
+    },
+    "Bloomingdale's": {
+      "BeFrugal": "OK: 3%",
+      "TopCashback": "OK: 4%",
+      "RebatesMe": "OK: 40%",
+      "Rakuten": "OK: 2%"
+    }
+  }
+}
