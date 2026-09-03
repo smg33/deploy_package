@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+<title>Are cash back sites safe? - Savvli</title>
+<meta name="description" content="An honest look at cash back site safety, browser extension privacy, the real data-for-money trade-off, and whether incognito mode actually helps.">
+<link rel="canonical" href="https://savvli.com/are-cash-back-sites-safe.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Savvli">
+<meta property="og:title" content="Are cash back sites safe? - Savvli">
+<meta property="og:description" content="An honest look at cash back site safety, browser extension privacy, the real data-for-money trade-off, and whether incognito mode actually helps.">
+<meta property="og:url" content="https://savvli.com/are-cash-back-sites-safe.html">
+<meta property="og:image" content="https://savvli.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Are cash back sites safe? - Savvli">
+<meta name="twitter:description" content="An honest look at cash back site safety, browser extension privacy, the real data-for-money trade-off, and whether incognito mode actually helps.">
+<meta name="twitter:image" content="https://savvli.com/og-image.png">
+
+<!-- Consent Mode default state (must load before GA4) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T8GZ45Q7');</script>
+<!-- End Google Tag Manager -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* hero */
+  .hero{ padding:20px 0 8px; }
+  .eyebrow{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--lav-deep);
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight:600;
+    font-size:32px;
+    line-height:1.15;
+    margin-bottom:14px;
+  }
+  .hero p{
+    font-size:16px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:60ch;
+  }
+  .updated-note{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:14px;
+  }
+
+  /* verdict stat bar */
+  .stat-bar{
+    display:flex;
+    gap:12px;
+    margin:28px 0;
+    flex-wrap:wrap;
+  }
+  .stat-card{
+    flex:1;
+    min-width:140px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    padding:16px 18px;
+    text-align:center;
+  }
+  .stat-card.win{ border-color:var(--lav); background:var(--lav-soft); }
+  .stat-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:28px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .stat-card.win .stat-num{ color:var(--lav-deep); }
+  .stat-label{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+
+  section{ margin:40px 0; }
+  h2{
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight:500;
+    font-size:22px;
+    margin-bottom:14px;
+  }
+  section > p{
+    font-size:15px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+
+  /* store comparison table */
+  .compare-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .compare-table th, .compare-table td{
+    padding:11px 14px;
+    text-align:left;
+    font-size:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .compare-table th{
+    font-size:11.5px;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--paper);
+  }
+  .compare-table td.num{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+  }
+  .compare-table tr:last-child td{ border-bottom:none; }
+  .win-cell{ color:var(--lav-deep); font-weight:600; }
+  .tie-cell{ color:var(--ink-soft); }
+
+  /* payout mechanics */
+  .payout-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .payout-card{
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px;
+  }
+  .payout-card h3{
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight:600;
+    font-size:17px;
+    margin-bottom:12px;
+  }
+  .payout-card dl{ font-size:13.5px; }
+  .payout-card dt{
+    color:var(--ink-soft);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin-top:12px;
+  }
+  .payout-card dt:first-child{ margin-top:0; }
+  .payout-card dd{ margin-top:2px; line-height:1.5; }
+
+  /* category breakdown */
+  .category-list{ list-style:none; }
+  .category-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 16px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    margin-bottom:8px;
+    font-size:14px;
+  }
+  .category-list .cat-winner{
+    font-weight:600;
+    color:var(--lav-deep);
+  }
+
+  /* faq */
+  .faq-item{ margin-bottom:20px; }
+  .faq-item h3{
+    font-size:15.5px;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .faq-item p{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  /* cta */
+  .cta{
+    background:var(--ink);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:28px 24px;
+    text-align:center;
+    margin-top:40px;
+  }
+  .cta h2{ color:#fff; margin-bottom:8px; }
+  .cta p{ color:#C9C4DA; font-size:14px; margin-bottom:18px; }
+  .cta a.btn{
+    display:inline-block;
+    background:var(--lav);
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    padding:11px 24px;
+    border-radius:999px;
+  }
+  .cta a.btn:hover{ background:#8570DD; }
+
+  .disclosure{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:36px;
+    line-height:1.6;
+  }
+
+  @media (max-width:560px){
+    .payout-grid{ grid-template-columns:1fr; }
+    h1{ font-size:26px; }
+    .compare-table th, .compare-table td{ padding:9px 8px; font-size:13px; }
+  }
+.legal-body h2{ margin-top:32px; font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight:600; font-size:20px; }
+.legal-body h3{ margin-top:20px; font-size:16px; font-weight:600; }
+.legal-body p, .legal-body li{
+  font-size:14.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+}
+.legal-body ul, .legal-body ol{ padding-left:20px; margin-bottom:16px; }
+.takeaways{
+  background:var(--lav-soft);
+  border:1.5px solid var(--lav);
+  border-radius:14px;
+  padding:20px 22px;
+  margin:20px 0 28px;
+}
+.takeaways h3{
+  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+  color:var(--lav-deep);
+  margin-bottom:10px;
+}
+.takeaways ul{
+  padding-left:18px;
+  margin-bottom:0;
+}
+.takeaways li{
+  font-size:14px;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+.takeaways li:last-child{ margin-bottom:0; }
+.related-links{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.related-links a{
+  background:#fff; border:1.5px solid var(--line); border-radius:999px;
+  padding:8px 16px; font-size:13px; text-decoration:none; color:var(--ink);
+}
+.related-links a:hover{ border-color:var(--lav); color:var(--lav-deep); }
+.callout{
+  background:var(--lav-soft);
+  border:1.5px solid var(--lav);
+  border-radius:12px;
+  padding:16px 18px;
+  margin:16px 0;
+}
+.callout p{ color:var(--ink); margin-bottom:0; }
+</style>
+</head>
+<body>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+  <svg class="icon-bars" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<nav class="nav-menu" id="navMenu" role="menu" aria-label="Main">
+  <a href="browse-stores.html" role="menuitem">Browse stores</a>
+  <a href="compare.html" role="menuitem">Compare platforms</a>
+  <a href="guides.html" role="menuitem">Learn</a>
+  <a href="how-it-works.html" role="menuitem">How it works</a>
+  <a href="about.html" role="menuitem">About</a>
+  <a href="suggest-store.html" role="menuitem">Suggest a store</a>
+</nav>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8GZ45Q7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to understand how Savvli is used. You can accept or decline analytics cookies - either way, the site works the same.</p>
+  <div class="cookie-actions">
+    <button id="cookie-decline">Decline</button>
+    <button id="cookie-accept">Accept</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var CONSENT_KEY = 'savvli_consent';
+    var banner = document.getElementById('cookie-banner');
+    var accepted = localStorage.getItem(CONSENT_KEY);
+    function updateConsent(state){
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', { 'analytics_storage': state, 'ad_storage': state, 'ad_user_data': state, 'ad_personalization': state });
+      }
+    }
+    if (!accepted) { banner.classList.add('show'); }
+    else if (accepted === 'granted') { updateConsent('granted'); }
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem(CONSENT_KEY, 'granted'); updateConsent('granted'); banner.classList.remove('show');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function(){
+      localStorage.setItem(CONSENT_KEY, 'denied'); banner.classList.remove('show');
+    });
+  })();
+</script>
+<div class="wrap">
+  <header class="site-header">
+    <a href="index.html"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="tagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#8FA0EA"/>
+            <stop offset="100%" stop-color="#6E56CF"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(-279.615392,1073.887818) scale(0.1,-0.1)" fill="url(#tagGrad)" stroke="none"><path d="M9322 10729 c-704 -58 -1344 -523 -1602 -1165 -41 -101 -39 -105 57 -142 277 -106 535 -44 672 163 293 445 919 640 1451 453 841 -297 1075 -1308 469 -2024 -113 -134 -315 -299 -331 -271 -4 8 -68 169 -142 358 -220 564 -287 731 -318 794 -41 81 -136 174 -218 213 -151 72 -209 70 -746 -18 -496 -82 -772 -122 -1269 -185 -198 -25 -419 -54 -491 -66 -1025 -158 -1718 -879 -1750 -1824 -25 -720 338 -1329 1121 -1882 145 -102 234 -158 585 -368 594 -355 856 -539 1065 -749 347 -348 496 -701 457 -1081 -85 -814 -943 -1291 -1745 -969 -114 46 -137 59 -457 249 -193 115 -1455 859 -1770 1043 -80 46 -288 170 -462 274 l-317 189 123 202 c528 866 713 1171 871 1432 100 165 200 330 223 367 42 68 42 68 7 127 -109 185 -193 459 -233 761 -8 55 -8 55 -389 -580 -613 -1023 -898 -1494 -1218 -2016 -184 -298 -207 -413 -120 -584 68 -136 96 -156 635 -465 70 -40 907 -534 1145 -675 99 -59 376 -222 615 -362 1008 -591 1612 -946 1875 -1102 307 -182 356 -205 460 -213 200 -15 322 59 471 289 690 1059 857 1341 932 1573 228 706 17 1477 -563 2060 -235 237 -487 418 -970 697 -721 417 -1114 706 -1322 970 -591 749 -261 1708 657 1907 75 16 1238 212 1760 296 368 59 484 39 564 -97 30 -52 330 -838 322 -845 -31 -31 -327 -53 -471 -34 -123 16 -291 62 -410 112 -195 82 -373 53 -469 -74 -135 -181 -76 -388 138 -487 407 -188 875 -239 1314 -144 72 16 127 23 131 18 7 -7 284 -708 406 -1029 32 -84 44 -220 26 -305 -21 -99 -54 -161 -256 -480 -110 -173 -263 -416 -341 -539 l-141 -225 43 -94 c92 -197 171 -452 209 -676 8 -49 16 -91 18 -92 1 -1 44 66 96 149 52 84 147 235 211 337 691 1089 746 1182 803 1351 70 203 76 490 16 701 -7 24 -71 192 -142 373 -219 561 -289 739 -303 777 -13 37 -13 37 99 111 557 367 891 919 937 1547 67 925 -578 1763 -1494 1939 -95 19 -346 43 -401 40 -11 -1 -66 -6 -123 -10z"/></g>
+      </svg><span class="logo">Savvli<span class="dot">.</span></span></a>
+    <a class="back-link" href="index.html">&larr; Back to search</a>
+    <nav class="header-nav-row" aria-label="Main">
+      <a href="browse-stores.html">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="guides.html">Learn</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="about.html">About</a>
+      <a href="suggest-store.html" class="nav-cta">Suggest a store</a>
+    </nav>
+  </header>
+  <div class="hero">
+    <p class="eyebrow">Learn</p>
+    <h1>Are cash back sites safe? Here is the honest answer.</h1>
+  </div>
+  <section class="legal-body">
+    <p>Cash back sites have a real trust problem, and honestly, some of it is deserved. Here is a straight answer about what is legitimate, what to watch for, and specifically what browser extensions in this space can actually see about you.</p>
+
+    <div class="takeaways">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>The core cash back model is legitimate and has paid out real money for over a decade.</li>
+        <li>The 2024 Honey scandal was about one extension hijacking other people's commissions, not cash back generally.</li>
+        <li>Most cash back browser extensions request broad access to see the sites you visit, confirmed in their own privacy policies.</li>
+        <li>Savvli has no browser extension and cannot see your other browsing, since it is only a website.</li>
+        <li>Incognito mode does not meaningfully protect you from an extension you have re-enabled there.</li>
+        <li>Whether the data trade is worth a few dollars back is a personal call, not a universal answer.</li>
+      </ul>
+    </div>
+
+    <h2>Is the basic model legitimate?</h2>
+    <p>Yes. Platforms like Rakuten and TopCashback have paid out real money to real people for well over a decade, and they operate on a well understood, publicly documented business model (affiliate commissions, explained in full on our <a href="what-is-cash-back.html">what is cash back</a> page). The core idea is not a scam.</p>
+
+    <h2>The real scandal you may have heard about</h2>
+    <p>In late 2024, an investigation found that Honey, a popular coupon extension, was in some cases overriding other affiliates' tracking cookies at checkout, effectively redirecting commission to itself instead of whoever actually referred the customer. This was specifically about one extension intercepting other people's affiliate links, not a general problem with cash back as a concept. Google updated its Chrome Web Store policy afterward to explicitly prohibit extensions from silently replacing affiliate links or cookies.</p>
+
+    <h2>What browser extensions in this space can actually see</h2>
+    <p>This is a fair question, and worth answering honestly instead of glossing over. Most cash back and coupon browser extensions, including some of the platforms we compare here, request broad permission to read and change data on every website you visit. This is not a hypothetical: it is disclosed directly in their own privacy policies and Chrome Web Store listings.</p>
+
+    <p>For example, published privacy documentation shows that some platforms record which merchant sites you visit, what products and coupons you viewed or clicked, items added to or removed from your cart, timestamps of your browsing activity, and the page you were on right before arriving at their site. Extensions request this level of access because their core features genuinely need it: detecting when you land on a checkout page, auto-testing coupon codes, and confirming that a cash back click actually led to a purchase all require some visibility into what you are doing in the browser.</p>
+
+    <div class="callout">
+      <p><strong>Where Savvli is structurally different:</strong> Savvli is a website, not a browser extension. There is nothing to install, and nothing running in the background of your browser watching what you do. You visit savvli.com, search a store, and click through, exactly like clicking a link on any other webpage. Savvli has no technical ability to see your browsing activity on other sites, because it never runs on other sites.</p>
+    </div>
+
+    <p>To be clear about what this does and does not mean: once you click through to a platform like Rakuten or BeFrugal, you are on that platform's site, and their own privacy practices apply from that point on, the same as they would if you had gone there directly. If you separately choose to install that platform's own browser extension, that is a decision between you and them, and Savvli has no visibility into it either way.</p>
+
+    <h2>The trade you are actually making</h2>
+    <p>Here is the blunt version: when you use a cash back extension, you are trading some amount of your browsing data for a few dollars back on purchases you were already making. That is the real exchange, and it is worth deciding deliberately whether it is a good trade for you, rather than not thinking about it at all.</p>
+    <p>For a lot of people, the answer is genuinely yes. A few dollars a month, multiplied across a year of normal shopping, adds up to real money, and the data being collected is mostly about where you shop, not your medical records or private messages. For others, any amount of extra tracking is not worth it, and that is a completely reasonable position too. There is no single correct answer here, only what you are personally comfortable with.</p>
+
+    <h2>"Google and Meta already know everything about me anyway"</h2>
+    <p>This is a common reaction, and it is not wrong exactly. Most people already carry a phone that tracks location, use a search engine that logs queries, and have social media accounts that build detailed advertising profiles. Against that backdrop, one more browser extension tracking your shopping activity can feel like a rounding error.</p>
+    <p>The counterargument is narrower than "tracking in general is bad": shopping-specific data (what you buy, when, and how much you spend) is a more concentrated, specific picture than general browsing history, and it gets shared with a smaller, less scrutinized set of companies than the platforms you already know are tracking you. Whether that distinction matters to you is a judgment call, not a fact either of us can settle. We would rather lay out the actual trade honestly than tell you what to decide.</p>
+
+    <h2>Does incognito mode or a privacy browser actually help?</h2>
+    <p>This is worth getting right, because the common assumption here is often wrong.</p>
+    <p><strong>Incognito or private browsing:</strong> most browsers disable extensions by default in private windows unless you specifically re-enable them. If you turn a cash back extension back on for incognito so it still works, it has exactly the same access and sends exactly the same data to the platform's servers as it would in a normal window. Incognito mode only stops your own device from saving local browsing history, it does not stop the extension itself from collecting or transmitting data. It is a common but mistaken assumption that incognito adds meaningful privacy here.</p>
+    <p><strong>Privacy-focused browsers like Brave or DuckDuckGo:</strong> these are genuinely useful for blocking third-party ad trackers and fingerprinting scripts on the pages you visit generally. What they do not do is override permissions you have explicitly granted to an extension you installed. If you gave a cash back extension permission to read data on websites you visit, a privacy browser will not revoke that on its own.</p>
+    <p><strong>What actually reduces your exposure:</strong> using the cash back platform's website directly instead of installing its browser extension, since a website only sees your activity while you are on that specific site, not in the background across every tab. This is the same structural reason Savvli itself has no extension: comparing rates does not require watching your browsing.</p>
+
+    <h2>How to protect yourself if you use these extensions</h2>
+    <ul>
+      <li><strong>Read the actual privacy policy</strong> before installing, not just the marketing page. Look specifically for language about whether data is sold to third parties.</li>
+      <li><strong>Check who published it.</strong> A legitimate extension has an identifiable company, a working support contact, and a real privacy policy, not just a generic developer name.</li>
+      <li><strong>Check the last update date.</strong> An extension that has not been updated in over a year may be abandoned, which is its own security risk.</li>
+      <li><strong>Only install what you actually plan to use.</strong> Every extension you add is one more piece of code with access to your browsing.</li>
+    </ul>
+
+    <p>None of this requires giving up cash back entirely. Comparing rates on a plain website first, the way our <a href="how-to-maximize-cash-back.html">guide to maximizing cash back</a> recommends, gets you most of the benefit without installing anything at all.</p>
+
+    <h2>The honest bottom line</h2>
+    <p>Cash back itself is a legitimate, well established way to save money. The risk in this space comes specifically from browser extensions with broad permissions, not from the concept of cash back generally. Comparing rates on a plain website, checking the actual rate before you commit to an extension, and reading privacy policies before installing anything are the concrete ways to get the benefit without the downside.</p>
+  </section>
+  <section>
+    <h2>Keep reading</h2>
+    <div class="related-links">
+      <a href="what-is-cash-back.html">What is cash back?</a>
+<a href="how-to-maximize-cash-back.html">How to maximize your cash back</a>
+<a href="how-it-works.html">How Savvli works</a>
+    </div>
+  </section>
+  <div class="cta">
+    <h2>Ready to check a rate?</h2>
+    <p>Search a store and see who pays the most back, right now.</p>
+    <a class="btn" href="index.html">Search a store &rarr;</a>
+  </div>
+
+<div class="site-footer-v2">
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h3>Product</h3>
+      <ul>
+        <li><a href="browse-stores.html">Browse stores</a></li>
+        <li><a href="compare.html">Compare platforms</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="suggest-store.html">Suggest a store</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Learn</h3>
+      <ul>
+        <li><a href="what-is-cash-back.html">What is cash back?</a></li>
+        <li><a href="are-cash-back-sites-safe.html">Are cash back sites safe?</a></li>
+        <li><a href="how-to-maximize-cash-back.html">How to maximize cash back</a></li>
+        <li><a href="cash-back-glossary.html">Glossary</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <span>&copy; 2026 Savvli</span>
+      <span class="sep">&middot;</span>
+      <a href="terms.html">Terms</a>
+      <span class="sep">&middot;</span>
+      <a href="privacy.html">Privacy</a>
+      <span class="sep">&middot;</span>
+      <button type="button" onclick="localStorage.removeItem('savvli_consent'); location.reload();">Cookie preferences</button>
+    </div>
+    <div class="footer-social">
+      <a href="https://x.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></a>
+      <a href="https://www.instagram.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+      <a href="https://www.facebook.com/get.savvli" target="_blank" rel="noopener" aria-label="Savvli on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/><circle cx="12" cy="12" r="9"/></svg></a>
+      <a href="https://www.producthunt.com/products/savvli" target="_blank" rel="noopener" aria-label="Savvli on Product Hunt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="9"/><path d="M10 8h2.5a2.5 2.5 0 0 1 0 5H10V8zM10 13v3"/></svg></a>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  (function(){
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    function closeMenu(){
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('show');
+    }
+    function toggleMenu(){
+      const isOpen = navMenu.classList.contains('show');
+      if(isOpen){ closeMenu(); }
+      else{
+        menuBtn.classList.add('open');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        navMenu.classList.add('show');
+      }
+    }
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+    document.addEventListener('click', (e) => {
+      if(!e.target.closest('.nav-menu') && !e.target.closest('.menu-btn')){
+        closeMenu();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
+</body>
+</html>

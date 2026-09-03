@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+<title>Savvli - Compare Cash Back Rates Across Every Platform</title>
+<meta name="description" content="Savvli - built for savvy shoppers who maximize cash back by checking who pays the most before they buy.">
+<link rel="canonical" href="https://savvli.com/">
+<meta name="robots" content="index, follow">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Savvli">
+<meta property="og:title" content="Savvli - Compare Cash Back Rates Across Every Platform">
+<meta property="og:description" content="Savvli - built for savvy shoppers who maximize cash back by checking who pays the most before they buy.">
+<meta property="og:url" content="https://savvli.com/">
+<meta property="og:image" content="https://savvli.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Savvli - Compare Cash Back Rates Across Every Platform">
+<meta name="twitter:description" content="Savvli - built for savvy shoppers who maximize cash back by checking who pays the most before they buy.">
+<meta name="twitter:image" content="https://savvli.com/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F6FC;
+    --ink:#14121B;
+    --ink-soft:#5B5665;
+    --line:#E5E1F0;
+    --lav:#6E56CF;
+    --lav-soft:#ECE7FA;
+    --lav-deep:#4C3A9E;
+    --green:#2F7D53;
+    --green-soft:#E3EFE7;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  .bg-blob{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(60px);
+    opacity:0.35;
+    pointer-events:none;
+    z-index:0;
+  }
+  .bg-blob.b1{
+    width:360px; height:360px;
+    background:var(--lav);
+    top:-140px; left:-120px;
+  }
+  .bg-blob.b2{
+    width:280px; height:280px;
+    background:#B7A6F0;
+    bottom:-100px; right:-100px;
+    opacity:0.3;
+  }
+
+  .wrap{ position:relative; z-index:1; }
+
+  /* --- hamburger menu --- */
+  .menu-btn{
+    position:fixed;
+    top:24px; left:24px;
+    width:40px; height:40px;
+    border-radius:50%;
+    border:1.5px solid var(--line);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:20;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .menu-btn:hover{ border-color:var(--lav); }
+  .menu-btn svg{ color:var(--ink); }
+  .menu-btn .icon-close{ display:none; }
+  .menu-btn.open .icon-bars{ display:none; }
+  .menu-btn.open .icon-close{ display:block; }
+  .menu-btn.open{ background:var(--ink); border-color:var(--ink); }
+  .menu-btn.open svg{ color:#fff; }
+
+  .nav-menu{
+    position:fixed;
+    top:72px; left:24px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:0 10px 30px rgba(20,18,27,0.12);
+    padding:8px;
+    min-width:180px;
+    z-index:19;
+    display:none;
+    flex-direction:column;
+  }
+  .nav-menu.show{ display:flex; }
+  .nav-menu a{
+    display:block;
+    padding:10px 14px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-radius:9px;
+    transition:background .12s ease, color .12s ease;
+  }
+  .nav-menu a:hover{ background:var(--lav-soft); color:var(--lav-deep); }
+
+  .mini-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:24px 0 0;
+    flex-wrap:wrap;
+    row-gap:12px;
+  }
+  .mini-header a.mini-logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+  }
+  .mini-logo-mark{ width:24px; height:24px; flex-shrink:0; }
+  .mini-logo-text{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:18px;
+    color:var(--ink);
+  }
+  .mini-logo-text .dot{
+    color:var(--lav);
+    display:inline-block;
+    animation:pulse-dot 2.6s ease-in-out infinite;
+  }
+  .header-nav-row{
+    display:none;
+    align-items:center;
+    gap:22px;
+    margin-left:auto;
+  }
+  .header-nav-row a{
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .header-nav-row a:hover{ color:var(--lav-deep); }
+  .header-nav-row .nav-cta{
+    background:var(--ink);
+    color:#fff;
+    padding:8px 16px;
+    border-radius:999px;
+    font-size:13px;
+    transition:background .15s ease;
+  }
+  .header-nav-row .nav-cta:hover{
+    background:var(--lav-deep);
+    color:#fff;
+  }
+  @media (min-width:681px){
+    .header-nav-row{ display:flex; }
+    .menu-btn, .nav-menu{ display:none !important; }
+  }
+  @media (max-width:680px){
+    .mini-header{ padding-left:44px; }
+  }
+  @media (max-width:480px){
+    .mini-header{ padding-left:40px; }
+  }
+
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 20px 80px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* --- header / hero --- */
+  .hero{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding-top:64px;
+    padding-bottom:8px;
+    transition:padding .4s ease;
+  }
+  .wrap.active .hero{
+    padding-top:36px;
+    padding-bottom:0;
+  }
+
+  @keyframes pulse-dot{
+    0%, 100%{ transform:scale(1); opacity:1; }
+    50%{ transform:scale(1.35); opacity:0.7; }
+  }
+
+  .tagline{
+    margin-top:0;
+    color:var(--ink-soft);
+    font-size:30px;
+    font-weight:500;
+    line-height:1.3;
+    max-width:600px;
+    white-space:normal;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+    overflow:hidden;
+  }
+  .tagline-accent{ color:var(--lav-deep); font-weight:600; white-space:nowrap; }
+  .wrap.active .tagline{ opacity:0; height:0; margin:0; }
+
+  .stat-badge-search-wrap{
+    display:flex;
+    justify-content:center;
+    margin-top:14px;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+    overflow:hidden;
+  }
+  .wrap.active .stat-badge-search-wrap{ opacity:0; height:0; margin:0; pointer-events:none; }
+  .stat-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--lav-deep);
+    background:var(--lav-soft);
+    padding:6px 14px;
+    border-radius:999px;
+  }
+  .stat-badge .dot-pulse{
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--lav);
+    animation:pulse-dot 2.6s ease-in-out infinite;
+  }
+
+  /* --- search --- */
+  .search-row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .search-shell{
+    width:100%;
+    margin-top:32px;
+    position:relative;
+    transition:margin-top .5s ease;
+  }
+  .wrap.active .search-shell{ margin-top:20px; }
+  .amount-shell{
+    flex-shrink:0;
+    margin-top:32px;
+    transition:margin-top .5s ease;
+  }
+  .wrap.active .amount-shell{ margin-top:20px; }
+  .amount-box{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    background:#F1F1F3;
+    border:1px solid #D9D9DB;
+    border-radius:999px;
+    padding:14px 16px;
+    white-space:nowrap;
+  }
+  .amount-box span{
+    font-size:13px;
+    color:#6B6B70;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .amount-box input{
+    width:140px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:14px;
+    color:#4A4A4D;
+  }
+  .amount-box input::placeholder{ color:#A5A5AA; }
+  @media (max-width:520px){
+    .search-row{ flex-direction:column; }
+    .amount-shell{ width:100%; margin-top:10px; }
+    .amount-box{ width:100%; box-sizing:border-box; }
+    .amount-box input{ width:100%; }
+  }
+
+  .search-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:14px 20px;
+    box-shadow:0 1px 2px rgba(20,18,27,0.04);
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .search-box:focus-within{
+    border-color:var(--ink);
+    box-shadow:0 2px 10px rgba(110,86,207,0.14);
+  }
+  .search-box svg{ flex-shrink:0; color:var(--ink-soft); }
+  .search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:16px;
+    color:var(--ink);
+    background:transparent;
+  }
+  .search-box input::placeholder{ color:#A199B3; }
+  .clear-btn{
+    border:none;
+    background:none;
+    color:var(--ink-soft);
+    cursor:pointer;
+    font-size:18px;
+    line-height:1;
+    padding:2px;
+    display:none;
+  }
+  .clear-btn.show{ display:block; }
+
+  /* --- autocomplete --- */
+  .suggestions{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0; right:0;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(20,18,27,0.08);
+    overflow:hidden;
+    z-index:10;
+    display:none;
+  }
+  .suggestions.show{ display:block; }
+  .suggestion-item{
+    padding:12px 20px;
+    font-size:15px;
+    cursor:pointer;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .suggestion-item:hover, .suggestion-item.highlighted{ background:var(--lav-soft); }
+  .suggestion-item + .suggestion-item{ border-top:1px solid var(--line); }
+  .suggestion-item .hint{ font-size:12px; color:var(--ink-soft); }
+
+  /* --- popular chips (only on homepage state) --- */
+  .popular{
+    margin-top:22px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+  }
+  .wrap.active .popular{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
+  .popular span{ font-size:12px; font-weight:500; color:#8A8792; align-self:center; margin-right:2px; }
+  .chip{
+    border:none;
+    background:#F1F1F3;
+    border-radius:999px;
+    padding:6px 14px;
+    font-size:12px;
+    font-weight:500;
+    color:#8A8792;
+    cursor:pointer;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    transition:color .15s ease, background .15s ease, transform .15s ease;
+  }
+  .chip:hover{
+    background:var(--lav);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+
+  /* --- results --- */
+  .results{
+    margin-top:36px;
+    display:none;
+  }
+  .results.show{ display:block; }
+
+  .results-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+  .results-head h1{
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight:500;
+    font-size:22px;
+  }
+  .results-head .updated{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .results-head .updated.unverified{
+    color:#B0403A;
+    font-weight:500;
+  }
+  .savvy-note{
+    font-size:12.5px;
+    color:var(--lav-deep);
+    font-weight:500;
+    margin-bottom:16px;
+  }
+
+  #cardList{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+    gap:10px;
+  }
+
+  .card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    padding:14px;
+    overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(20,18,27,0.08);
+    border-color:var(--lav);
+  }
+  .card.best{
+    border:2px solid var(--lav);
+    padding-top:32px;
+  }
+  .card.best:hover{ border-color:var(--lav-deep); }
+
+  .ribbon{
+    position:absolute;
+    top:0; left:0; right:0;
+    background:var(--lav);
+    color:#fff;
+    font-size:9.5px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:4px 0;
+  }
+
+  .card-top{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin-bottom:10px;
+  }
+
+  .provider-badge{
+    width:20px; height:20px;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9.5px;
+    font-weight:600;
+    color:#fff;
+    flex-shrink:0;
+  }
+  .provider-name{
+    font-size:13px;
+    font-weight:500;
+    min-width:0;
+  }
+
+  .rate{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:26px;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1;
+  }
+  .card.best .rate{ color:var(--lav-deep); }
+
+  .rate-label{
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:3px;
+  }
+  .card.best .rate-label{ color:var(--lav-deep); }
+
+  .dollar-pill{
+    font-family:'IBM Plex Mono Medium', monospace;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border-radius:8px;
+    padding:4px 0;
+    text-align:center;
+    margin-top:8px;
+  }
+  .card.best .dollar-pill{
+    color:var(--lav-deep);
+    background:var(--lav-soft);
+    font-weight:600;
+  }
+
+  .provider-meta{
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-top:8px;
+    margin-bottom:12px;
+  }
+
+  .go-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    border:none;
+    background:var(--ink);
+    color:#fff;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .15s ease;
+    white-space:nowrap;
+    width:100%;
+    margin-top:auto;
+  }
+  .go-btn:hover{ background:var(--lav-deep); }
+  .card.best .go-btn{ background:var(--lav); }
+  .card.best .go-btn:hover{ background:var(--lav-deep); }
+
+  .referral-link{
+    display:block;
+    text-align:center;
+    margin-top:14px;
+    padding-top:10px;
+    border-top:1px solid var(--line);
+    font-size:11px;
+    color:var(--ink-soft);
+    text-decoration:none;
+  }
+  .referral-link:hover{ color:var(--lav-deep); text-decoration:underline; }
+
+  /* empty state */
+  .empty{
+    text-align:center;
+    padding:32px 20px;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+
+  a:focus-visible, button:focus-visible, .chip:focus-visible, .suggestion-item:focus-visible{
+    outline:2px solid var(--lav);
+    outline-offset:2px;
+  }
+
+  @media (max-width:480px){
+    .logo{ font-size:36px; }
+    .menu-btn{ top:16px; left:16px; width:36px; height:36px; }
+    .nav-menu{ top:60px; left:16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+</style>
+<!-- Consent Mode default state (must load before GA4) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T8GZ45Q7');</script>
+<!-- End Google Tag Manager -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://savvli.com/#organization",
+      "name": "Savvli",
+      "url": "https://savvli.com",
+      "logo": "https://savvli.com/logo.png",
+      "description": "Savvli compares cash-back rates across major cash-back platforms so shoppers can find the highest rate for any store in one search.",
+      "sameAs": [
+        "https://x.com/get_savvli",
+        "https://www.producthunt.com/products/savvli"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://savvli.com/#website",
+      "url": "https://savvli.com",
+      "name": "Savvli",
+      "description": "Compare cash-back rates across Rakuten, TopCashback, BeFrugal, and more in one search.",
+      "publisher": { "@id": "https://savvli.com/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://savvli.com/?store={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://savvli.com/#application",
+      "name": "Savvli",
+      "url": "https://savvli.com",
+      "applicationCategory": "ShoppingApplication",
+      "description": "Free tool to compare cash-back rates across major shopping platforms for any store.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8GZ45Q7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to understand how Savvli is used. You can accept or decline analytics cookies - either way, the site works the same.</p>
+  <div class="cookie-actions">
+    <button id="cookie-decline">Decline</button>
+    <button id="cookie-accept">Accept</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var CONSENT_KEY = 'savvli_consent';
+    var banner = document.getElementById('cookie-banner');
+    var accepted = localStorage.getItem(CONSENT_KEY);
+
+    function updateConsent(state){
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': state,
+          'ad_storage': state,
+          'ad_user_data': state,
+          'ad_personalization': state
+        });
+      }
+    }
+
+    if (!accepted) {
+      banner.classList.add('show');
+    } else if (accepted === 'granted') {
+      updateConsent('granted');
+    }
+
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem(CONSENT_KEY, 'granted');
+      updateConsent('granted');
+      banner.classList.remove('show');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function(){
+      localStorage.setItem(CONSENT_KEY, 'denied');
+      banner.classList.remove('show');
+    });
+  })();
+</script>
+
+
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+  <svg class="icon-bars" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<nav class="nav-menu" id="navMenu" role="menu" aria-label="Main">
+  <a href="browse-stores.html" role="menuitem">Browse stores</a>
+  <a href="compare.html" role="menuitem">Compare platforms</a>
+  <a href="guides.html" role="menuitem">Learn</a>
+  <a href="how-it-works.html" role="menuitem">How it works</a>
+  <a href="about.html" role="menuitem">About</a>
+  <a href="suggest-store.html" role="menuitem">Suggest a store</a>
+</nav>
+
+<div class="wrap" id="wrap">
+
+  <header class="mini-header">
+    <a href="index.html" class="mini-logo" aria-label="Savvli home">
+      <svg class="mini-logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="miniTagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#8FA0EA"/>
+            <stop offset="100%" stop-color="#6E56CF"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(-279.615392,1073.887818) scale(0.1,-0.1)" fill="url(#miniTagGrad)" stroke="none">
+          <path d="M9322 10729 c-704 -58 -1344 -523 -1602 -1165 -41 -101 -39 -105 57 -142 277 -106 535 -44 672 163 293 445 919 640 1451 453 841 -297 1075 -1308 469 -2024 -113 -134 -315 -299 -331 -271 -4 8 -68 169 -142 358 -220 564 -287 731 -318 794 -41 81 -136 174 -218 213 -151 72 -209 70 -746 -18 -496 -82 -772 -122 -1269 -185 -198 -25 -419 -54 -491 -66 -1025 -158 -1718 -879 -1750 -1824 -25 -720 338 -1329 1121 -1882 145 -102 234 -158 585 -368 594 -355 856 -539 1065 -749 347 -348 496 -701 457 -1081 -85 -814 -943 -1291 -1745 -969 -114 46 -137 59 -457 249 -193 115 -1455 859 -1770 1043 -80 46 -288 170 -462 274 l-317 189 123 202 c528 866 713 1171 871 1432 100 165 200 330 223 367 42 68 42 68 7 127 -109 185 -193 459 -233 761 -8 55 -8 55 -389 -580 -613 -1023 -898 -1494 -1218 -2016 -184 -298 -207 -413 -120 -584 68 -136 96 -156 635 -465 70 -40 907 -534 1145 -675 99 -59 376 -222 615 -362 1008 -591 1612 -946 1875 -1102 307 -182 356 -205 460 -213 200 -15 322 59 471 289 690 1059 857 1341 932 1573 228 706 17 1477 -563 2060 -235 237 -487 418 -970 697 -721 417 -1114 706 -1322 970 -591 749 -261 1708 657 1907 75 16 1238 212 1760 296 368 59 484 39 564 -97 30 -52 330 -838 322 -845 -31 -31 -327 -53 -471 -34 -123 16 -291 62 -410 112 -195 82 -373 53 -469 -74 -135 -181 -76 -388 138 -487 407 -188 875 -239 1314 -144 72 16 127 23 131 18 7 -7 284 -708 406 -1029 32 -84 44 -220 26 -305 -21 -99 -54 -161 -256 -480 -110 -173 -263 -416 -341 -539 l-141 -225 43 -94 c92 -197 171 -452 209 -676 8 -49 16 -91 18 -92 1 -1 44 66 96 149 52 84 147 235 211 337 691 1089 746 1182 803 1351 70 203 76 490 16 701 -7 24 -71 192 -142 373 -219 561 -289 739 -303 777 -13 37 -13 37 99 111 557 367 891 919 937 1547 67 925 -578 1763 -1494 1939 -95 19 -346 43 -401 40 -11 -1 -66 -6 -123 -10z"/>
+        </g>
+      </svg>
+      <span class="mini-logo-text">Savvli<span class="dot">.</span></span>
+    </a>
+    <nav class="header-nav-row" aria-label="Main">
+      <a href="browse-stores.html">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="guides.html">Learn</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="about.html">About</a>
+      <a href="suggest-store.html" class="nav-cta">Suggest a store</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="tagline">Type a store.<br>See who <span class="tagline-accent">pays the most back</span>.</div>
+  </div>
+
+  <div class="bg-blob b1" aria-hidden="true"></div>
+  <div class="bg-blob b2" aria-hidden="true"></div>
+
+  <div class="search-row">
+    <div class="search-shell">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="text" placeholder="Search a store - Nike, Target, Sephora..." autocomplete="off" aria-label="Search a store" role="combobox" aria-expanded="false" aria-controls="suggestions" aria-autocomplete="list">
+        <button class="clear-btn" id="clearBtn" aria-label="Clear search">&times;</button>
+      </div>
+      <div class="suggestions" id="suggestions" role="listbox"></div>
+    </div>
+    <div class="amount-shell">
+      <div class="amount-box">
+        <span>$</span>
+        <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see dollar savings" min="0">
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-badge-search-wrap">
+    <div class="stat-badge" id="statBadgeSearch"></div>
+  </div>
+
+  <div class="popular" id="popular">
+    <span>Popular:</span>
+  </div>
+
+  <div class="results" id="results">
+    <div class="results-head">
+      <h1 id="resultsStoreName"></h1>
+      <span class="updated" id="resultsUpdated"></span>
+    </div>
+    <p class="savvy-note">Savvy move - you checked first.</p>
+    <div id="cardList"></div>
+  </div>
+
+
+
+</div>
+
+<div class="site-footer-v2">
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h3>Product</h3>
+      <ul>
+        <li><a href="browse-stores.html">Browse stores</a></li>
+        <li><a href="compare.html">Compare platforms</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="suggest-store.html">Suggest a store</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Learn</h3>
+      <ul>
+        <li><a href="what-is-cash-back.html">What is cash back?</a></li>
+        <li><a href="are-cash-back-sites-safe.html">Are cash back sites safe?</a></li>
+        <li><a href="how-to-maximize-cash-back.html">How to maximize cash back</a></li>
+        <li><a href="cash-back-glossary.html">Glossary</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <div class="stat-badge" id="statBadge"></div>
+      <span>&copy; 2026 Savvli</span>
+      <span class="sep">&middot;</span>
+      <a href="terms.html">Terms</a>
+      <span class="sep">&middot;</span>
+      <a href="privacy.html">Privacy</a>
+      <span class="sep">&middot;</span>
+      <button type="button" onclick="localStorage.removeItem('savvli_consent'); location.reload();">Cookie preferences</button>
+    </div>
+    <div class="footer-social">
+      <a href="https://x.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></a>
+      <a href="https://www.instagram.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+      <a href="https://www.facebook.com/get.savvli" target="_blank" rel="noopener" aria-label="Savvli on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/><circle cx="12" cy="12" r="9"/></svg></a>
+      <a href="https://www.producthunt.com/products/savvli" target="_blank" rel="noopener" aria-label="Savvli on Product Hunt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="9"/><path d="M10 8h2.5a2.5 2.5 0 0 1 0 5H10V8zM10 13v3"/></svg></a>
+    </div>
+  </div>
+</div>
+<script>
+  // Mock dataset - placeholder rates for UI development only.
+  // Replace with real, verified data from affiliate networks before launch.
+  const STORES = {
+    "Nike": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "6%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+      { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Old Navy": { verified: "2026-08-31", offers: [
+      { provider: "BeFrugal", rate: "9%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Lululemon": { verified: "2026-08-31", offers: [
+      { provider: "Rakuten", rate: "2%", meta: "Base rate - can spike to 15% during promotions" },
+    ]},
+    "ASOS": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Best Buy": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
+      { provider: "BeFrugal", rate: "8%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "Rakuten", rate: "5%", meta: "Cash back, paid quarterly" },
+      { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Dell": { verified: "2026-08-31", offers: [
+      { provider: "BeFrugal", rate: "2%", meta: "Cash back, paid via check or PayPal" },
+    ]},
+    "Samsung": { verified: "2026-08-31", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+    ]},
+    "Sephora": { verified: "2026-08-29", offers: [
+      { provider: "Rakuten", rate: "6%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+      { provider: "BeFrugal", rate: "4%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Ulta Beauty": { verified: "2026-08-31", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Target": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "1%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Walmart": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
+      { provider: "BeFrugal", rate: "2%", meta: "Up to 15% in select categories - base rate shown" },
+    ]},
+    "Wayfair": { verified: null, offers: [
+      { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
+      { provider: "Capital One Shopping", rate: "2%", meta: "Automatic at checkout" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+      { provider: "BeFrugal", rate: "2%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Home Depot": { verified: "2026-08-31", offers: [
+      { provider: "BeFrugal", rate: "12%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Expedia": { verified: null, offers: [
+      { provider: "RebatesMe", rate: "5%", meta: "Cash back, paid via PayPal" },
+      { provider: "BeFrugal", rate: "4%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "Capital One Shopping", rate: "4%", meta: "Automatic at checkout" },
+      { provider: "Rakuten", rate: "3%", meta: "Cash back, paid quarterly" },
+      { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
+      { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    ]},
+    "Booking.com": { verified: "2026-08-31", offers: [
+      { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "eBay": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+    ]},
+    "Kohl's": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+    ]},
+    "Macy's": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "12%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "RebatesMe", rate: "7%", meta: "Cash back, paid via PayPal" },
+      { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+    ]},
+
+    "Priceline": { verified: "2026-09-03", offers: [
+      { provider: "Rakuten", rate: "8%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+    ]},
+    "Hotels.com": { verified: "2026-09-03", offers: [
+      { provider: "Rakuten", rate: "6%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
+      { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Etsy": { verified: "2026-09-03", offers: [
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+    "CVS": { verified: "2026-09-03", offers: [
+      { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "3%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Zappos": { verified: "2026-09-03", offers: [
+      { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Marriott Bonvoy": { verified: "2026-09-03", offers: [
+      { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    ]},
+    "Temu": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "14%", meta: "Base rate - can spike much higher during promotions" },
+    ]},
+    "Skechers": { verified: "2026-09-03", offers: [
+      { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
+    ]},
+    "Walgreens": { verified: "2026-09-03", offers: [
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+      { provider: "BeFrugal", rate: "4%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Nordstrom": { verified: "2026-09-03", offers: [
+      { provider: "TopCashback", rate: "2.4%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Gap": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+    ]},
+    "PetSmart": { verified: "2026-09-03", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+    ]},
+    "Chewy": { verified: "2026-09-03", offers: [
+      { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+    ]},
+    "Viator": { verified: "2026-09-03", offers: [
+      { provider: "Rakuten", rate: "15%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
+    ]},
+    "Kiehl's": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "10%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Zulily": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "14%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Alo": { verified: "2026-09-03", offers: [
+      { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+      { provider: "Mr Rebates", rate: "8%", meta: "Cash back, paid via PayPal" },
+      { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+    ]},
+    "Athleta": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+    ]},
+    "StubHub": { verified: "2026-09-03", offers: [
+      { provider: "Mr Rebates", rate: "10%", meta: "Cash back, paid via PayPal" },
+      { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
+    ]},
+    "Vineyard Vines": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Banana Republic": { verified: "2026-09-03", offers: [
+      { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Bergdorf Goodman": { verified: "2026-09-03", offers: [
+      { provider: "BeFrugal", rate: "8%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+
+    // Verified real rates, pulled 2026-08-29 - not all providers cover every store
+    "Apple": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+    "Adidas": { verified: "2026-08-29", offers: [
+      { provider: "TopCashback", rate: "9%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "8%", meta: "Cash back, paid quarterly" },
+      { provider: "RebatesMe", rate: "5%", meta: "Cash back, paid via PayPal" },
+      { provider: "BeFrugal", rate: "4%", meta: "Cash back, paid via check or PayPal" },
+    ]},
+    "Staples": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "9%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Neiman Marcus": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Saks Fifth Avenue": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Ann Taylor": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "6%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+      { provider: "TopCashback", rate: "1%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
+    ]},
+    "Bloomingdale's": { verified: "2026-08-29", offers: [
+      { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+      { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+      { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
+      { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    ]},
+  };
+
+  const storeNames = Object.keys(STORES);
+
+  // Live stat badge - computed from actual data, never hardcoded
+  (function(){
+    const verifiedCount = storeNames.filter(name => STORES[name].verified).length;
+    const badgeHTML = `<span class="dot-pulse" aria-hidden="true"></span>${verifiedCount} stores verified and growing`;
+    const badge = document.getElementById('statBadge');
+    if (badge) badge.innerHTML = badgeHTML;
+    const badgeSearch = document.getElementById('statBadgeSearch');
+    if (badgeSearch) badgeSearch.innerHTML = badgeHTML;
+  })();
+  const wrap = document.getElementById('wrap');
+  const input = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('clearBtn');
+  const suggestionsEl = document.getElementById('suggestions');
+  const resultsEl = document.getElementById('results');
+  const cardListEl = document.getElementById('cardList');
+  const resultsStoreName = document.getElementById('resultsStoreName');
+  const resultsUpdated = document.getElementById('resultsUpdated');
+  const popularEl = document.getElementById('popular');
+
+  let highlightedIndex = -1;
+  let currentSuggestions = [];
+
+  ["Nike", "Target", "Sephora", "ASOS", "Expedia", "Wayfair"].forEach(name => {
+    const chip = document.createElement('button');
+    chip.className = 'chip';
+    chip.textContent = name;
+    chip.addEventListener('click', () => runSearch(name));
+    popularEl.appendChild(chip);
+  });
+
+  function renderSuggestions(query){
+    if(!query){
+      suggestionsEl.classList.remove('show');
+      input.setAttribute('aria-expanded', 'false');
+      currentSuggestions = [];
+      return;
+    }
+    const q = query.toLowerCase();
+    currentSuggestions = storeNames.filter(n => n.toLowerCase().includes(q));
+    highlightedIndex = -1;
+
+    if(currentSuggestions.length === 0){
+      suggestionsEl.innerHTML = `<div class="empty">No store matches "${escapeHtml(query)}" yet.</div>`;
+      suggestionsEl.classList.add('show');
+      input.setAttribute('aria-expanded', 'true');
+      return;
+    }
+
+    suggestionsEl.innerHTML = currentSuggestions.map((name, i) => `
+      <div class="suggestion-item" role="option" data-index="${i}" tabindex="-1">
+        <span>${escapeHtml(name)}</span>
+        <span class="hint">${STORES[name].offers.length} offers</span>
+      </div>
+    `).join('');
+
+    suggestionsEl.querySelectorAll('.suggestion-item').forEach((el, i) => {
+      el.addEventListener('click', () => runSearch(currentSuggestions[i]));
+    });
+
+    suggestionsEl.classList.add('show');
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  const PROVIDER_COLORS = {
+    "Rakuten": "#7B4FE0",
+    "Mr Rebates": "#3D8B6A",
+    "Capital One Shopping": "#B0403A",
+    "TopCashback": "#2F6FB5",
+    "BeFrugal": "#C97A2E",
+    "RebatesMe": "#4C5A73"
+  };
+
+  const PROVIDER_URLS = {
+    "Rakuten": "https://www.rakuten.com/",
+    "Mr Rebates": "https://www.mrrebates.com/",
+    "Capital One Shopping": "https://capitaloneshopping.com/",
+    "TopCashback": "https://www.topcashback.com/",
+    "BeFrugal": "https://www.befrugal.com/",
+    "RebatesMe": "https://www.rebatesme.com/"
+  };
+
+  // Verified real store-page URLs - only added where confirmed, not guessed.
+  // Falls back to provider homepage for everything else.
+  const STORE_DEEP_LINKS = {
+    "Apple|Rakuten": "https://www.rakuten.com/shop/apple",
+    "Apple|TopCashback": "https://www.topcashback.com/apple/",
+    "Adidas|Rakuten": "https://www.rakuten.com/shop/adidas",
+    "Adidas|TopCashback": "https://www.topcashback.com/adidas/",
+    "Adidas|BeFrugal": "https://www.befrugal.com/store/adidas/",
+    "Adidas|RebatesMe": "https://www.rebatesme.com/en/stores/adidas-us",
+    "Sephora|TopCashback": "https://www.topcashback.com/sephora/",
+    "Kohl's|TopCashback": "https://www.topcashback.com/kohls/",
+    "Best Buy|TopCashback": "https://www.topcashback.com/best-buy/",
+    "eBay|TopCashback": "https://www.topcashback.com/ebay/"
+  };
+
+  // New-member referral bonuses - only added once we have a real,
+  // verified link and terms from the platform's own account/dashboard.
+  // Not every provider has one yet; that's intentional, not a bug.
+  const REFERRAL_LINKS = {
+    "Rakuten": {
+      url: "https://www.rakuten.com/r/SHEARA151",
+      text: "New here? Sign up & earn a bonus"
+    },
+    "Mr Rebates": {
+      url: "http://www.mrrebates.com?refid=1313693",
+      text: "New here? Sign up & earn a bonus"
+    },
+    "Capital One Shopping": {
+      url: "https://capitaloneshopping.com/r/98716fac-1c11-4403-a86c-f0c23b8ef46d",
+      text: "New here? Sign up & earn a bonus"
+    },
+    "TopCashback": {
+      url: "https://www.topcashback.com/ref/member845906671136",
+      text: "New here? Sign up & earn a bonus"
+    },
+    "BeFrugal": {
+      url: "https://www.befrugal.com/rs/NXRWXBM/",
+      text: "New here? Sign up & earn a bonus"
+    },
+    "RebatesMe": {
+      url: "https://www.rebatesme.com/r/fonked",
+      text: "New here? Sign up & earn a bonus"
+    }
+  };
+
+  function getProviderLink(provider, storeName){
+    return STORE_DEEP_LINKS[storeName + "|" + provider] || PROVIDER_URLS[provider] || "#";
+  }
+
+  function formatFreshness(verifiedDate){
+    if (!verifiedDate) {
+      return "Rate not yet independently verified";
+    }
+    const verified = new Date(verifiedDate + 'T00:00:00');
+    const now = new Date();
+    const msPerDay = 1000 * 60 * 60 * 24;
+    const diffDays = Math.floor((new Date(now.toDateString()) - new Date(verified.toDateString())) / msPerDay);
+
+    if (diffDays <= 0) return "Verified today";
+    if (diffDays === 1) return "Verified yesterday";
+    if (diffDays < 7) return `Verified ${diffDays} days ago`;
+    if (diffDays < 14) return "Verified 1 week ago";
+    if (diffDays < 30) return `Verified ${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 60) return "Verified 1 month ago";
+    return `Verified ${Math.floor(diffDays / 30)} months ago`;
+  }
+
+  function providerInitials(name){
+    return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  }
+
+  function trackShopClick(provider, storeName){
+    if (typeof gtag === 'function') {
+      gtag('event', 'shop_click', {
+        provider: provider,
+        store: storeName
+      });
+    }
+  }
+
+  function trackReferralClick(provider){
+    if (typeof gtag === 'function') {
+      gtag('event', 'referral_signup_click', {
+        provider: provider
+      });
+    }
+  }
+
+  function trackSearch(storeName){
+    if (typeof gtag === 'function') {
+      gtag('event', 'search', {
+        search_term: storeName
+      });
+    }
+  }
+
+  let currentStoreName = null;
+
+  function getSpendAmount(){
+    const raw = document.getElementById('amountInput').value;
+    const val = parseFloat(raw);
+    return (!isNaN(val) && val > 0) ? val : null;
+  }
+
+  function renderCards(storeName){
+    const store = STORES[storeName];
+    if(!store) return;
+
+    const sorted = [...store.offers].sort((a, b) => parseFloat(b.rate) - parseFloat(a.rate));
+    const amount = getSpendAmount();
+
+    cardListEl.innerHTML = sorted.map((offer, i) => {
+      const referral = REFERRAL_LINKS[offer.provider];
+      const referralHtml = referral
+        ? `<a class="referral-link" href="${referral.url}" target="_blank" rel="noopener" onclick="trackReferralClick('${escapeHtml(offer.provider)}')">${escapeHtml(referral.text)}</a>`
+        : '';
+      let dollarHtml = '';
+      if (amount !== null) {
+        const ratePct = parseFloat(offer.rate);
+        const dollarAmount = (amount * ratePct / 100).toFixed(2);
+        dollarHtml = `<div class="dollar-pill">= $${dollarAmount}</div>`;
+      }
+      return `
+      <div class="card ${i === 0 ? 'best' : ''}">
+        ${i === 0 ? '<div class="ribbon">Best rate</div>' : ''}
+        <div class="card-top">
+          <span class="provider-badge" style="background:${PROVIDER_COLORS[offer.provider] || '#6E56CF'}">${providerInitials(offer.provider)}</span>
+          <span class="provider-name">${escapeHtml(offer.provider)}</span>
+        </div>
+        <div class="rate">${offer.rate}</div>
+        <div class="rate-label">Cash back</div>
+        ${dollarHtml}
+        <div class="provider-meta">${escapeHtml(offer.meta)}</div>
+        <a class="go-btn" href="${getProviderLink(offer.provider, storeName)}" target="_blank" rel="noopener sponsored" onclick="trackShopClick('${escapeHtml(offer.provider)}', '${escapeHtml(storeName)}')">${i === 0 ? 'Shop & earn' : 'Activate'} ${offer.rate} →</a>
+        ${referralHtml}
+      </div>
+    `;
+    }).join('');
+  }
+
+  function runSearch(storeName, pushUrl = true){
+    const store = STORES[storeName];
+    if(!store) return;
+
+    trackSearch(storeName);
+
+    input.value = storeName;
+    clearBtn.classList.add('show');
+    suggestionsEl.classList.remove('show');
+    input.setAttribute('aria-expanded', 'false');
+    wrap.classList.add('active');
+
+    resultsStoreName.textContent = storeName;
+    resultsUpdated.textContent = formatFreshness(store.verified);
+    resultsUpdated.classList.toggle('unverified', !store.verified);
+
+    currentStoreName = storeName;
+    renderCards(storeName);
+
+    resultsEl.classList.add('show');
+
+    const newUrl = window.location.pathname + '?store=' + encodeURIComponent(storeName);
+    if (pushUrl && window.location.pathname + window.location.search !== newUrl) {
+      history.pushState({ store: storeName }, '', newUrl);
+    }
+    document.title = storeName + ' cash back rates - Savvli';
+  }
+
+  input.addEventListener('input', (e) => {
+    clearBtn.classList.toggle('show', !!e.target.value);
+    renderSuggestions(e.target.value);
+    if(!e.target.value){
+      wrap.classList.remove('active');
+      resultsEl.classList.remove('show');
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    const items = suggestionsEl.querySelectorAll('.suggestion-item');
+    if(e.key === 'ArrowDown'){
+      e.preventDefault();
+      if(items.length === 0) return;
+      highlightedIndex = (highlightedIndex + 1) % items.length;
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightedIndex));
+    } else if(e.key === 'ArrowUp'){
+      e.preventDefault();
+      if(items.length === 0) return;
+      highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightedIndex));
+    } else if(e.key === 'Enter'){
+      e.preventDefault();
+      if(highlightedIndex >= 0 && currentSuggestions[highlightedIndex]){
+        runSearch(currentSuggestions[highlightedIndex]);
+      } else if(currentSuggestions.length > 0){
+        runSearch(currentSuggestions[0]);
+      } else if(STORES[input.value]){
+        runSearch(input.value);
+      }
+    } else if(e.key === 'Escape'){
+      suggestionsEl.classList.remove('show');
+      input.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.classList.remove('show');
+    suggestionsEl.classList.remove('show');
+    wrap.classList.remove('active');
+    resultsEl.classList.remove('show');
+    input.focus();
+    history.pushState({}, '', window.location.pathname);
+    document.title = 'Savvli - Compare Cash Back Rates Across Every Platform';
+  });
+
+  let amountTrackTimer = null;
+  document.getElementById('amountInput').addEventListener('input', () => {
+    if(currentStoreName) renderCards(currentStoreName);
+    clearTimeout(amountTrackTimer);
+    amountTrackTimer = setTimeout(() => {
+      const amount = getSpendAmount();
+      if (amount !== null && typeof gtag === 'function') {
+        gtag('event', 'spend_amount_entered', { value: amount });
+      }
+    }, 1200);
+  });
+
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.search-shell')){
+      suggestionsEl.classList.remove('show');
+      input.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // --- hamburger menu ---
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  function closeMenu(){
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('show');
+  }
+  function toggleMenu(){
+    const isOpen = navMenu.classList.contains('show');
+    if(isOpen){ closeMenu(); }
+    else{
+      menuBtn.classList.add('open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      navMenu.classList.add('show');
+    }
+  }
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.nav-menu') && !e.target.closest('.menu-btn')){
+      closeMenu();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeMenu();
+  });
+
+  // Deep-link support: ?store=Name auto-runs a search on load
+  const urlParams = new URLSearchParams(window.location.search);
+  const storeParam = urlParams.get('store');
+  if (storeParam && STORES[storeParam]) {
+    runSearch(storeParam, false);
+  }
+
+  // Support browser back/forward buttons
+  window.addEventListener('popstate', () => {
+    const params = new URLSearchParams(window.location.search);
+    const store = params.get('store');
+    if (store && STORES[store]) {
+      runSearch(store, false);
+    } else {
+      input.value = '';
+      clearBtn.classList.remove('show');
+      wrap.classList.remove('active');
+      resultsEl.classList.remove('show');
+      document.title = 'Savvli - Compare Cash Back Rates Across Every Platform';
+    }
+  });
+</script>
+
+</body>
+</html>
