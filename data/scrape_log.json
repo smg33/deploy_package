@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-09-04T17:37:20.154135+00:00",
+  "run_at": "2026-09-05T12:13:58.959191+00:00",
   "stores": {
     "Nike": {
       "BeFrugal": "OK: 9%",
@@ -36,7 +36,7 @@
       "TopCashback": "OK: 2%"
     },
     "Sephora": {
-      "Rakuten": "OK: 2%",
+      "Rakuten": "OK: 6%",
       "TopCashback": "OK: 4%",
       "BeFrugal": "OK: 9%",
       "RebatesMe": "OK: 40%"
@@ -72,7 +72,7 @@
       "RebatesMe": "OK: 40%",
       "BeFrugal": "OK: 9%",
       "Capital One Shopping": "PARSE_FAILED - kept previous value",
-      "Rakuten": "OK: 6%",
+      "Rakuten": "OK: 3%",
       "Mr Rebates": "PARSE_FAILED - kept previous value",
       "TopCashback": "PARSE_FAILED - kept previous value"
     },
@@ -90,10 +90,10 @@
       "BeFrugal": "OK: 9%",
       "RebatesMe": "OK: 40%",
       "TopCashback": "PARSE_FAILED - kept previous value",
-      "Rakuten": "OK: 4%"
+      "Rakuten": "OK: 6%"
     },
     "Priceline": {
-      "Rakuten": "OK: 8%",
+      "Rakuten": "OK: 4%",
       "TopCashback": "PARSE_FAILED - kept previous value"
     },
     "Hotels.com": {
@@ -102,7 +102,7 @@
       "Mr Rebates": "PARSE_FAILED - kept previous value"
     },
     "Etsy": {
-      "Rakuten": "OK: 2%"
+      "Rakuten": "OK: 1%"
     },
     "CVS": {
       "BeFrugal": "OK: 9%",
@@ -137,7 +137,7 @@
     },
     "PetSmart": {
       "BeFrugal": "OK: 9%",
-      "Rakuten": "OK: 2%",
+      "Rakuten": "OK: 6%",
       "TopCashback": "OK: 4%"
     },
     "Chewy": {
@@ -217,14 +217,14 @@
     },
     "Adidas": {
       "TopCashback": "PARSE_FAILED - kept previous value",
-      "Rakuten": "OK: 4%",
+      "Rakuten": "OK: 6%",
       "RebatesMe": "OK: 40%",
       "BeFrugal": "OK: 9%"
     },
     "Staples": {
       "BeFrugal": "OK: 9%",
       "TopCashback": "OK: 4%",
-      "Rakuten": "OK: 4%",
+      "Rakuten": "OK: 2%",
       "RebatesMe": "OK: 40%"
     },
     "Neiman Marcus": {
