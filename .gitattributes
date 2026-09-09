@@ -1,2 +1,3 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+stores-data.js merge=ours
+data/scrape_log.json merge=ours
+data/latest_results.json merge=ours
