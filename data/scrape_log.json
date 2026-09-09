@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-09-09T12:55:27.398866+00:00",
+  "run_at": "2026-09-09T13:16:05.193078+00:00",
   "stores": {
     "Nike": {
       "BeFrugal": "OK: 9%",
@@ -105,7 +105,7 @@
       "Rakuten": "OK: 1%"
     },
     "CVS": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "FETCH_FAILED - kept previous value",
       "Rakuten": "OK: 3%"
     },
@@ -123,7 +123,7 @@
     },
     "Walgreens": {
       "TopCashback": "OK: 4%",
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "RebatesMe": "OK: 40%"
     },
     "Nordstrom": {
@@ -136,7 +136,7 @@
       "TopCashback": "OK: 4%"
     },
     "PetSmart": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 4%"
     },
@@ -173,7 +173,7 @@
       "RebatesMe": "OK: 40%"
     },
     "Bergdorf Goodman": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "RebatesMe": "OK: 40%",
       "Rakuten": "OK: 10%"
     },
@@ -208,7 +208,7 @@
     },
     "Scheels": {
       "Rakuten": "OK: 3%",
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "PARSE_FAILED - kept previous value"
     },
     "Apple": {
@@ -219,34 +219,34 @@
       "TopCashback": "PARSE_FAILED - kept previous value",
       "Rakuten": "OK: 4%",
       "RebatesMe": "OK: 40%",
-      "BeFrugal": "OK: 9%"
+      "BeFrugal": "OK: 10%"
     },
     "Staples": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 4%",
       "Rakuten": "OK: 4%",
       "RebatesMe": "OK: 40%"
     },
     "Neiman Marcus": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 5%",
       "Rakuten": "OK: 10%",
       "RebatesMe": "OK: 40%"
     },
     "Saks Fifth Avenue": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 5%",
       "Rakuten": "OK: 10%",
       "RebatesMe": "OK: 40%"
     },
     "Ann Taylor": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "Rakuten": "OK: 10%",
       "TopCashback": "OK: 1%",
       "RebatesMe": "OK: 40%"
     },
     "Bloomingdale's": {
-      "BeFrugal": "OK: 9%",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 4%",
       "RebatesMe": "OK: 40%",
       "Rakuten": "OK: 2%"
