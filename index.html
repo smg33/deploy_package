@@ -769,8 +769,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Real data, generated daily by scripts/scrape_rates.py. Some providers'
   // parsers are still unverified against real, raw HTML and have produced
   // wrong rates before - hide those until they're fixed and verified the
-  // same way RebatesMe, TopCashback, and Rakuten already have been.
-  const VERIFIED_PROVIDERS = new Set(["RebatesMe", "TopCashback", "Rakuten"]);
+  // same way TopCashback and Rakuten already have been.
+  //
+  // RebatesMe was verified correct against real raw HTML, but is CURRENTLY
+  // failing on every real scraper run (likely IP-blocked specifically from
+  // GitHub Actions' servers, not a code bug - the same request from a home
+  // connection returns the real page). Hidden here so the site never shows
+  // its stale/wrong fallback data. The scraper keeps trying it in the
+  // background; re-add "RebatesMe" here once scrape_log.json shows it
+  // consistently succeeding again.
+  const VERIFIED_PROVIDERS = new Set(["TopCashback", "Rakuten"]);
   Object.keys(STORES).forEach(name => {
     STORES[name].offers = STORES[name].offers.filter(o => VERIFIED_PROVIDERS.has(o.provider));
     if (STORES[name].offers.length === 0) delete STORES[name];
