@@ -10,13 +10,18 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "10%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "Rakuten",
         "rate": "6%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "6%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -31,13 +36,18 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "8%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "Rakuten",
         "rate": "10%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -58,13 +68,18 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "3%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "Rakuten",
         "rate": "2%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -85,6 +100,11 @@
       {
         "provider": "RebatesMe",
         "rate": "40%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -113,6 +133,11 @@
         "provider": "TopCashback",
         "rate": "2%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -127,12 +152,17 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "4%",
+        "rate": "7%",
         "meta": "Cash back, no minimum"
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -148,7 +178,7 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "6%",
         "meta": "Cash back, paid via PayPal"
       },
       {
@@ -182,6 +212,11 @@
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -207,12 +242,17 @@
     "offers": [
       {
         "provider": "TopCashback",
-        "rate": "12%",
+        "rate": "10%",
         "meta": "Cash back, no minimum"
       },
       {
         "provider": "RebatesMe",
         "rate": "40%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -223,7 +263,7 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "6%",
         "meta": "Cash back, paid via PayPal"
       },
       {
@@ -246,6 +286,11 @@
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -257,6 +302,11 @@
         "provider": "TopCashback",
         "rate": "5%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -268,6 +318,11 @@
         "provider": "TopCashback",
         "rate": "2%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -277,7 +332,7 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "15%",
         "meta": "Cash back, paid via PayPal"
       },
       {
@@ -289,6 +344,11 @@
         "provider": "Rakuten",
         "rate": "2%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -305,6 +365,11 @@
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -316,6 +381,11 @@
         "provider": "Rakuten",
         "rate": "10%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "5%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -349,6 +419,11 @@
         "provider": "Rakuten",
         "rate": "2%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -358,8 +433,13 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "50%",
         "meta": "Base rate - can spike much higher during promotions"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "5%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -371,6 +451,11 @@
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -385,7 +470,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "7%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -406,7 +496,7 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -424,6 +514,11 @@
         "provider": "TopCashback",
         "rate": "4%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -440,6 +535,11 @@
         "provider": "TopCashback",
         "rate": "4%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -451,6 +551,11 @@
         "provider": "TopCashback",
         "rate": "1%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -467,6 +572,11 @@
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -476,7 +586,12 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "12%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "5%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -487,7 +602,12 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "1.2%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "5%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -509,13 +629,18 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "TopCashback",
         "rate": "4%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -523,6 +648,11 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "12%",
@@ -538,6 +668,11 @@
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -547,7 +682,12 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -558,13 +698,18 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "Rakuten",
         "rate": "10%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -579,7 +724,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -590,13 +740,29 @@
     "offers": [
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "TopCashback",
         "rate": "3%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
+      }
+    ]
+  },
+  "Net-a-Porter": {
+    "verified": "2026-09-10",
+    "category": "General merchandise",
+    "offers": [
+      {
+        "provider": "Mr Rebates",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -613,6 +779,11 @@
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -624,6 +795,11 @@
         "provider": "Rakuten",
         "rate": "10%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -657,6 +833,11 @@
         "provider": "Rakuten",
         "rate": "3%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "5%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -673,6 +854,11 @@
         "provider": "TopCashback",
         "rate": "5%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   },
@@ -708,7 +894,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -729,7 +920,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "3%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -750,7 +946,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "2%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -771,7 +972,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "4%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -792,7 +998,12 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
@@ -808,13 +1019,18 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "40%",
+        "rate": "7%",
         "meta": "Cash back, paid via PayPal"
       },
       {
         "provider": "Rakuten",
-        "rate": "10%",
+        "rate": "2%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "Mr Rebates",
+        "rate": "1%",
+        "meta": "Cash back, paid via PayPal"
       }
     ]
   }
