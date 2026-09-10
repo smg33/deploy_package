@@ -81,11 +81,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <style>
-  .store-hero{ padding:8px 0 4px; }
-  .store-hero h1{ font-family:'Fraunces', serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:12px; }
+  .bg-blob{ position:fixed; border-radius:50%; filter:blur(60px); opacity:0.35; pointer-events:none; z-index:0; }
+  .bg-blob.b1{ width:360px; height:360px; background:var(--lav); top:-140px; left:-120px; }
+  .bg-blob.b2{ width:280px; height:280px; background:#B7A6F0; bottom:-100px; right:-100px; opacity:0.3; }
+  .store-hero{ padding:8px 0 4px; position:relative; z-index:1; }
+  .store-hero-top{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+  .store-logo{ width:52px; height:52px; border-radius:14px; background:#fff; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 8px rgba(20,18,27,0.06); }
+  .store-logo img{ width:30px; height:30px; object-fit:contain; }
+  .store-hero h1{ font-family:'Fraunces', serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:0; }
   .store-hero p{ font-size:15px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin-bottom:8px; }
-  .store-updated{ font-size:12px; color:var(--ink-soft); margin-bottom:28px; }
-  #cardList{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; margin-bottom:40px; }
+  .store-updated{ font-size:12px; color:var(--ink-soft); margin-bottom:28px; position:relative; z-index:1; }
+  #cardList{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; margin-bottom:40px; position:relative; z-index:1; }
   .card{ position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; background:#fff; border:1.5px solid var(--line); border-radius:var(--radius); padding:14px; overflow:hidden; }
   .card.best{ border:2px solid var(--lav); padding-top:32px; }
   .ribbon{ position:absolute; top:0; left:0; right:0; background:var(--lav); color:#fff; font-size:9.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-align:center; padding:4px 0; }
@@ -100,14 +106,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .go-btn{ display:block; text-align:center; text-decoration:none; border:none; background:var(--ink); color:#fff; font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:12.5px; font-weight:500; padding:8px 14px; border-radius:999px; cursor:pointer; white-space:nowrap; width:100%; margin-top:auto; }
   .card.best .go-btn{ background:var(--lav); }
   .referral-link{ display:block; text-align:center; margin-top:14px; padding-top:10px; border-top:1px solid var(--line); font-size:11px; color:var(--ink-soft); text-decoration:none; }
-  .store-faq{ margin:40px 0; }
+  .store-faq{ margin:40px 0; position:relative; z-index:1; }
   .store-faq h2{ font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight:500; font-size:20px; margin-bottom:16px; }
   .faq-item{ margin-bottom:18px; }
   .faq-item h3{ font-size:15px; font-weight:600; margin-bottom:5px; }
   .faq-item p{ font-size:14px; line-height:1.6; color:var(--ink-soft); }
-  @media (max-width:480px){ .store-hero h1{ font-size:26px; } }
+  @media (max-width:480px){ .store-hero h1{ font-size:26px; } .store-logo{ width:44px; height:44px; } .store-logo img{ width:24px; height:24px; } }
 </style>
 </head>
+
 <body>
 <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
   <svg class="icon-bars" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -151,6 +158,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <div class="wrap">
+  <div class="bg-blob b1" aria-hidden="true"></div>
+  <div class="bg-blob b2" aria-hidden="true"></div>
   <header class="site-header">
     <a href="index.html"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><linearGradient id="tagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
@@ -158,7 +167,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </linearGradient></defs>
         <g transform="translate(-279.615392,1073.887818) scale(0.1,-0.1)" fill="url(#tagGrad)" stroke="none"><path d="M9322 10729 c-704 -58 -1344 -523 -1602 -1165 -41 -101 -39 -105 57 -142 277 -106 535 -44 672 163 293 445 919 640 1451 453 841 -297 1075 -1308 469 -2024 -113 -134 -315 -299 -331 -271 -4 8 -68 169 -142 358 -220 564 -287 731 -318 794 -41 81 -136 174 -218 213 -151 72 -209 70 -746 -18 -496 -82 -772 -122 -1269 -185 -198 -25 -419 -54 -491 -66 -1025 -158 -1718 -879 -1750 -1824 -25 -720 338 -1329 1121 -1882 145 -102 234 -158 585 -368 594 -355 856 -539 1065 -749 347 -348 496 -701 457 -1081 -85 -814 -943 -1291 -1745 -969 -114 46 -137 59 -457 249 -193 115 -1455 859 -1770 1043 -80 46 -288 170 -462 274 l-317 189 123 202 c528 866 713 1171 871 1432 100 165 200 330 223 367 42 68 42 68 7 127 -109 185 -193 459 -233 761 -8 55 -8 55 -389 -580 -613 -1023 -898 -1494 -1218 -2016 -184 -298 -207 -413 -120 -584 68 -136 96 -156 635 -465 70 -40 907 -534 1145 -675 99 -59 376 -222 615 -362 1008 -591 1612 -946 1875 -1102 307 -182 356 -205 460 -213 200 -15 322 59 471 289 690 1059 857 1341 932 1573 228 706 17 1477 -563 2060 -235 237 -487 418 -970 697 -721 417 -1114 706 -1322 970 -591 749 -261 1708 657 1907 75 16 1238 212 1760 296 368 59 484 39 564 -97 30 -52 330 -838 322 -845 -31 -31 -327 -53 -471 -34 -123 16 -291 62 -410 112 -195 82 -373 53 -469 -74 -135 -181 -76 -388 138 -487 407 -188 875 -239 1314 -144 72 16 127 23 131 18 7 -7 284 -708 406 -1029 32 -84 44 -220 26 -305 -21 -99 -54 -161 -256 -480 -110 -173 -263 -416 -341 -539 l-141 -225 43 -94 c92 -197 171 -452 209 -676 8 -49 16 -91 18 -92 1 -1 44 66 96 149 52 84 147 235 211 337 691 1089 746 1182 803 1351 70 203 76 490 16 701 -7 24 -71 192 -142 373 -219 561 -289 739 -303 777 -13 37 -13 37 99 111 557 367 891 919 937 1547 67 925 -578 1763 -1494 1939 -95 19 -346 43 -401 40 -11 -1 -66 -6 -123 -10z"/></g>
       </svg><span class="logo">Savvli<span class="dot">.</span></span></a>
-    <a class="back-link" href="index.html">&larr; Back to search</a>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <input type="text" name="store" placeholder="Search a store..." aria-label="Search a store">
+      <button type="submit" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </form>
     <nav class="header-nav-row" aria-label="Main">
       <a href="browse-stores.html">Browse</a>
       <a href="compare.html">Compare</a>
@@ -174,7 +188,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </nav>
 
   <div class="store-hero">
-    <h1>Apple cash back rates</h1>
+    <div class="store-hero-top">
+      <div class="store-logo"><img src="https://www.google.com/s2/favicons?sz=64&domain=apple.com" alt="" loading="lazy"></div>
+      <h1>Apple cash back rates</h1>
+    </div>
     <p>Compare Apple cash back across TopCashback, and Rakuten. Rates change often - activate the offer before you check out to make sure it tracks.</p>
   </div>
   <div class="store-updated">Verified 2026-09-10</div>

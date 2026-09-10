@@ -57,26 +57,6 @@
     overflow-x:hidden;
   }
 
-  .bg-blob{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(60px);
-    opacity:0.35;
-    pointer-events:none;
-    z-index:0;
-  }
-  .bg-blob.b1{
-    width:360px; height:360px;
-    background:var(--lav);
-    top:-140px; left:-120px;
-  }
-  .bg-blob.b2{
-    width:280px; height:280px;
-    background:#B7A6F0;
-    bottom:-100px; right:-100px;
-    opacity:0.3;
-  }
-
   .wrap{ position:relative; z-index:1; }
 
   .mini-header{
@@ -204,7 +184,8 @@
   }
   .amount-box span{
     font-size:13px;
-    color:#6B6B70;
+    color:var(--lav);
+    font-weight:600;
     font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   .amount-box input{
@@ -288,18 +269,6 @@
   .suggestion-item:hover, .suggestion-item.highlighted{ background:var(--lav-soft); }
   .suggestion-item + .suggestion-item{ border-top:1px solid var(--line); }
   .suggestion-item .hint{ font-size:12px; color:var(--ink-soft); }
-  .suggestion-right{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:2px;
-  }
-  .suggestion-deeplink{
-    font-size:11px;
-    color:var(--lav-deep);
-    text-decoration:none;
-  }
-  .suggestion-deeplink:hover{ text-decoration:underline; }
 
   /* --- popular chips (only on homepage state) --- */
   .popular{
@@ -707,8 +676,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="tagline">Type a store.<br>See who <span class="tagline-accent">pays the most back</span>.</div>
   </div>
 
-  <div class="bg-blob b1" aria-hidden="true"></div>
-  <div class="bg-blob b2" aria-hidden="true"></div>
 
   <div class="search-row">
     <div class="search-shell">
@@ -896,18 +863,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     suggestionsEl.innerHTML = currentSuggestions.map((name, i) => `
       <div class="suggestion-item" role="option" data-index="${i}" tabindex="-1">
         <span>${escapeHtml(name)}</span>
-        <span class="suggestion-right">
-          <span class="hint">${STORES[name].offers.length > 0 ? STORES[name].offers.length + ' offers' : 'checking rates...'}</span>
-          ${STORES[name].offers.length > 0 ? `<a class="suggestion-deeplink" href="${slugifyStore(name)}-cash-back.html">View full page</a>` : ''}
-        </span>
+        <span class="hint">${STORES[name].offers.length > 0 ? STORES[name].offers.length + ' offers' : 'checking rates...'}</span>
       </div>
     `).join('');
 
     suggestionsEl.querySelectorAll('.suggestion-item').forEach((el, i) => {
-      el.addEventListener('click', (e) => {
-        if (e.target.closest('.suggestion-deeplink')) return; // let the link navigate normally
-        goToStore(currentSuggestions[i]);
-      });
+      el.addEventListener('click', () => goToStore(currentSuggestions[i]));
     });
 
     suggestionsEl.classList.add('show');
