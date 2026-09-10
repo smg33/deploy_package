@@ -57,6 +57,52 @@
     color:var(--ink);
   }
   .logo .dot{ color:var(--lav); }
+
+  /* header search bar - lets people search from any subpage, not just
+     the homepage. Plain HTML form (no JS needed): submits to
+     index.html?store=... which the homepage's existing redirect logic
+     picks up and sends to the real store page automatically. */
+  .header-search{
+    display:flex;
+    align-items:center;
+    flex:1;
+    max-width:340px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:4px 4px 4px 16px;
+    margin:0 8px;
+    transition:border-color .15s ease;
+  }
+  .header-search:focus-within{ border-color:var(--lav); }
+  .header-search input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:13.5px;
+    color:var(--ink);
+  }
+  .header-search input::placeholder{ color:#A199B3; }
+  .header-search button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:30px; height:30px;
+    border:none;
+    border-radius:50%;
+    background:var(--lav);
+    color:#fff;
+    cursor:pointer;
+    flex-shrink:0;
+    transition:background .15s ease;
+  }
+  .header-search button:hover{ background:var(--lav-deep); }
+  @media (max-width:680px){
+    .header-search{ display:none; }
+  }
+
   .back-link{
     margin-left:auto;
     font-size:13.5px;
@@ -142,14 +188,13 @@
 
   .site-footer-v2{
     margin-top:auto;
-    padding-top:72px;
+    padding-top:56px;
     border-top:1px solid var(--line);
   }
   .footer-cols{
     display:flex;
     justify-content:space-between;
     gap:24px;
-    margin-top:40px;
     margin-bottom:44px;
   }
   .footer-col h3{
