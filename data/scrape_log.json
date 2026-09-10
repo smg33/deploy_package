@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-09-10T04:03:48.591336+00:00",
+  "run_at": "2026-09-10T13:13:43.491520+00:00",
   "stores": {
     "Nike": {
       "BeFrugal": "DISABLED - excluded from fail-safe check",
@@ -57,9 +57,9 @@
     },
     "Wayfair": {
       "RebatesMe": "PARSE_FAILED (fetched 77488 chars) - kept previous value",
-      "Capital One Shopping": "PARSE_FAILED (fetched 799749 chars) - kept previous value",
+      "Capital One Shopping": "PARSE_FAILED (fetched 797606 chars) - kept previous value",
       "Rakuten": "OK: 3.5%",
-      "TopCashback": "PARSE_FAILED (fetched 185946 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 185844 chars) - kept previous value",
       "BeFrugal": "DISABLED - excluded from fail-safe check",
       "Mr Rebates": "PARSE_FAILED (fetched 13841 chars) - kept previous value"
     },
@@ -71,10 +71,10 @@
     "Expedia": {
       "RebatesMe": "PARSE_FAILED (fetched 77488 chars) - kept previous value",
       "BeFrugal": "DISABLED - excluded from fail-safe check",
-      "Capital One Shopping": "PARSE_FAILED (fetched 800429 chars) - kept previous value",
-      "Rakuten": "OK: 8%",
+      "Capital One Shopping": "PARSE_FAILED (fetched 797865 chars) - kept previous value",
+      "Rakuten": "OK: 6%",
       "Mr Rebates": "PARSE_FAILED (fetched 13841 chars) - kept previous value",
-      "TopCashback": "OK: 10%"
+      "TopCashback": "OK: 12%"
     },
     "Booking.com": {
       "RebatesMe": "PARSE_FAILED (fetched 77494 chars) - kept previous value"
@@ -164,7 +164,7 @@
     },
     "StubHub": {
       "Mr Rebates": "PARSE_FAILED (fetched 13841 chars) - kept previous value",
-      "TopCashback": "OK: 10%"
+      "TopCashback": "OK: 12%"
     },
     "Vineyard Vines": {
       "RebatesMe": "PARSE_FAILED (fetched 77502 chars) - kept previous value"
@@ -249,7 +249,7 @@
       "BeFrugal": "DISABLED - excluded from fail-safe check",
       "TopCashback": "OK: 4%",
       "RebatesMe": "PARSE_FAILED (fetched 77500 chars) - kept previous value",
-      "Rakuten": "OK: 2%"
+      "Rakuten": "OK: 10%"
     }
   }
 }

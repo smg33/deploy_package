@@ -1,5 +1,5 @@
 // Auto-generated daily by scripts/scrape_rates.py - do not edit by hand
-// Last updated: 2026-09-10T04:11:01.894612+00:00
+// Last updated: 2026-09-10T13:21:11.965152+00:00
 const STORES = {
   "Nike": { verified: "2026-09-10", offers: [
     { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
@@ -57,8 +57,8 @@ const STORES = {
   ]},
   "Expedia": { verified: "2026-09-10", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
-    { provider: "Rakuten", rate: "8%", meta: "Cash back, paid quarterly" },
-    { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
+    { provider: "Rakuten", rate: "6%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "12%", meta: "Cash back, no minimum" },
   ]},
   "Booking.com": { verified: "2026-09-10", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
@@ -134,7 +134,7 @@ const STORES = {
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
   ]},
   "StubHub": { verified: "2026-09-10", offers: [
-    { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
+    { provider: "TopCashback", rate: "12%", meta: "Cash back, no minimum" },
   ]},
   "Vineyard Vines": { verified: "2026-09-10", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
@@ -206,6 +206,6 @@ const STORES = {
   "Bloomingdale's": { verified: "2026-09-10", offers: [
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
-    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
   ]},
 };
