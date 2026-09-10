@@ -301,10 +301,13 @@
   .wrap.active .popular{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
   .popular span{ font-size:12px; font-weight:500; color:#8A8792; align-self:center; margin-right:2px; }
   .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
     border:none;
     background:#F1F1F3;
     border-radius:999px;
-    padding:6px 14px;
+    padding:5px 14px 5px 5px;
     font-size:12px;
     font-weight:500;
     color:#8A8792;
@@ -316,6 +319,17 @@
     background:var(--lav);
     color:#fff;
     transform:translateY(-1px);
+  }
+  .chip-icon{
+    width:18px; height:18px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9px;
+    font-weight:600;
+    color:#fff;
+    flex-shrink:0;
   }
 
   /* --- results --- */
@@ -778,7 +792,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // its stale/wrong fallback data. The scraper keeps trying it in the
   // background; re-add "RebatesMe" here once scrape_log.json shows it
   // consistently succeeding again.
-  const VERIFIED_PROVIDERS = new Set(["TopCashback", "Rakuten"]);
+  // Real data, generated daily by scripts/scrape_rates.py. BeFrugal and
+  // Capital One Shopping are still using unverified/broken parsers -
+  // hidden until fixed and verified the same way the others were.
+  // RebatesMe and Mr Rebates were both previously broken (wrong URL
+  // patterns causing the same wrong number for every store) - both fixed
+  // and confirmed showing genuinely varied, correct rates per store.
+  const VERIFIED_PROVIDERS = new Set(["TopCashback", "Rakuten", "RebatesMe", "Mr Rebates"]);
   Object.keys(STORES).forEach(name => {
     STORES[name].offers = STORES[name].offers.filter(o => VERIFIED_PROVIDERS.has(o.provider));
     // Keep the store searchable even with zero verified offers right now -
@@ -810,10 +830,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   let highlightedIndex = -1;
   let currentSuggestions = [];
 
+  // Same palette used for provider badges elsewhere on the site, reused
+  // here so a store's chip color stays visually consistent with the app.
+  // Picked deterministically from the store name so any future store
+  // added to the popular list gets a color automatically, no manual work.
+  const CHIP_COLORS = ["#6E56CF", "#2F6FB5", "#C97A2E", "#3D8B6A", "#B0403A", "#4C5A73"];
+  function chipColorFor(name){
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+    return CHIP_COLORS[hash % CHIP_COLORS.length];
+  }
+
   ["Nike", "Target", "Sephora", "ASOS", "Expedia", "Wayfair"].forEach(name => {
     const chip = document.createElement('button');
     chip.className = 'chip';
-    chip.textContent = name;
+    chip.innerHTML = `<span class="chip-icon" style="background:${chipColorFor(name)}">${escapeHtml(name[0].toUpperCase())}</span>${escapeHtml(name)}`;
     chip.addEventListener('click', () => runSearch(name));
     popularEl.appendChild(chip);
   });
