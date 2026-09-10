@@ -57,17 +57,21 @@ def parse_rakuten(html):
 
 def parse_topcashback(html):
     """
-    VERIFIED against a real fetched page (topcashback.com/nike/, Sept 2026).
-    Real pattern found in a clean structured block:
-      "## **Nike** Cash Back\n\nOnline Purchase\n\nImproved\n\n8%"
-    We anchor on the "Cash Back" heading block and take the standalone
-    percentage that follows it, which is cleaner/more reliable than the
-    "Get X% of the price back" headline (which sometimes reads "Up to X%").
+    VERIFIED against real raw HTML fetched via curl (Nike page, Sept 2026)
+    - not a browser/JS-rendered view. The real rate lives in a dedicated
+    element:
+      <div class="merch-rate-card">...<span class="merch-cat__rate">8%</span>
+    (Previous version was built from a markdown-rendered fetch, not real
+    HTML - its primary regex expected newlines between "Cash Back" and the
+    percentage that don't exist in the actual page, so it silently always
+    fell through to the fragile "Get X% of the price back" marketing
+    headline fallback. This version anchors on the real dedicated rate
+    element instead.)
     """
-    match = re.search(r'Cash Back\s*\n+\s*Online Purchase\s*\n+(?:Improved\s*\n+)?(\d+(?:\.\d+)?)\s*%', html)
+    match = re.search(r'merch-cat__rate"[^>]*>\s*(\d+(?:\.\d+)?)\s*%', html)
     if match:
         return f"{match.group(1)}%"
-    # fallback to the headline pattern if the structured block isn't found
+    # fallback to the headline pattern if the dedicated element isn't found
     match = re.search(r'Get\s+(\d+(?:\.\d+)?)\s*%\s+of the price back', html)
     if match:
         return f"{match.group(1)}%"
@@ -97,18 +101,20 @@ def parse_mrrebates(html):
 
 def parse_rebatesme(html):
     """
-    VERIFIED against real raw HTML (Nike page, fetched via curl - not a
-    browser/JS-rendered view - Sept 2026). The actual store-level rate
-    lives in a static HTML block with a unique class name:
-      <p class="... merchantDetailsCashBack">+&nbsp;<span>Up to</span><b>10%</b></p>
-    Anchoring on "merchantDetailsCashBack" avoids every other "Cash Back"
-    mention on the page (coupon titles, nav links, footer, promo banners),
-    which is what caused every store to previously show a wrong, identical
-    40% - that number was a storewide "40% OFF" sale discount unrelated to
-    cash-back rate, picked up by an unanchored, whole-page search.
+    VERIFIED against real raw HTML fetched via curl (Nike and Belk pages,
+    Sept 2026) - not a browser/JS-rendered view. RebatesMe's page template
+    puts the store's one true headline rate in a fixed block right after
+    the store logo, before the "Shop Now" button:
+      <div class="merchant-cash-back" ><span>...<b>N%</b>...Cash Back</span>
+    Confirmed identical structure on two different stores (with or without
+    an "Up to" prefix inside the span). This is the single authoritative
+    rate for the page - not a per-deal promo number - which avoids the bug
+    in earlier versions of this parser that grabbed an unrelated "X% OFF"
+    sale discount or a per-deal cash-back repeat instead of the real rate
+    (e.g. wrongly returned a flat 40% for every store).
     """
     match = re.search(
-        r'merchantDetailsCashBack[^>]*>.*?<b>\s*(\d+(?:\.\d+)?)\s*%\s*</b>',
+        r'class="merchant-cash-back"[^>]*>.*?<b>\s*(\d+(?:\.\d+)?)\s*%\s*</b>',
         html, re.IGNORECASE | re.DOTALL
     )
     if match:
