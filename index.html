@@ -781,7 +781,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const VERIFIED_PROVIDERS = new Set(["TopCashback", "Rakuten"]);
   Object.keys(STORES).forEach(name => {
     STORES[name].offers = STORES[name].offers.filter(o => VERIFIED_PROVIDERS.has(o.provider));
-    if (STORES[name].offers.length === 0) delete STORES[name];
+    // Keep the store searchable even with zero verified offers right now -
+    // it's a temporary data gap, not proof Savvli doesn't track this store.
+    // renderCards() shows an honest "not available" message for this case.
   });
 
   const storeNames = Object.keys(STORES);
@@ -837,7 +839,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     suggestionsEl.innerHTML = currentSuggestions.map((name, i) => `
       <div class="suggestion-item" role="option" data-index="${i}" tabindex="-1">
         <span>${escapeHtml(name)}</span>
-        <span class="hint">${STORES[name].offers.length} offers</span>
+        <span class="hint">${STORES[name].offers.length > 0 ? STORES[name].offers.length + ' offers' : 'checking rates...'}</span>
       </div>
     `).join('');
 
@@ -980,6 +982,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function renderCards(storeName){
     const store = STORES[storeName];
     if(!store) return;
+
+    if (store.offers.length === 0) {
+      cardListEl.innerHTML = `
+        <div class="empty" style="grid-column:1/-1;">
+          No verified cash back rate for ${escapeHtml(storeName)} right now.
+          We're still checking - please try again soon.
+        </div>
+      `;
+      return;
+    }
 
     const sorted = [...store.offers].sort((a, b) => parseFloat(b.rate) - parseFloat(a.rate));
     const amount = getSpendAmount();
