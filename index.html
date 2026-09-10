@@ -79,54 +79,6 @@
 
   .wrap{ position:relative; z-index:1; }
 
-  /* --- hamburger menu --- */
-  .menu-btn{
-    position:fixed;
-    top:24px; left:24px;
-    width:40px; height:40px;
-    border-radius:50%;
-    border:1.5px solid var(--line);
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    z-index:20;
-    transition:border-color .15s ease, background .15s ease;
-  }
-  .menu-btn:hover{ border-color:var(--lav); }
-  .menu-btn svg{ color:var(--ink); }
-  .menu-btn .icon-close{ display:none; }
-  .menu-btn.open .icon-bars{ display:none; }
-  .menu-btn.open .icon-close{ display:block; }
-  .menu-btn.open{ background:var(--ink); border-color:var(--ink); }
-  .menu-btn.open svg{ color:#fff; }
-
-  .nav-menu{
-    position:fixed;
-    top:72px; left:24px;
-    background:#fff;
-    border:1.5px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow:0 10px 30px rgba(20,18,27,0.12);
-    padding:8px;
-    min-width:180px;
-    z-index:19;
-    display:none;
-    flex-direction:column;
-  }
-  .nav-menu.show{ display:flex; }
-  .nav-menu a{
-    display:block;
-    padding:10px 14px;
-    font-size:14.5px;
-    color:var(--ink-soft);
-    text-decoration:none;
-    border-radius:9px;
-    transition:background .12s ease, color .12s ease;
-  }
-  .nav-menu a:hover{ background:var(--lav-soft); color:var(--lav-deep); }
-
   .mini-header{
     display:flex;
     align-items:center;
@@ -152,36 +104,6 @@
     color:var(--lav);
     display:inline-block;
     animation:pulse-dot 2.6s ease-in-out infinite;
-  }
-  .header-nav-row{
-    display:none;
-    align-items:center;
-    gap:22px;
-    margin-left:auto;
-  }
-  .header-nav-row a{
-    font-size:13.5px;
-    font-weight:500;
-    color:var(--ink-soft);
-    text-decoration:none;
-    white-space:nowrap;
-  }
-  .header-nav-row a:hover{ color:var(--lav-deep); }
-  .header-nav-row .nav-cta{
-    background:var(--ink);
-    color:#fff;
-    padding:8px 16px;
-    border-radius:999px;
-    font-size:13px;
-    transition:background .15s ease;
-  }
-  .header-nav-row .nav-cta:hover{
-    background:var(--lav-deep);
-    color:#fff;
-  }
-  @media (min-width:681px){
-    .header-nav-row{ display:flex; }
-    .menu-btn, .nav-menu{ display:none !important; }
   }
   @media (max-width:680px){
     .mini-header{ padding-left:44px; }
@@ -589,8 +511,6 @@
 
   @media (max-width:480px){
     .logo{ font-size:36px; }
-    .menu-btn{ top:16px; left:16px; width:36px; height:36px; }
-    .nav-menu{ top:60px; left:16px; }
   }
 
   @media (prefers-reduced-motion: reduce){
