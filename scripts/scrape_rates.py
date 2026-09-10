@@ -141,6 +141,12 @@ PARSERS = {
     "Capital One Shopping": parse_capitaloneshopping,
 }
 
+# Providers whose parser is intentionally disabled (always returns None)
+# because it was confirmed broken and not yet fixed. Skipped before even
+# fetching - saves a request, and excluded from the fail-safe ratio below
+# so a deliberate disable doesn't get mistaken for site-wide blocking.
+DISABLED_PROVIDERS = {"BeFrugal"}
+
 
 def fetch_page(url):
     """
@@ -237,6 +243,10 @@ def scrape_all(config, previous_results=None):
         for provider, url in store_info.get("urls", {}).items():
             parser = PARSERS.get(provider)
             if not parser:
+                continue
+
+            if provider in DISABLED_PROVIDERS:
+                store_log[provider] = "DISABLED - excluded from fail-safe check"
                 continue
 
             html = fetch_page(url)
@@ -338,7 +348,11 @@ def main():
         for status in store.values()
         if "FAILED" in status
     )
-    total_count = sum(len(store) for store in log["stores"].values())
+    total_count = sum(
+        1 for store in log["stores"].values()
+        for status in store.values()
+        if "DISABLED" not in status
+    )
     print(f"\nDone. {total_count - fail_count}/{total_count} provider checks succeeded.")
 
     if fail_count > total_count * 0.5:
