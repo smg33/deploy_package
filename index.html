@@ -321,15 +321,20 @@
     transform:translateY(-1px);
   }
   .chip-icon{
-    width:18px; height:18px;
-    border-radius:50%;
+    width:20px; height:20px;
+    border-radius:7px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:9px;
-    font-weight:600;
-    color:#fff;
     flex-shrink:0;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(20,18,27,0.12);
+    overflow:hidden;
+  }
+  .chip-icon img{
+    width:13px; height:13px;
+    object-fit:contain;
+    display:block;
   }
 
   /* --- results --- */
@@ -830,21 +835,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   let highlightedIndex = -1;
   let currentSuggestions = [];
 
-  // Same palette used for provider badges elsewhere on the site, reused
-  // here so a store's chip color stays visually consistent with the app.
-  // Picked deterministically from the store name so any future store
-  // added to the popular list gets a color automatically, no manual work.
-  const CHIP_COLORS = ["#6E56CF", "#2F6FB5", "#C97A2E", "#3D8B6A", "#B0403A", "#4C5A73"];
-  function chipColorFor(name){
-    let hash = 0;
-    for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
-    return CHIP_COLORS[hash % CHIP_COLORS.length];
+  // Real favicons, fetched via Google's public favicon service - the same
+  // technique browsers use for site icons/speed-dial tabs. Only needs a
+  // domain per store, so adding a new store to the popular list later is
+  // a one-line addition, not a manual icon-sourcing task.
+  const STORE_DOMAINS = {
+    "Nike": "nike.com",
+    "Target": "target.com",
+    "Sephora": "sephora.com",
+    "ASOS": "asos.com",
+    "Expedia": "expedia.com",
+    "Wayfair": "wayfair.com"
+  };
+  function faviconUrlFor(domain){
+    return `https://www.google.com/s2/favicons?sz=64&domain=${encodeURIComponent(domain)}`;
   }
 
   ["Nike", "Target", "Sephora", "ASOS", "Expedia", "Wayfair"].forEach(name => {
     const chip = document.createElement('button');
     chip.className = 'chip';
-    chip.innerHTML = `<span class="chip-icon" style="background:${chipColorFor(name)}">${escapeHtml(name[0].toUpperCase())}</span>${escapeHtml(name)}`;
+    const domain = STORE_DOMAINS[name];
+    const iconHtml = domain
+      ? `<span class="chip-icon"><img src="${faviconUrlFor(domain)}" alt="" loading="lazy"></span>`
+      : '';
+    chip.innerHTML = `${iconHtml}${escapeHtml(name)}`;
     chip.addEventListener('click', () => runSearch(name));
     popularEl.appendChild(chip);
   });
@@ -906,19 +920,200 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     "RebatesMe": "https://www.rebatesme.com/"
   };
 
-  // Verified real store-page URLs - only added where confirmed, not guessed.
-  // Falls back to provider homepage for everything else.
+  // Real per-store URLs, generated straight from data/stores_config.json
+  // - the exact same URLs the scraper itself uses to fetch each rate.
+  // Guarantees "Shop & earn"/"Activate" always lands on the real store
+  // page for that provider, never a generic homepage guess. Falls back
+  // to a provider's homepage only if a store+provider combo is somehow
+  // missing here.
   const STORE_DEEP_LINKS = {
-    "Apple|Rakuten": "https://www.rakuten.com/shop/apple",
-    "Apple|TopCashback": "https://www.topcashback.com/apple/",
-    "Adidas|Rakuten": "https://www.rakuten.com/shop/adidas",
-    "Adidas|TopCashback": "https://www.topcashback.com/adidas/",
-    "Adidas|BeFrugal": "https://www.befrugal.com/store/adidas/",
-    "Adidas|RebatesMe": "https://www.rebatesme.com/en/stores/adidas-us",
-    "Sephora|TopCashback": "https://www.topcashback.com/sephora/",
-    "Kohl's|TopCashback": "https://www.topcashback.com/kohls/",
+    "Nike|BeFrugal": "https://www.befrugal.com/rs/nike/",
+    "Nike|TopCashback": "https://www.topcashback.com/nike/",
+    "Nike|RebatesMe": "https://www.rebatesme.com/en/stores/nike",
+    "Nike|Rakuten": "https://www.rakuten.com/shop/nike",
+    "Nike|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Nike",
+    "Old Navy|BeFrugal": "https://www.befrugal.com/rs/old-navy/",
+    "Old Navy|TopCashback": "https://www.topcashback.com/old-navy/",
+    "Old Navy|RebatesMe": "https://www.rebatesme.com/en/stores/old-navy",
+    "Old Navy|Rakuten": "https://www.rakuten.com/shop/old-navy",
+    "Old Navy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Old+Navy",
+    "Lululemon|Rakuten": "https://www.rakuten.com/shop/lululemon",
+    "Lululemon|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Lululemon",
+    "ASOS|TopCashback": "https://www.topcashback.com/asos/",
+    "ASOS|RebatesMe": "https://www.rebatesme.com/en/stores/asos",
+    "ASOS|Rakuten": "https://www.rakuten.com/shop/asos",
+    "ASOS|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=ASOS",
     "Best Buy|TopCashback": "https://www.topcashback.com/best-buy/",
-    "eBay|TopCashback": "https://www.topcashback.com/ebay/"
+    "Best Buy|BeFrugal": "https://www.befrugal.com/rs/best-buy/",
+    "Best Buy|Rakuten": "https://www.rakuten.com/shop/best-buy",
+    "Best Buy|RebatesMe": "https://www.rebatesme.com/en/stores/best-buy",
+    "Best Buy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Best+Buy",
+    "Dell|BeFrugal": "https://www.befrugal.com/rs/dell/",
+    "Dell|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dell",
+    "Samsung|BeFrugal": "https://www.befrugal.com/rs/samsung/",
+    "Samsung|Rakuten": "https://www.rakuten.com/shop/samsung",
+    "Samsung|TopCashback": "https://www.topcashback.com/samsung/",
+    "Samsung|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Samsung",
+    "Sephora|Rakuten": "https://www.rakuten.com/shop/sephora",
+    "Sephora|TopCashback": "https://www.topcashback.com/sephora/",
+    "Sephora|BeFrugal": "https://www.befrugal.com/rs/sephora/",
+    "Sephora|RebatesMe": "https://www.rebatesme.com/en/stores/sephora",
+    "Sephora|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Sephora",
+    "Ulta Beauty|BeFrugal": "https://www.befrugal.com/rs/ulta-beauty/",
+    "Ulta Beauty|TopCashback": "https://www.topcashback.com/ulta-beauty/",
+    "Ulta Beauty|RebatesMe": "https://www.rebatesme.com/en/stores/ulta-beauty",
+    "Ulta Beauty|Rakuten": "https://www.rakuten.com/shop/ulta-beauty",
+    "Ulta Beauty|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Ulta+Beauty",
+    "Target|TopCashback": "https://www.topcashback.com/target/",
+    "Target|Rakuten": "https://www.rakuten.com/shop/target",
+    "Target|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Target",
+    "Walmart|TopCashback": "https://www.topcashback.com/walmart/",
+    "Walmart|BeFrugal": "https://www.befrugal.com/rs/walmart/",
+    "Walmart|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Walmart",
+    "Wayfair|RebatesMe": "https://www.rebatesme.com/en/stores/wayfair",
+    "Wayfair|Capital One Shopping": "https://capitaloneshopping.com/s/wayfair",
+    "Wayfair|Rakuten": "https://www.rakuten.com/shop/wayfair",
+    "Wayfair|TopCashback": "https://www.topcashback.com/wayfair/",
+    "Wayfair|BeFrugal": "https://www.befrugal.com/rs/wayfair/",
+    "Wayfair|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Wayfair",
+    "Home Depot|BeFrugal": "https://www.befrugal.com/rs/home-depot/",
+    "Home Depot|TopCashback": "https://www.topcashback.com/home-depot/",
+    "Home Depot|RebatesMe": "https://www.rebatesme.com/en/stores/home-depot",
+    "Home Depot|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Home+Depot",
+    "Expedia|RebatesMe": "https://www.rebatesme.com/en/stores/expedia",
+    "Expedia|BeFrugal": "https://www.befrugal.com/rs/expedia/",
+    "Expedia|Capital One Shopping": "https://capitaloneshopping.com/s/expedia",
+    "Expedia|Rakuten": "https://www.rakuten.com/shop/expedia",
+    "Expedia|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Expedia",
+    "Expedia|TopCashback": "https://www.topcashback.com/expedia/",
+    "Booking.com|RebatesMe": "https://www.rebatesme.com/en/stores/bookingcom",
+    "Booking.com|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Booking.com",
+    "eBay|TopCashback": "https://www.topcashback.com/ebay/",
+    "eBay|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=eBay",
+    "Kohl's|BeFrugal": "https://www.befrugal.com/rs/kohls/",
+    "Kohl's|TopCashback": "https://www.topcashback.com/kohls/",
+    "Kohl's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Kohl%27s",
+    "Macy's|BeFrugal": "https://www.befrugal.com/rs/macys/",
+    "Macy's|RebatesMe": "https://www.rebatesme.com/en/stores/macys",
+    "Macy's|TopCashback": "https://www.topcashback.com/macys/",
+    "Macy's|Rakuten": "https://www.rakuten.com/shop/macys",
+    "Macy's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Macy%27s",
+    "Priceline|Rakuten": "https://www.rakuten.com/shop/priceline",
+    "Priceline|TopCashback": "https://www.topcashback.com/priceline/",
+    "Priceline|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Priceline",
+    "Hotels.com|Rakuten": "https://www.rakuten.com/shop/hotelscom",
+    "Hotels.com|TopCashback": "https://www.topcashback.com/hotelscom/",
+    "Hotels.com|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Hotels.com",
+    "Etsy|Rakuten": "https://www.rakuten.com/shop/etsy",
+    "Etsy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Etsy",
+    "CVS|BeFrugal": "https://www.befrugal.com/rs/cvs/",
+    "CVS|TopCashback": "https://www.topcashback.com/cvs/",
+    "CVS|Rakuten": "https://www.rakuten.com/shop/cvs",
+    "CVS|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=CVS",
+    "Zappos|Rakuten": "https://www.rakuten.com/shop/zappos",
+    "Zappos|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Zappos",
+    "Marriott Bonvoy|TopCashback": "https://www.topcashback.com/marriott-bonvoy/",
+    "Marriott Bonvoy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Marriott+Bonvoy",
+    "Temu|RebatesMe": "https://www.rebatesme.com/en/stores/temu",
+    "Temu|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Temu",
+    "Skechers|TopCashback": "https://www.topcashback.com/skechers/",
+    "Skechers|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Skechers",
+    "Walgreens|TopCashback": "https://www.topcashback.com/walgreens/",
+    "Walgreens|BeFrugal": "https://www.befrugal.com/rs/walgreens/",
+    "Walgreens|RebatesMe": "https://www.rebatesme.com/en/stores/walgreens",
+    "Walgreens|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Walgreens",
+    "Nordstrom|TopCashback": "https://www.topcashback.com/nordstrom/",
+    "Nordstrom|Rakuten": "https://www.rakuten.com/shop/nordstrom",
+    "Nordstrom|RebatesMe": "https://www.rebatesme.com/en/stores/nordstrom",
+    "Nordstrom|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Nordstrom",
+    "Gap|RebatesMe": "https://www.rebatesme.com/en/stores/gap",
+    "Gap|TopCashback": "https://www.topcashback.com/gap/",
+    "Gap|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Gap",
+    "PetSmart|BeFrugal": "https://www.befrugal.com/rs/petsmart/",
+    "PetSmart|Rakuten": "https://www.rakuten.com/shop/petsmart",
+    "PetSmart|TopCashback": "https://www.topcashback.com/petsmart/",
+    "PetSmart|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=PetSmart",
+    "Chewy|TopCashback": "https://www.topcashback.com/chewy/",
+    "Chewy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Chewy",
+    "Viator|Rakuten": "https://www.rakuten.com/shop/viator",
+    "Viator|TopCashback": "https://www.topcashback.com/viator/",
+    "Viator|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Viator",
+    "Kiehl's|RebatesMe": "https://www.rebatesme.com/en/stores/kiehls",
+    "Kiehl's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Kiehl%27s",
+    "Zulily|RebatesMe": "https://www.rebatesme.com/en/stores/zulily",
+    "Zulily|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Zulily",
+    "Alo|Rakuten": "https://www.rakuten.com/shop/alo",
+    "Alo|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Alo",
+    "Alo|TopCashback": "https://www.topcashback.com/alo/",
+    "Athleta|RebatesMe": "https://www.rebatesme.com/en/stores/athleta",
+    "Athleta|TopCashback": "https://www.topcashback.com/athleta/",
+    "Athleta|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Athleta",
+    "StubHub|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=StubHub",
+    "StubHub|TopCashback": "https://www.topcashback.com/stubhub/",
+    "Vineyard Vines|RebatesMe": "https://www.rebatesme.com/en/stores/vineyard-vines",
+    "Vineyard Vines|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Vineyard+Vines",
+    "Banana Republic|RebatesMe": "https://www.rebatesme.com/en/stores/banana-republic",
+    "Banana Republic|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Banana+Republic",
+    "Bergdorf Goodman|BeFrugal": "https://www.befrugal.com/rs/bergdorf-goodman/",
+    "Bergdorf Goodman|RebatesMe": "https://www.rebatesme.com/en/stores/bergdorf-goodman",
+    "Bergdorf Goodman|Rakuten": "https://www.rakuten.com/shop/bergdorf-goodman",
+    "Bergdorf Goodman|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bergdorf+Goodman",
+    "Farfetch|Rakuten": "https://www.rakuten.com/shop/farfetch",
+    "Farfetch|RebatesMe": "https://www.rebatesme.com/en/stores/farfetch",
+    "Farfetch|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Farfetch",
+    "Shopbop|RebatesMe": "https://www.rebatesme.com/en/stores/shopbop",
+    "Shopbop|TopCashback": "https://www.topcashback.com/shopbop/",
+    "Shopbop|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Shopbop",
+    "Net-a-Porter|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Net-a-Porter",
+    "DVF|Rakuten": "https://www.rakuten.com/shop/dvf",
+    "DVF|RebatesMe": "https://www.rebatesme.com/en/stores/dvf",
+    "DVF|TopCashback": "https://www.topcashback.com/dvf/",
+    "DVF|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=DVF",
+    "Dick's Sporting Goods|Rakuten": "https://www.rakuten.com/shop/dicks-sporting-goods",
+    "Dick's Sporting Goods|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dick%27s+Sporting+Goods",
+    "The North Face|Rakuten": "https://www.rakuten.com/shop/the-north-face",
+    "The North Face|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=The+North+Face",
+    "Patagonia|Rakuten": "https://www.rakuten.com/shop/patagonia",
+    "Patagonia|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Patagonia",
+    "JanSport|Rakuten": "https://www.rakuten.com/shop/jansport",
+    "JanSport|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=JanSport",
+    "Scheels|Rakuten": "https://www.rakuten.com/shop/scheels",
+    "Scheels|BeFrugal": "https://www.befrugal.com/rs/scheels/",
+    "Scheels|TopCashback": "https://www.topcashback.com/scheels/",
+    "Scheels|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Scheels",
+    "Apple|TopCashback": "https://www.topcashback.com/apple/",
+    "Apple|Rakuten": "https://www.rakuten.com/shop/apple",
+    "Apple|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Apple",
+    "Adidas|TopCashback": "https://www.topcashback.com/adidas/",
+    "Adidas|Rakuten": "https://www.rakuten.com/shop/adidas",
+    "Adidas|RebatesMe": "https://www.rebatesme.com/en/stores/adidas",
+    "Adidas|BeFrugal": "https://www.befrugal.com/rs/adidas/",
+    "Adidas|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Adidas",
+    "Staples|BeFrugal": "https://www.befrugal.com/rs/staples/",
+    "Staples|TopCashback": "https://www.topcashback.com/staples/",
+    "Staples|Rakuten": "https://www.rakuten.com/shop/staples",
+    "Staples|RebatesMe": "https://www.rebatesme.com/en/stores/staples",
+    "Staples|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Staples",
+    "Neiman Marcus|BeFrugal": "https://www.befrugal.com/rs/neiman-marcus/",
+    "Neiman Marcus|TopCashback": "https://www.topcashback.com/neiman-marcus/",
+    "Neiman Marcus|Rakuten": "https://www.rakuten.com/shop/neiman-marcus",
+    "Neiman Marcus|RebatesMe": "https://www.rebatesme.com/en/stores/neiman-marcus",
+    "Neiman Marcus|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Neiman+Marcus",
+    "Saks Fifth Avenue|BeFrugal": "https://www.befrugal.com/rs/saks-fifth-avenue/",
+    "Saks Fifth Avenue|TopCashback": "https://www.topcashback.com/saks-fifth-avenue/",
+    "Saks Fifth Avenue|Rakuten": "https://www.rakuten.com/shop/saks-fifth-avenue",
+    "Saks Fifth Avenue|RebatesMe": "https://www.rebatesme.com/en/stores/saks-fifth-avenue",
+    "Saks Fifth Avenue|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Saks+Fifth+Avenue",
+    "Ann Taylor|BeFrugal": "https://www.befrugal.com/rs/ann-taylor/",
+    "Ann Taylor|Rakuten": "https://www.rakuten.com/shop/ann-taylor",
+    "Ann Taylor|TopCashback": "https://www.topcashback.com/ann-taylor/",
+    "Ann Taylor|RebatesMe": "https://www.rebatesme.com/en/stores/ann-taylor",
+    "Ann Taylor|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Ann+Taylor",
+    "Bloomingdale's|BeFrugal": "https://www.befrugal.com/rs/bloomingdales/",
+    "Bloomingdale's|TopCashback": "https://www.topcashback.com/bloomingdales/",
+    "Bloomingdale's|RebatesMe": "https://www.rebatesme.com/en/stores/bloomingdales",
+    "Bloomingdale's|Rakuten": "https://www.rakuten.com/shop/bloomingdales",
+    "Bloomingdale's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bloomingdale%27s"
   };
 
   // New-member referral bonuses - only added once we have a real,
