@@ -44,7 +44,7 @@ REQUEST_TIMEOUT = 15
 # doubt, since a missing update is much safer than a wrong number.
 # ---------------------------------------------------------------------------
 
-def parse_rakuten(html):
+def parse_rakuten(html, store_name=None):
     """
     VERIFIED against a real fetched page (rakuten.com/shop/nike, Sept 2026).
     Real pattern found: "Nike6% Cash Backwas 2%Shop Now" - the store name is
@@ -59,7 +59,7 @@ def parse_rakuten(html):
     return None
 
 
-def parse_topcashback(html):
+def parse_topcashback(html, store_name=None):
     """
     VERIFIED against real raw HTML fetched via curl (Nike page, Sept 2026)
     - not a browser/JS-rendered view. The real rate lives in a dedicated
@@ -82,7 +82,7 @@ def parse_topcashback(html):
     return None
 
 
-def parse_befrugal(html):
+def parse_befrugal(html, store_name=None):
     """
     CONFIRMED BROKEN on a real run: returned the identical 1.8% for nearly
     every store checked, which means the old generic pattern was grabbing
@@ -93,15 +93,57 @@ def parse_befrugal(html):
     return None
 
 
-def parse_mrrebates(html):
-    """NOT YET VERIFIED against a live page - generic pattern."""
-    match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*[Cc]ash\s*[Bb]ack', html)
-    if match:
-        return f"{match.group(1)}%"
-    return None
+def parse_mrrebates(html, store_name=None):
+    """
+    VERIFIED against real raw HTML fetched via curl (Nike page, Sept 2026)
+    - not a browser/JS-rendered view. Two real findings from that fetch:
+
+    1. Mr Rebates doesn't have a stable per-store URL slug the way other
+       providers do (their config used guessed URLs like "?merchantid=wayfair"
+       which don't exist - confirmed via a live 404). Instead, their own
+       search endpoint (/search_stores.asp?t_search=...) redirects straight
+       to the real merchant page when there's a match. Since Python's
+       urllib follows redirects automatically, pointing the scraper's URL
+       at the search endpoint directly lands on the real merchant page (or
+       a "no stores found" page) with no separate resolution step needed -
+       this store's "urls" entry in stores_config.json should be the
+       search URL, not a guessed merchant ID.
+
+    2. The real rate lives in clean, structured JSON-LD:
+         "name": "6% Cash Back at Nike"
+       BUT the search is fuzzy/substring-based (e.g. searching "target"
+       matched "Target Optical", a different store) - so before trusting
+       a match, we verify the JSON-LD Organization name actually matches
+       the store we asked for. Without this check we could silently
+       attach a completely different store's rate to the wrong store.
+    """
+    if not store_name:
+        return None
+
+    offer_match = re.search(r'"name":\s*"(\d+(?:\.\d+)?)%\s*Cash Back at', html)
+    if not offer_match:
+        return None
+
+    org_match = re.search(
+        r'"@type":\s*"Organization"[^}]*?"name":\s*"([^"]+)"', html, re.DOTALL
+    )
+    if not org_match:
+        return None
+
+    def normalize(s):
+        return re.sub(r'[^a-z0-9]', '', s.lower())
+
+    matched_name = normalize(org_match.group(1))
+    expected_name = normalize(store_name)
+    if matched_name != expected_name:
+        # Fuzzy search landed on a different store (e.g. "Target" ->
+        # "Target Optical") - refuse to guess, safer to return nothing.
+        return None
+
+    return f"{offer_match.group(1)}%"
 
 
-def parse_rebatesme(html):
+def parse_rebatesme(html, store_name=None):
     """
     VERIFIED against real raw HTML fetched via curl (Nike and Belk pages,
     Sept 2026) - not a browser/JS-rendered view. RebatesMe's page template
@@ -124,7 +166,7 @@ def parse_rebatesme(html):
     return None
 
 
-def parse_capitaloneshopping(html):
+def parse_capitaloneshopping(html, store_name=None):
     """NOT YET VERIFIED against a live page - generic pattern."""
     match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*[Cc]ash\s*[Bb]ack', html)
     if match:
@@ -258,7 +300,7 @@ def scrape_all(config, previous_results=None):
             if html is None:
                 store_log[provider] = "FETCH_FAILED - kept previous value"
             else:
-                rate = parser(html)
+                rate = parser(html, store_name)
                 if rate is None:
                     # Include the fetched length as a quick diagnostic -
                     # a near-zero or suspiciously small length usually
