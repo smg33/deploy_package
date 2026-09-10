@@ -4,11 +4,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
@@ -29,11 +24,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "TopCashback",
         "rate": "4%",
@@ -88,11 +78,6 @@
         "meta": "Cash back, no minimum"
       },
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "Rakuten",
         "rate": "10%",
         "meta": "Cash back, paid quarterly"
@@ -120,11 +105,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "Rakuten",
         "rate": "2%",
         "meta": "Cash back, paid quarterly"
@@ -151,11 +131,6 @@
         "meta": "Cash back, no minimum"
       },
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
@@ -166,11 +141,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "TopCashback",
         "rate": "4%",
@@ -212,11 +182,6 @@
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
-      },
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Up to 15% in select categories - base rate shown"
       }
     ]
   },
@@ -233,11 +198,6 @@
         "provider": "Rakuten",
         "rate": "3.5%",
         "meta": "Cash back, paid quarterly"
-      },
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
@@ -245,11 +205,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "TopCashback",
         "rate": "12%",
@@ -270,11 +225,6 @@
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
-      },
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
       },
       {
         "provider": "Rakuten",
@@ -315,11 +265,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "TopCashback",
         "rate": "2%",
         "meta": "Cash back, no minimum"
@@ -330,11 +275,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "RebatesMe",
         "rate": "40%",
@@ -395,11 +335,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "Rakuten",
         "rate": "3%",
         "meta": "Cash back, paid quarterly"
@@ -449,11 +384,6 @@
         "meta": "Cash back, no minimum"
       },
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
@@ -501,11 +431,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "Rakuten",
         "rate": "2%",
@@ -632,11 +557,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
@@ -750,11 +670,6 @@
         "meta": "Cash back, paid quarterly"
       },
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "TopCashback",
         "rate": "5%",
         "meta": "Cash back, no minimum"
@@ -795,11 +710,6 @@
         "provider": "RebatesMe",
         "rate": "40%",
         "meta": "Cash back, paid via PayPal"
-      },
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
@@ -807,11 +717,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "TopCashback",
         "rate": "4%",
@@ -834,11 +739,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "TopCashback",
         "rate": "5%",
         "meta": "Cash back, no minimum"
@@ -859,11 +759,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "TopCashback",
         "rate": "5%",
@@ -886,11 +781,6 @@
     "category": "General merchandise",
     "offers": [
       {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
-      {
         "provider": "Rakuten",
         "rate": "10%",
         "meta": "Cash back, paid quarterly"
@@ -911,11 +801,6 @@
     "verified": "2026-09-10",
     "category": "General merchandise",
     "offers": [
-      {
-        "provider": "BeFrugal",
-        "rate": "1.8%",
-        "meta": "Cash back, paid via check or PayPal"
-      },
       {
         "provider": "TopCashback",
         "rate": "4%",
