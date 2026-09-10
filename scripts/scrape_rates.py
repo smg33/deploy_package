@@ -97,33 +97,19 @@ def parse_mrrebates(html):
 
 def parse_rebatesme(html):
     """
-    VERIFIED against a real fetched page (rebatesme.com/en/stores/nike,
-    Sept 2026). The store's true headline rate appears once, right after
-    the store logo/breadcrumb, as "Up to N% Cash Back" followed by a "Shop
-    Now" activation link - BEFORE the "Cash Back You will Earn" section.
-    Everything after that heading is per-deal promo rates ("+ Up to N%"
-    repeated for dozens of individual items), which can be misleading if
-    grabbed instead of the real base rate. We cut the search window there
-    so we can only ever match the genuine headline number.
-
-    (Previous version of this parser searched the whole page body with no
-    anchor and, on a real run, grabbed a stray promotional/tiered number
-    instead of the actual current rate - e.g. returned 40% for Nike when
-    the real rate was 10%. This version fixes that.)
+    VERIFIED against real raw HTML (Nike page, fetched via curl - not a
+    browser/JS-rendered view - Sept 2026). The actual store-level rate
+    lives in a static HTML block with a unique class name:
+      <p class="... merchantDetailsCashBack">+&nbsp;<span>Up to</span><b>10%</b></p>
+    Anchoring on "merchantDetailsCashBack" avoids every other "Cash Back"
+    mention on the page (coupon titles, nav links, footer, promo banners),
+    which is what caused every store to previously show a wrong, identical
+    40% - that number was a storewide "40% OFF" sale discount unrelated to
+    cash-back rate, picked up by an unanchored, whole-page search.
     """
-    cutoff = html.find("Cash Back You will Earn")
-    header_html = html[:cutoff] if cutoff != -1 else html
-
     match = re.search(
-        r'Up to\s*(?:<[^>]+>)*\s*(\d+(?:\.\d+)?)\s*%\s*(?:<[^>]+>)*\s*Cash Back',
-        header_html, re.IGNORECASE
-    )
-    if match:
-        return f"{match.group(1)}%"
-    # fallback for stores without an "Up to" prefix (flat, non-tiered rate)
-    match = re.search(
-        r'(?:<[^>]+>)*\s*(\d+(?:\.\d+)?)\s*%\s*(?:<[^>]+>)*\s*Cash Back',
-        header_html, re.IGNORECASE
+        r'merchantDetailsCashBack[^>]*>.*?<b>\s*(\d+(?:\.\d+)?)\s*%\s*</b>',
+        html, re.IGNORECASE | re.DOTALL
     )
     if match:
         return f"{match.group(1)}%"
