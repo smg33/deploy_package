@@ -871,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ? `<span class="chip-icon"><img src="${faviconUrlFor(domain)}" alt="" loading="lazy"></span>`
       : '';
     chip.innerHTML = `${iconHtml}${escapeHtml(name)}`;
-    chip.addEventListener('click', () => runSearch(name));
+    chip.addEventListener('click', () => goToStore(name));
     popularEl.appendChild(chip);
   });
 
@@ -906,7 +906,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     suggestionsEl.querySelectorAll('.suggestion-item').forEach((el, i) => {
       el.addEventListener('click', (e) => {
         if (e.target.closest('.suggestion-deeplink')) return; // let the link navigate normally
-        runSearch(currentSuggestions[i]);
+        goToStore(currentSuggestions[i]);
       });
     });
 
@@ -928,6 +928,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .replace(/['\u2019]/g, '')
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-+|-+$/g, '');
+  }
+
+  // Selecting a store now navigates to its real static SEO page (same
+  // page Google would land someone on) instead of rendering results
+  // inline - keeps exactly one canonical page/design per store instead
+  // of two different experiences with competing titles. Falls back to
+  // the old inline "checking rates" view only for stores with no
+  // verified offers yet, since no static page exists for those.
+  function goToStore(name){
+    const store = STORES[name];
+    if (store && store.offers.length > 0) {
+      window.location.href = slugifyStore(name) + '-cash-back.html';
+      return;
+    }
+    runSearch(name);
   }
 
   const PROVIDER_COLORS = {
@@ -1331,11 +1346,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     } else if(e.key === 'Enter'){
       e.preventDefault();
       if(highlightedIndex >= 0 && currentSuggestions[highlightedIndex]){
-        runSearch(currentSuggestions[highlightedIndex]);
+        goToStore(currentSuggestions[highlightedIndex]);
       } else if(currentSuggestions.length > 0){
-        runSearch(currentSuggestions[0]);
+        goToStore(currentSuggestions[0]);
       } else if(STORES[input.value]){
-        runSearch(input.value);
+        goToStore(input.value);
       }
     } else if(e.key === 'Escape'){
       suggestionsEl.classList.remove('show');
@@ -1404,11 +1419,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(e.key === 'Escape') closeMenu();
   });
 
-  // Deep-link support: ?store=Name auto-runs a search on load
+  // Deep-link support: ?store=Name redirects to the real static page when
+  // one exists (old bookmarks/shared links converge on the one canonical
+  // URL), otherwise falls back to the inline "checking rates" view.
   const urlParams = new URLSearchParams(window.location.search);
   const storeParam = urlParams.get('store');
   if (storeParam && STORES[storeParam]) {
-    runSearch(storeParam, false);
+    if (STORES[storeParam].offers.length > 0) {
+      window.location.replace(slugifyStore(storeParam) + '-cash-back.html');
+    } else {
+      runSearch(storeParam, false);
+    }
   }
 
   // Support browser back/forward buttons

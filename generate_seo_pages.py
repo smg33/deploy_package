@@ -42,6 +42,33 @@ from html import escape as html_escape
 # config file both the frontend and this script read from.
 VERIFIED_PROVIDERS = {"TopCashback", "Rakuten", "RebatesMe", "Mr Rebates"}
 
+# Real domains for fetching each store's favicon via the same technique
+# used for the homepage's popular-store chips. Best-effort: a store not
+# listed here just gets no logo rather than a guessed/broken one.
+STORE_DOMAINS = {
+    "Nike": "nike.com", "Old Navy": "oldnavy.gap.com", "Lululemon": "lululemon.com",
+    "ASOS": "asos.com", "Best Buy": "bestbuy.com", "Dell": "dell.com",
+    "Samsung": "samsung.com", "Sephora": "sephora.com", "Ulta Beauty": "ulta.com",
+    "Target": "target.com", "Walmart": "walmart.com", "Wayfair": "wayfair.com",
+    "Home Depot": "homedepot.com", "Expedia": "expedia.com", "Booking.com": "booking.com",
+    "eBay": "ebay.com", "Kohl's": "kohls.com", "Macy's": "macys.com",
+    "Priceline": "priceline.com", "Hotels.com": "hotels.com", "Etsy": "etsy.com",
+    "CVS": "cvs.com", "Zappos": "zappos.com", "Marriott Bonvoy": "marriott.com",
+    "Temu": "temu.com", "Skechers": "skechers.com", "Walgreens": "walgreens.com",
+    "Nordstrom": "nordstrom.com", "Gap": "gap.com", "PetSmart": "petsmart.com",
+    "Chewy": "chewy.com", "Viator": "viator.com", "Kiehl's": "kiehls.com",
+    "Zulily": "zulily.com", "Alo": "aloyoga.com", "Athleta": "athleta.gap.com",
+    "StubHub": "stubhub.com", "Vineyard Vines": "vineyardvines.com",
+    "Banana Republic": "bananarepublic.gap.com", "Bergdorf Goodman": "bergdorfgoodman.com",
+    "Farfetch": "farfetch.com", "Shopbop": "shopbop.com", "Net-a-Porter": "net-a-porter.com",
+    "DVF": "dvf.com", "Dick's Sporting Goods": "dickssportinggoods.com",
+    "The North Face": "thenorthface.com", "Patagonia": "patagonia.com",
+    "JanSport": "jansport.com", "Scheels": "scheels.com", "Apple": "apple.com",
+    "Adidas": "adidas.com", "Staples": "staples.com", "Neiman Marcus": "neimanmarcus.com",
+    "Saks Fifth Avenue": "saksfifthavenue.com", "Ann Taylor": "anntaylor.com",
+    "Bloomingdale's": "bloomingdales.com",
+}
+
 PROVIDER_COLORS = {
     "Rakuten": "#7B4FE0",
     "Mr Rebates": "#3D8B6A",
@@ -229,11 +256,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <style>
-  .store-hero{{ padding:8px 0 4px; }}
-  .store-hero h1{{ font-family:'Fraunces', serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:12px; }}
+  .bg-blob{{ position:fixed; border-radius:50%; filter:blur(60px); opacity:0.35; pointer-events:none; z-index:0; }}
+  .bg-blob.b1{{ width:360px; height:360px; background:var(--lav); top:-140px; left:-120px; }}
+  .bg-blob.b2{{ width:280px; height:280px; background:#B7A6F0; bottom:-100px; right:-100px; opacity:0.3; }}
+  .store-hero{{ padding:8px 0 4px; position:relative; z-index:1; }}
+  .store-hero-top{{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }}
+  .store-logo{{ width:52px; height:52px; border-radius:14px; background:#fff; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 8px rgba(20,18,27,0.06); }}
+  .store-logo img{{ width:30px; height:30px; object-fit:contain; }}
+  .store-hero h1{{ font-family:'Fraunces', serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:0; }}
   .store-hero p{{ font-size:15px; line-height:1.6; color:var(--ink-soft); max-width:58ch; margin-bottom:8px; }}
-  .store-updated{{ font-size:12px; color:var(--ink-soft); margin-bottom:28px; }}
-  #cardList{{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; margin-bottom:40px; }}
+  .store-updated{{ font-size:12px; color:var(--ink-soft); margin-bottom:28px; position:relative; z-index:1; }}
+  #cardList{{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; margin-bottom:40px; position:relative; z-index:1; }}
   .card{{ position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; background:#fff; border:1.5px solid var(--line); border-radius:var(--radius); padding:14px; overflow:hidden; }}
   .card.best{{ border:2px solid var(--lav); padding-top:32px; }}
   .ribbon{{ position:absolute; top:0; left:0; right:0; background:var(--lav); color:#fff; font-size:9.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-align:center; padding:4px 0; }}
@@ -248,14 +281,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .go-btn{{ display:block; text-align:center; text-decoration:none; border:none; background:var(--ink); color:#fff; font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size:12.5px; font-weight:500; padding:8px 14px; border-radius:999px; cursor:pointer; white-space:nowrap; width:100%; margin-top:auto; }}
   .card.best .go-btn{{ background:var(--lav); }}
   .referral-link{{ display:block; text-align:center; margin-top:14px; padding-top:10px; border-top:1px solid var(--line); font-size:11px; color:var(--ink-soft); text-decoration:none; }}
-  .store-faq{{ margin:40px 0; }}
+  .store-faq{{ margin:40px 0; position:relative; z-index:1; }}
   .store-faq h2{{ font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight:500; font-size:20px; margin-bottom:16px; }}
   .faq-item{{ margin-bottom:18px; }}
   .faq-item h3{{ font-size:15px; font-weight:600; margin-bottom:5px; }}
   .faq-item p{{ font-size:14px; line-height:1.6; color:var(--ink-soft); }}
-  @media (max-width:480px){{ .store-hero h1{{ font-size:26px; }} }}
+  @media (max-width:480px){{ .store-hero h1{{ font-size:26px; }} .store-logo{{ width:44px; height:44px; }} .store-logo img{{ width:24px; height:24px; }} }}
 </style>
 </head>
+
 <body>
 <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
   <svg class="icon-bars" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -299,6 +333,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <div class="wrap">
+  <div class="bg-blob b1" aria-hidden="true"></div>
+  <div class="bg-blob b2" aria-hidden="true"></div>
   <header class="site-header">
     <a href="index.html"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><linearGradient id="tagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
@@ -322,7 +358,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </nav>
 
   <div class="store-hero">
-    <h1>{store_name} cash back rates</h1>
+    <div class="store-hero-top">
+      {logo_html}
+      <h1>{store_name} cash back rates</h1>
+    </div>
     <p>Compare {store_name} cash back across {provider_list}. Rates change often - activate the offer before you check out to make sure it tracks.</p>
   </div>
   <div class="store-updated">Verified {verified_date}</div>
@@ -484,6 +523,12 @@ def generate():
         faq_jsonld = build_faq_jsonld(store_name)
         verified_date = store_data.get("verified") or "recently"
 
+        domain = STORE_DOMAINS.get(store_name)
+        logo_html = (
+            f'<div class="store-logo"><img src="https://www.google.com/s2/favicons?sz=64&domain={domain}" alt="" loading="lazy"></div>'
+            if domain else ""
+        )
+
         page_html = PAGE_TEMPLATE.format(
             store_name=html_escape(store_name),
             slug=slug,
@@ -491,6 +536,7 @@ def generate():
             faq_jsonld=faq_jsonld,
             cards_html=cards_html,
             verified_date=verified_date,
+            logo_html=logo_html,
         )
 
         out_path = f"{slug}-cash-back.html"
