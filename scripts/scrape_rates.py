@@ -14,6 +14,8 @@ HONESTY NOTE ON CONFIDENCE LEVEL:
   during development (the dev sandbox that wrote this script could not
   reach those specific domains). These three are the most likely to need
   debugging on the first real run. Check scrape_log.json after each run.
+  BeFrugal has since been CONFIRMED broken (see parse_befrugal) and is
+  disabled until it's rebuilt against real raw HTML.
 
 This script is designed to fail SAFELY: if a provider's page can't be parsed,
 that specific offer is left unchanged (keeps last-known-good data) rather
@@ -21,10 +23,12 @@ than being deleted or zeroed out. The site should never show broken/missing
 data because of a scraper hiccup.
 """
 
+import gzip
 import json
 import re
 import time
 import sys
+import zlib
 from datetime import datetime, timezone
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
@@ -80,14 +84,12 @@ def parse_topcashback(html):
 
 def parse_befrugal(html):
     """
-    NOT YET VERIFIED against a live page - generic pattern, likely needs
-    adjustment after the first real run. BeFrugal's own marketing describes
-    "up to X%" tiered offers often, so this may need refinement to avoid
-    grabbing a promotional ceiling instead of the base/standard rate.
+    CONFIRMED BROKEN on a real run: returned the identical 1.8% for nearly
+    every store checked, which means the old generic pattern was grabbing
+    one fixed sitewide number (a promo banner or similar), not each
+    store's actual rate. Disabled until it can be rebuilt against real raw
+    HTML the same way RebatesMe and TopCashback were.
     """
-    match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*[Cc]ash\s*[Bb]ack', html)
-    if match:
-        return f"{match.group(1)}%"
     return None
 
 
@@ -141,13 +143,38 @@ PARSERS = {
 
 
 def fetch_page(url):
-    """Fetch a URL politely. Returns HTML text or None on any failure."""
+    """
+    Fetch a URL politely. Returns HTML text or None on any failure.
+
+    Explicitly requests uncompressed content (Accept-Encoding: identity).
+    Some servers/CDNs compress responses regardless of what a client
+    requests; without this, a compressed response decoded as UTF-8 text
+    silently produces garbled output (no exception raised) instead of the
+    real page - which would make a parser fail to match even though the
+    fetch itself "succeeded". This is the likely cause of RebatesMe
+    consistently failing to parse on real runs despite the parser being
+    verified correct against the same page fetched via curl (curl auto-
+    decompresses; this script's old version did not).
+
+    As a safety net in case a server sends compressed content anyway, we
+    detect and decompress gzip/deflate before decoding, rather than
+    assuming the identity request was honored.
+    """
     try:
-        req = Request(url, headers={"User-Agent": USER_AGENT})
+        req = Request(url, headers={
+            "User-Agent": USER_AGENT,
+            "Accept-Encoding": "identity",
+        })
         with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
             if resp.status != 200:
                 return None
-            return resp.read().decode("utf-8", errors="ignore")
+            raw = resp.read()
+            encoding = resp.headers.get("Content-Encoding", "").lower()
+            if encoding == "gzip":
+                raw = gzip.decompress(raw)
+            elif encoding == "deflate":
+                raw = zlib.decompress(raw)
+            return raw.decode("utf-8", errors="ignore")
     except (URLError, HTTPError, TimeoutError, Exception) as e:
         print(f"  fetch failed: {e}")
         return None
@@ -223,7 +250,13 @@ def scrape_all(config, previous_results=None):
             else:
                 rate = parser(html)
                 if rate is None:
-                    store_log[provider] = "PARSE_FAILED - kept previous value"
+                    # Include the fetched length as a quick diagnostic -
+                    # a near-zero or suspiciously small length usually
+                    # means a compressed/garbled/blocked response rather
+                    # than a genuine parser mismatch on real HTML.
+                    store_log[provider] = (
+                        f"PARSE_FAILED (fetched {len(html)} chars) - kept previous value"
+                    )
 
             if rate is not None:
                 offers_by_provider[provider] = {
