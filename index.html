@@ -288,6 +288,18 @@
   .suggestion-item:hover, .suggestion-item.highlighted{ background:var(--lav-soft); }
   .suggestion-item + .suggestion-item{ border-top:1px solid var(--line); }
   .suggestion-item .hint{ font-size:12px; color:var(--ink-soft); }
+  .suggestion-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:2px;
+  }
+  .suggestion-deeplink{
+    font-size:11px;
+    color:var(--lav-deep);
+    text-decoration:none;
+  }
+  .suggestion-deeplink:hover{ text-decoration:underline; }
 
   /* --- popular chips (only on homepage state) --- */
   .popular{
@@ -884,12 +896,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     suggestionsEl.innerHTML = currentSuggestions.map((name, i) => `
       <div class="suggestion-item" role="option" data-index="${i}" tabindex="-1">
         <span>${escapeHtml(name)}</span>
-        <span class="hint">${STORES[name].offers.length > 0 ? STORES[name].offers.length + ' offers' : 'checking rates...'}</span>
+        <span class="suggestion-right">
+          <span class="hint">${STORES[name].offers.length > 0 ? STORES[name].offers.length + ' offers' : 'checking rates...'}</span>
+          ${STORES[name].offers.length > 0 ? `<a class="suggestion-deeplink" href="${slugifyStore(name)}-cash-back.html">View full page</a>` : ''}
+        </span>
       </div>
     `).join('');
 
     suggestionsEl.querySelectorAll('.suggestion-item').forEach((el, i) => {
-      el.addEventListener('click', () => runSearch(currentSuggestions[i]));
+      el.addEventListener('click', (e) => {
+        if (e.target.closest('.suggestion-deeplink')) return; // let the link navigate normally
+        runSearch(currentSuggestions[i]);
+      });
     });
 
     suggestionsEl.classList.add('show');
@@ -900,6 +918,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  }
+
+  // Matches scripts/generate_seo_pages.py's slugify() exactly - both must
+  // produce the same filename or these links 404. "Kohl's" -> "kohls",
+  // "Booking.com" -> "booking-com".
+  function slugifyStore(name){
+    return name.toLowerCase()
+      .replace(/['\u2019]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
   }
 
   const PROVIDER_COLORS = {
