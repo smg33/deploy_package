@@ -259,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <style>
-  .store-hero-row{{ display:flex; align-items:center; gap:14px; padding:20px 0 6px; position:relative; z-index:1; }}
+  .store-hero-row{{ display:flex; align-items:center; gap:14px; padding:40px 0 6px; position:relative; z-index:1; }}
   .store-logo{{ width:48px; height:48px; border-radius:13px; background:#fff; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; }}
   .store-logo img{{ width:26px; height:26px; object-fit:contain; }}
   .store-hero-row h1{{ font-family:'Fraunces', serif; font-weight:600; font-size:28px; line-height:1.2; }}
@@ -338,10 +338,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="suggest-store.html" class="nav-cta">Suggest a store</a>
     </nav>
   </header>
-
-  <nav aria-label="Breadcrumb" style="font-size:13px; color:var(--ink-soft); margin:8px 0 24px;">
-    <a href="index.html" style="color:var(--ink-soft); text-decoration:none;">Home</a> / {store_name}
-  </nav>
 
   <div class="store-hero-row">
     {logo_html}

@@ -2,7 +2,7 @@
   "Nike": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/nike/",
+      "BeFrugal": "https://www.befrugal.com/store/nike/",
       "TopCashback": "https://www.topcashback.com/nike/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/nike",
       "Rakuten": "https://www.rakuten.com/shop/nike",
@@ -19,7 +19,7 @@
   "Old Navy": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/old-navy/",
+      "BeFrugal": "https://www.befrugal.com/store/old-navy/",
       "TopCashback": "https://www.topcashback.com/old-navy/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/old-navy",
       "Rakuten": "https://www.rakuten.com/shop/old-navy",
@@ -63,7 +63,7 @@
     "category": "General merchandise",
     "urls": {
       "TopCashback": "https://www.topcashback.com/best-buy/",
-      "BeFrugal": "https://www.befrugal.com/rs/best-buy/",
+      "BeFrugal": "https://www.befrugal.com/store/best-buy/",
       "Rakuten": "https://www.rakuten.com/shop/best-buy",
       "RebatesMe": "https://www.rebatesme.com/en/stores/best-buy",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Best+Buy"
@@ -79,7 +79,7 @@
   "Dell": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/dell/",
+      "BeFrugal": "https://www.befrugal.com/store/dell/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dell"
     },
     "meta": {
@@ -90,7 +90,7 @@
   "Samsung": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/samsung/",
+      "BeFrugal": "https://www.befrugal.com/store/samsung/",
       "Rakuten": "https://www.rakuten.com/shop/samsung",
       "TopCashback": "https://www.topcashback.com/samsung/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Samsung"
@@ -107,7 +107,7 @@
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/sephora",
       "TopCashback": "https://www.topcashback.com/sephora/",
-      "BeFrugal": "https://www.befrugal.com/rs/sephora/",
+      "BeFrugal": "https://www.befrugal.com/store/sephora/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/sephora",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Sephora"
     },
@@ -122,7 +122,7 @@
   "Ulta Beauty": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/ulta-beauty/",
+      "BeFrugal": "https://www.befrugal.com/store/ulta-beauty/",
       "TopCashback": "https://www.topcashback.com/ulta-beauty/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/ulta-beauty",
       "Rakuten": "https://www.rakuten.com/shop/ulta-beauty",
@@ -153,7 +153,7 @@
     "category": "General merchandise",
     "urls": {
       "TopCashback": "https://www.topcashback.com/walmart/",
-      "BeFrugal": "https://www.befrugal.com/rs/walmart/",
+      "BeFrugal": "https://www.befrugal.com/store/walmart/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Walmart"
     },
     "meta": {
@@ -169,7 +169,7 @@
       "Capital One Shopping": "https://capitaloneshopping.com/s/wayfair",
       "Rakuten": "https://www.rakuten.com/shop/wayfair",
       "TopCashback": "https://www.topcashback.com/wayfair/",
-      "BeFrugal": "https://www.befrugal.com/rs/wayfair/",
+      "BeFrugal": "https://www.befrugal.com/store/wayfair/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Wayfair"
     },
     "meta": {
@@ -184,7 +184,7 @@
   "Home Depot": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/home-depot/",
+      "BeFrugal": "https://www.befrugal.com/store/home-depot/",
       "TopCashback": "https://www.topcashback.com/home-depot/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/home-depot",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Home+Depot"
@@ -200,7 +200,7 @@
     "category": "General merchandise",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/expedia",
-      "BeFrugal": "https://www.befrugal.com/rs/expedia/",
+      "BeFrugal": "https://www.befrugal.com/store/expedia/",
       "Capital One Shopping": "https://capitaloneshopping.com/s/expedia",
       "Rakuten": "https://www.rakuten.com/shop/expedia",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Expedia",
@@ -240,7 +240,7 @@
   "Kohl's": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/kohls/",
+      "BeFrugal": "https://www.befrugal.com/store/kohls/",
       "TopCashback": "https://www.topcashback.com/kohls/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Kohl%27s"
     },
@@ -253,7 +253,7 @@
   "Macy's": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/macys/",
+      "BeFrugal": "https://www.befrugal.com/store/macys/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/macys",
       "TopCashback": "https://www.topcashback.com/macys/",
       "Rakuten": "https://www.rakuten.com/shop/macys",
@@ -307,7 +307,7 @@
   "CVS": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/cvs/",
+      "BeFrugal": "https://www.befrugal.com/store/cvs/",
       "TopCashback": "https://www.topcashback.com/cvs/",
       "Rakuten": "https://www.rakuten.com/shop/cvs",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=CVS"
@@ -367,7 +367,7 @@
     "category": "General merchandise",
     "urls": {
       "TopCashback": "https://www.topcashback.com/walgreens/",
-      "BeFrugal": "https://www.befrugal.com/rs/walgreens/",
+      "BeFrugal": "https://www.befrugal.com/store/walgreens/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/walgreens",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Walgreens"
     },
@@ -409,7 +409,7 @@
   "PetSmart": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/petsmart/",
+      "BeFrugal": "https://www.befrugal.com/store/petsmart/",
       "Rakuten": "https://www.rakuten.com/shop/petsmart",
       "TopCashback": "https://www.topcashback.com/petsmart/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=PetSmart"
@@ -529,7 +529,7 @@
   "Bergdorf Goodman": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/bergdorf-goodman/",
+      "BeFrugal": "https://www.befrugal.com/store/bergdorf-goodman/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/bergdorf-goodman",
       "Rakuten": "https://www.rakuten.com/shop/bergdorf-goodman",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bergdorf+Goodman"
@@ -639,7 +639,7 @@
     "category": "General merchandise",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/scheels",
-      "BeFrugal": "https://www.befrugal.com/rs/scheels/",
+      "BeFrugal": "https://www.befrugal.com/store/scheels/",
       "TopCashback": "https://www.topcashback.com/scheels/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Scheels"
     },
@@ -669,7 +669,7 @@
       "TopCashback": "https://www.topcashback.com/adidas/",
       "Rakuten": "https://www.rakuten.com/shop/adidas",
       "RebatesMe": "https://www.rebatesme.com/en/stores/adidas",
-      "BeFrugal": "https://www.befrugal.com/rs/adidas/",
+      "BeFrugal": "https://www.befrugal.com/store/adidas/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Adidas"
     },
     "meta": {
@@ -683,7 +683,7 @@
   "Staples": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/staples/",
+      "BeFrugal": "https://www.befrugal.com/store/staples/",
       "TopCashback": "https://www.topcashback.com/staples/",
       "Rakuten": "https://www.rakuten.com/shop/staples",
       "RebatesMe": "https://www.rebatesme.com/en/stores/staples",
@@ -700,7 +700,7 @@
   "Neiman Marcus": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/neiman-marcus/",
+      "BeFrugal": "https://www.befrugal.com/store/neiman-marcus/",
       "TopCashback": "https://www.topcashback.com/neiman-marcus/",
       "Rakuten": "https://www.rakuten.com/shop/neiman-marcus",
       "RebatesMe": "https://www.rebatesme.com/en/stores/neiman-marcus",
@@ -717,7 +717,7 @@
   "Saks Fifth Avenue": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/saks-fifth-avenue/",
+      "BeFrugal": "https://www.befrugal.com/store/saks-fifth-avenue/",
       "TopCashback": "https://www.topcashback.com/saks-fifth-avenue/",
       "Rakuten": "https://www.rakuten.com/shop/saks-fifth-avenue",
       "RebatesMe": "https://www.rebatesme.com/en/stores/saks-fifth-avenue",
@@ -734,7 +734,7 @@
   "Ann Taylor": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/ann-taylor/",
+      "BeFrugal": "https://www.befrugal.com/store/ann-taylor/",
       "Rakuten": "https://www.rakuten.com/shop/ann-taylor",
       "TopCashback": "https://www.topcashback.com/ann-taylor/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/ann-taylor",
@@ -751,7 +751,7 @@
   "Bloomingdale's": {
     "category": "General merchandise",
     "urls": {
-      "BeFrugal": "https://www.befrugal.com/rs/bloomingdales/",
+      "BeFrugal": "https://www.befrugal.com/store/bloomingdales/",
       "TopCashback": "https://www.topcashback.com/bloomingdales/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/bloomingdales",
       "Rakuten": "https://www.rakuten.com/shop/bloomingdales",

@@ -84,12 +84,30 @@ def parse_topcashback(html, store_name=None):
 
 def parse_befrugal(html, store_name=None):
     """
-    CONFIRMED BROKEN on a real run: returned the identical 1.8% for nearly
-    every store checked, which means the old generic pattern was grabbing
-    one fixed sitewide number (a promo banner or similar), not each
-    store's actual rate. Disabled until it can be rebuilt against real raw
-    HTML the same way RebatesMe and TopCashback were.
+    VERIFIED against real raw HTML fetched via curl (Nike page, Sept 2026)
+    - not a browser/JS-rendered view. The old URL pattern in stores_config
+    was wrong (/rs/{slug}/ 302-redirects to a generic broken search page,
+    /?s=5) - confirmed via curl -I showing the redirect. The real URL
+    pattern is /store/{slug}/, confirmed working (returns "Nike 8.0% Cash
+    Back..." as the page title).
+
+    The old generic regex (matching any "X% Cash Back" anywhere on the
+    page) was also broken separately - BeFrugal pages repeat the same
+    store-wide rate dozens of times across individual deal listings, and
+    on a real run this returned the identical 1.8% for nearly every store,
+    meaning it was grabbing one fixed sitewide element, not the real rate.
+
+    The real, unique anchor is the header rate module next to the store
+    logo:
+      <span class="txt-highlight"><span class="txt-small txt-under-store">
+      up to </span><span class="txt-bold txt-under-store">8%</span>...
+    "txt-bold txt-under-store" is a distinctive class combination that
+    only appears in this one primary rate display, not in the repeated
+    per-deal listings below it.
     """
+    match = re.search(r'txt-bold txt-under-store">(\d+(?:\.\d+)?)%', html)
+    if match:
+        return f"{match.group(1)}%"
     return None
 
 
@@ -187,7 +205,7 @@ PARSERS = {
 # because it was confirmed broken and not yet fixed. Skipped before even
 # fetching - saves a request, and excluded from the fail-safe ratio below
 # so a deliberate disable doesn't get mistaken for site-wide blocking.
-DISABLED_PROVIDERS = {"BeFrugal"}
+DISABLED_PROVIDERS = set()  # BeFrugal fixed and re-enabled Sept 2026
 
 
 def fetch_page(url):
