@@ -164,7 +164,19 @@ def build_offer_cards_html(offers, store_name, store_urls):
     return "\n".join(cards)
 
 
-def build_faq_jsonld(store_name):
+def build_faq_jsonld(store_name, best_offer, provider_count):
+    """
+    Uses real, per-store data (the actual current top offer and how many
+    providers we track for this store) so each page's FAQ answer is
+    genuinely different in substance, not just a name swapped into an
+    identical sentence - the same near-duplicate-content risk that likely
+    contributed to some of the site's early comparison pages landing in
+    "Crawled - currently not indexed" in Search Console.
+    """
+    best_provider = best_offer["provider"]
+    best_rate = best_offer["rate"]
+    best_meta = best_offer["meta"][0].lower() + best_offer["meta"][1:]
+
     return json.dumps({
         "@type": "FAQPage",
         "mainEntity": [
@@ -174,9 +186,10 @@ def build_faq_jsonld(store_name):
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": (
-                        "Click activate on the highest rate above, shop at "
-                        f"{store_name} as usual, and the cash back tracks "
-                        "automatically once your order confirms."
+                        f"Click activate on {best_provider}'s {best_rate} "
+                        f"offer above. Shop at {store_name} like normal, and "
+                        "the cash back tracks itself once your order goes "
+                        "through."
                     ),
                 },
             },
@@ -186,9 +199,10 @@ def build_faq_jsonld(store_name):
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": (
-                        "Rates change often. Savvli checks all major cash "
-                        "back sites so you always see the current highest "
-                        "payout, without checking each one yourself."
+                        f"{best_provider}, at {best_rate}. That could change, "
+                        f"though. We track {provider_count} providers here "
+                        "because rates shift constantly, so it's worth a "
+                        "quick check before anything big."
                     ),
                 },
             },
@@ -352,17 +366,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="store-extra">
     <div class="store-tips">
       <h2>Shopping tips</h2>
-      <p>Clear cookies or use a private window before clicking through, to make sure your cash back tracks correctly. Rates change often, so check back before a big purchase at {store_name}.</p>
+      <p>{tips_text}</p>
     </div>
     <div class="store-faq">
       <h2>FAQ</h2>
       <details class="faq-item">
         <summary>How do I get {store_name} cash back?</summary>
-        <p>Click activate on the highest rate above, shop at {store_name} as usual, and the cash back tracks automatically once your order confirms.</p>
+        <p>{faq_answer_1}</p>
       </details>
       <details class="faq-item">
         <summary>Which site pays the most for {store_name}?</summary>
-        <p>Rates change often. Savvli checks all major cash back sites so you always see the current highest payout, without checking each one yourself.</p>
+        <p>{faq_answer_2}</p>
       </details>
     </div>
   </div>
@@ -509,7 +523,31 @@ def generate():
             provider_list = ", ".join(provider_names[:-1]) + f", and {provider_names[-1]}"
 
         cards_html = build_offer_cards_html(verified_offers, store_name, store_urls)
-        faq_jsonld = build_faq_jsonld(store_name)
+
+        best_offer = max(verified_offers, key=lambda o: float(o["rate"].rstrip("%")))
+        provider_count = len(verified_offers)
+
+        faq_jsonld = build_faq_jsonld(store_name, best_offer, provider_count)
+
+        best_meta_lower = best_offer["meta"][0].lower() + best_offer["meta"][1:]
+        tips_text = (
+            f'{html_escape(best_offer["provider"])} has the best rate right now: '
+            f'{html_escape(best_offer["rate"])}, {html_escape(best_meta_lower)}. '
+            "Clear your cookies before you click through. Cash back sites are picky "
+            "about tracking, and rates move more than people expect, so it's worth "
+            "checking back before anything big."
+        )
+        faq_answer_1 = (
+            f'Click activate on {html_escape(best_offer["provider"])}\'s '
+            f'{html_escape(best_offer["rate"])} offer above. Shop at {html_escape(store_name)} '
+            "like normal, and the cash back tracks itself once your order goes through."
+        )
+        faq_answer_2 = (
+            f'{html_escape(best_offer["provider"])}, at {html_escape(best_offer["rate"])}. '
+            f"That could change, though. We track {provider_count} providers here because "
+            "rates shift constantly, so it's worth a quick check before anything big."
+        )
+
         verified_date = store_data.get("verified") or "recently"
 
         domain = STORE_DOMAINS.get(store_name)
@@ -526,6 +564,9 @@ def generate():
             cards_html=cards_html,
             verified_date=verified_date,
             logo_html=logo_html,
+            tips_text=tips_text,
+            faq_answer_1=faq_answer_1,
+            faq_answer_2=faq_answer_2,
         )
 
         out_path = f"{slug}-cash-back.html"
