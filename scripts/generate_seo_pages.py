@@ -138,9 +138,12 @@ def build_offer_cards_html(offers, store_name, store_urls):
         referral = REFERRAL_LINKS.get(provider)
         referral_html = ""
         if referral:
+            # Short, per-card link - keeps the clear "this card's bonus"
+            # pairing (each provider has its own unique referral URL) but
+            # without repeating the same full sentence on every card.
             referral_html = (
                 f'<a class="referral-link" href="{html_escape(referral["url"])}" '
-                f'target="_blank" rel="noopener">{html_escape(referral["text"])}</a>'
+                f'target="_blank" rel="noopener">Sign-up bonus &rarr;</a>'
             )
         ribbon_html = '<div class="ribbon">Best rate</div>' if is_best else ""
         card_class = "card best" if is_best else "card"
@@ -260,7 +263,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .store-logo{{ width:48px; height:48px; border-radius:13px; background:#fff; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; }}
   .store-logo img{{ width:26px; height:26px; object-fit:contain; }}
   .store-hero-row h1{{ font-family:'Fraunces', serif; font-weight:600; font-size:28px; line-height:1.2; }}
-  .store-intro{{ font-size:13.5px; color:var(--ink-soft); margin:0 0 32px 62px; max-width:70ch; position:relative; z-index:1; }}
+  .store-intro{{ font-size:13px; color:var(--ink-soft); margin:0 0 32px 62px; position:relative; z-index:1; }}
   .store-extra{{ display:grid; grid-template-columns:1fr 1fr; gap:32px; border-top:1px solid var(--line); padding-top:32px; margin-top:8px; position:relative; z-index:1; }}
   .store-extra h2{{ font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-weight:600; font-size:14px; margin-bottom:12px; }}
   .store-tips p{{ font-size:13px; line-height:1.7; color:var(--ink-soft); }}
@@ -336,7 +339,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </nav>
   </header>
 
-  <nav aria-label="Breadcrumb" style="font-size:12.5px; color:var(--ink-soft); margin:8px 0 24px;">
+  <nav aria-label="Breadcrumb" style="font-size:13px; color:var(--ink-soft); margin:8px 0 24px;">
     <a href="index.html" style="color:var(--ink-soft); text-decoration:none;">Home</a> / {store_name}
   </nav>
 
