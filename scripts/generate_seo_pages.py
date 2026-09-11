@@ -256,12 +256,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 
 <style>
-  .store-hero{{ padding:8px 0 4px; position:relative; z-index:1; }}
+  .store-hero{{ padding:16px 0 4px; position:relative; z-index:1; }}
   .store-hero-top{{ display:flex; align-items:center; gap:14px; margin-bottom:12px; }}
   .store-logo{{ width:52px; height:52px; border-radius:14px; background:#fff; border:1.5px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 8px rgba(20,18,27,0.06); }}
   .store-logo img{{ width:30px; height:30px; object-fit:contain; }}
   .store-hero h1{{ font-family:'Fraunces', serif; font-weight:600; font-size:32px; line-height:1.2; margin-bottom:0; }}
-  .store-hero p{{ font-size:15px; line-height:1.6; color:var(--ink-soft); margin-bottom:8px; }}
+  .store-intro{{ font-size:14px; line-height:1.6; color:var(--ink-soft); max-width:64ch; margin:8px 0 36px; }}
   .store-updated{{ font-size:12px; color:var(--ink-soft); margin-bottom:28px; position:relative; z-index:1; }}
   #cardList{{ display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; margin-bottom:40px; position:relative; z-index:1; }}
   .card{{ position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; background:#fff; border:1.5px solid var(--line); border-radius:var(--radius); padding:14px; overflow:hidden; }}
@@ -363,12 +363,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {logo_html}
       <h1>{store_name} cash back rates</h1>
     </div>
-    <p>Compare {store_name} cash back across {provider_list}. Rates change often - activate the offer before you check out to make sure it tracks.</p>
   </div>
   <div class="store-updated">Verified {verified_date}</div>
 
   <div id="cardList">{cards_html}
   </div>
+
+  <p class="store-intro">Compare {store_name} cash back across {provider_list}. Rates change often - activate the offer before you check out to make sure it tracks.</p>
 
   <div class="store-faq">
     <h2>{store_name} cash back FAQ</h2>
@@ -516,9 +517,12 @@ def generate():
         slug = slugify(store_name)
         store_urls = config.get(store_name, {}).get("urls", {})
         provider_names = [o["provider"] for o in verified_offers]
-        provider_list = ", ".join(provider_names[:-1]) + (
-            f", and {provider_names[-1]}" if len(provider_names) > 1 else provider_names[0]
-        )
+        if len(provider_names) == 1:
+            provider_list = provider_names[0]
+        elif len(provider_names) == 2:
+            provider_list = f"{provider_names[0]} and {provider_names[1]}"
+        else:
+            provider_list = ", ".join(provider_names[:-1]) + f", and {provider_names[-1]}"
 
         cards_html = build_offer_cards_html(verified_offers, store_name, store_urls)
         faq_jsonld = build_faq_jsonld(store_name)
