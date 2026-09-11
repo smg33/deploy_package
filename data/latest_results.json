@@ -1,8 +1,13 @@
 {
   "Nike": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "8%",
@@ -26,7 +31,7 @@
     ]
   },
   "Old Navy": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -52,7 +57,7 @@
     ]
   },
   "Lululemon": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -63,7 +68,7 @@
     ]
   },
   "ASOS": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -84,7 +89,7 @@
     ]
   },
   "Best Buy": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -110,20 +115,25 @@
     ]
   },
   "Dell": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "1.8%",
+        "rate": "10%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Samsung": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "Rakuten",
         "rate": "2%",
@@ -142,7 +152,7 @@
     ]
   },
   "Sephora": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -154,6 +164,11 @@
         "provider": "TopCashback",
         "rate": "7%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
       },
       {
         "provider": "RebatesMe",
@@ -168,9 +183,14 @@
     ]
   },
   "Ulta Beauty": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "4%",
@@ -189,7 +209,7 @@
     ]
   },
   "Target": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -205,13 +225,18 @@
     ]
   },
   "Walmart": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
         "provider": "TopCashback",
         "rate": "8%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Up to 15% in select categories - base rate shown"
       },
       {
         "provider": "Mr Rebates",
@@ -221,7 +246,7 @@
     ]
   },
   "Wayfair": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -233,11 +258,16 @@
         "provider": "Rakuten",
         "rate": "3.5%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Home Depot": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -258,7 +288,7 @@
     ]
   },
   "Expedia": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -267,19 +297,24 @@
         "meta": "Cash back, paid via PayPal"
       },
       {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
+      {
         "provider": "Rakuten",
         "rate": "6%",
         "meta": "Cash back, paid quarterly"
       },
       {
         "provider": "TopCashback",
-        "rate": "12%",
+        "rate": "7%",
         "meta": "Cash back, no minimum"
       }
     ]
   },
   "Booking.com": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -295,7 +330,7 @@
     ]
   },
   "eBay": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -311,9 +346,14 @@
     ]
   },
   "Kohl's": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "2%",
@@ -327,9 +367,14 @@
     ]
   },
   "Macy's": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "RebatesMe",
         "rate": "15%",
@@ -337,12 +382,12 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "11%",
+        "rate": "12%",
         "meta": "Cash back, no minimum"
       },
       {
         "provider": "Rakuten",
-        "rate": "2%",
+        "rate": "4%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -353,7 +398,7 @@
     ]
   },
   "Priceline": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -374,7 +419,7 @@
     ]
   },
   "Hotels.com": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -390,7 +435,7 @@
     ]
   },
   "Etsy": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -401,9 +446,14 @@
     ]
   },
   "CVS": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "Rakuten",
         "rate": "3%",
@@ -412,7 +462,7 @@
     ]
   },
   "Zappos": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -428,7 +478,7 @@
     ]
   },
   "Temu": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -444,7 +494,7 @@
     ]
   },
   "Skechers": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -460,13 +510,18 @@
     ]
   },
   "Walgreens": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
         "provider": "TopCashback",
         "rate": "4%",
         "meta": "Cash back, no minimum"
+      },
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
       },
       {
         "provider": "RebatesMe",
@@ -481,7 +536,7 @@
     ]
   },
   "Nordstrom": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -502,7 +557,7 @@
     ]
   },
   "Gap": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -523,9 +578,14 @@
     ]
   },
   "PetSmart": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "Rakuten",
         "rate": "2%",
@@ -544,7 +604,7 @@
     ]
   },
   "Chewy": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -560,7 +620,7 @@
     ]
   },
   "Viator": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -581,7 +641,7 @@
     ]
   },
   "Kiehl's": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -597,7 +657,7 @@
     ]
   },
   "Zulily": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -613,7 +673,7 @@
     ]
   },
   "Alo": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -624,7 +684,7 @@
     ]
   },
   "Athleta": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -645,7 +705,7 @@
     ]
   },
   "StubHub": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -655,13 +715,13 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "12%",
+        "rate": "10%",
         "meta": "Cash back, no minimum"
       }
     ]
   },
   "Vineyard Vines": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -677,7 +737,7 @@
     ]
   },
   "Banana Republic": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -693,7 +753,7 @@
     ]
   },
   "Bergdorf Goodman": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -714,12 +774,12 @@
     ]
   },
   "Farfetch": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
         "provider": "Rakuten",
-        "rate": "2%",
+        "rate": "10%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -735,7 +795,7 @@
     ]
   },
   "Shopbop": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -756,7 +816,7 @@
     ]
   },
   "Net-a-Porter": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -767,7 +827,7 @@
     ]
   },
   "DVF": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -788,7 +848,7 @@
     ]
   },
   "Dick's Sporting Goods": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -804,7 +864,7 @@
     ]
   },
   "The North Face": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -815,7 +875,7 @@
     ]
   },
   "Patagonia": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -826,7 +886,7 @@
     ]
   },
   "JanSport": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -842,13 +902,18 @@
     ]
   },
   "Scheels": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
         "provider": "Rakuten",
         "rate": "3%",
         "meta": "Cash back, paid quarterly"
+      },
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
       },
       {
         "provider": "TopCashback",
@@ -863,7 +928,7 @@
     ]
   },
   "Apple": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -879,7 +944,7 @@
     ]
   },
   "Adidas": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -898,6 +963,11 @@
         "meta": "Cash back, paid via PayPal"
       },
       {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
+      {
         "provider": "Mr Rebates",
         "rate": "3%",
         "meta": "Cash back, paid via PayPal"
@@ -905,9 +975,14 @@
     ]
   },
   "Staples": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "4%",
@@ -915,7 +990,7 @@
       },
       {
         "provider": "Rakuten",
-        "rate": "4%",
+        "rate": "2%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -931,7 +1006,7 @@
     ]
   },
   "Neiman Marcus": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -957,9 +1032,14 @@
     ]
   },
   "Saks Fifth Avenue": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "5%",
@@ -983,7 +1063,7 @@
     ]
   },
   "Ann Taylor": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
       {
@@ -1009,9 +1089,14 @@
     ]
   },
   "Bloomingdale's": {
-    "verified": "2026-09-10",
+    "verified": "2026-09-11",
     "category": "General merchandise",
     "offers": [
+      {
+        "provider": "BeFrugal",
+        "rate": "10%",
+        "meta": "Cash back, paid via check or PayPal"
+      },
       {
         "provider": "TopCashback",
         "rate": "4%",

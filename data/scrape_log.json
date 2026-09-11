@@ -1,15 +1,15 @@
 {
-  "run_at": "2026-09-10T16:08:26.661333+00:00",
+  "run_at": "2026-09-11T13:07:14.785708+00:00",
   "stores": {
     "Nike": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 8%",
       "RebatesMe": "OK: 10%",
       "Rakuten": "OK: 6%",
       "Mr Rebates": "OK: 6%"
     },
     "Old Navy": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "FETCH_FAILED - kept previous value",
       "TopCashback": "OK: 4%",
       "RebatesMe": "OK: 8%",
       "Rakuten": "OK: 10%",
@@ -17,7 +17,7 @@
     },
     "Lululemon": {
       "Rakuten": "OK: 2%",
-      "Mr Rebates": "PARSE_FAILED (fetched 32442 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 30802 chars) - kept previous value"
     },
     "ASOS": {
       "TopCashback": "FETCH_FAILED - kept previous value",
@@ -27,17 +27,17 @@
     },
     "Best Buy": {
       "TopCashback": "OK: 12%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "FETCH_FAILED - kept previous value",
       "Rakuten": "OK: 10%",
-      "RebatesMe": "PARSE_FAILED (fetched 195303 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 199353 chars) - kept previous value",
       "Mr Rebates": "OK: 1%"
     },
     "Dell": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "Mr Rebates": "PARSE_FAILED (fetched 19506 chars) - kept previous value"
     },
     "Samsung": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 2%",
       "Mr Rebates": "OK: 1%"
@@ -45,16 +45,16 @@
     "Sephora": {
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 7%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "RebatesMe": "OK: 4%",
       "Mr Rebates": "OK: 3%"
     },
     "Ulta Beauty": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 4%",
       "RebatesMe": "OK: 6%",
       "Rakuten": "OK: 10%",
-      "Mr Rebates": "PARSE_FAILED (fetched 119362 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 113836 chars) - kept previous value"
     },
     "Target": {
       "TopCashback": "OK: 2%",
@@ -63,33 +63,33 @@
     },
     "Walmart": {
       "TopCashback": "OK: 8%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "Mr Rebates": "OK: 2%"
     },
     "Wayfair": {
       "RebatesMe": "PARSE_FAILED (fetched 66660 chars) - kept previous value",
-      "Capital One Shopping": "PARSE_FAILED (fetched 798700 chars) - kept previous value",
+      "Capital One Shopping": "PARSE_FAILED (fetched 800378 chars) - kept previous value",
       "Rakuten": "OK: 3.5%",
-      "TopCashback": "PARSE_FAILED (fetched 185841 chars) - kept previous value",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
-      "Mr Rebates": "PARSE_FAILED (fetched 32966 chars) - kept previous value"
+      "TopCashback": "PARSE_FAILED (fetched 185944 chars) - kept previous value",
+      "BeFrugal": "OK: 10%",
+      "Mr Rebates": "PARSE_FAILED (fetched 33208 chars) - kept previous value"
     },
     "Home Depot": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "FETCH_FAILED - kept previous value",
       "TopCashback": "OK: 10%",
-      "RebatesMe": "PARSE_FAILED (fetched 199304 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 199353 chars) - kept previous value",
       "Mr Rebates": "OK: 1%"
     },
     "Expedia": {
       "RebatesMe": "OK: 6%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
-      "Capital One Shopping": "PARSE_FAILED (fetched 798219 chars) - kept previous value",
+      "BeFrugal": "OK: 10%",
+      "Capital One Shopping": "PARSE_FAILED (fetched 800275 chars) - kept previous value",
       "Rakuten": "OK: 6%",
       "Mr Rebates": "PARSE_FAILED (fetched 27122 chars) - kept previous value",
-      "TopCashback": "OK: 12%"
+      "TopCashback": "OK: 7%"
     },
     "Booking.com": {
-      "RebatesMe": "PARSE_FAILED (fetched 195303 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 199353 chars) - kept previous value",
       "Mr Rebates": "OK: 3%"
     },
     "eBay": {
@@ -97,15 +97,15 @@
       "Mr Rebates": "OK: 1%"
     },
     "Kohl's": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 2%",
       "Mr Rebates": "OK: 2%"
     },
     "Macy's": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "RebatesMe": "OK: 15%",
-      "TopCashback": "OK: 11%",
-      "Rakuten": "OK: 2%",
+      "TopCashback": "OK: 12%",
+      "Rakuten": "OK: 4%",
       "Mr Rebates": "OK: 2%"
     },
     "Priceline": {
@@ -120,10 +120,10 @@
     },
     "Etsy": {
       "Rakuten": "OK: 1%",
-      "Mr Rebates": "PARSE_FAILED (fetched 31137 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 30994 chars) - kept previous value"
     },
     "CVS": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "FETCH_FAILED - kept previous value",
       "Rakuten": "OK: 3%",
       "Mr Rebates": "PARSE_FAILED (fetched 20619 chars) - kept previous value"
@@ -146,7 +146,7 @@
     },
     "Walgreens": {
       "TopCashback": "OK: 4%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "RebatesMe": "OK: 7%",
       "Mr Rebates": "OK: 3%"
     },
@@ -162,7 +162,7 @@
       "Mr Rebates": "OK: 3%"
     },
     "PetSmart": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 4%",
       "Mr Rebates": "OK: 1%"
@@ -196,10 +196,10 @@
     },
     "StubHub": {
       "Mr Rebates": "OK: 3%",
-      "TopCashback": "OK: 12%"
+      "TopCashback": "OK: 10%"
     },
     "Vineyard Vines": {
-      "RebatesMe": "PARSE_FAILED (fetched 199304 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 199353 chars) - kept previous value",
       "Mr Rebates": "OK: 2%"
     },
     "Banana Republic": {
@@ -207,13 +207,13 @@
       "Mr Rebates": "OK: 3%"
     },
     "Bergdorf Goodman": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "FETCH_FAILED - kept previous value",
       "RebatesMe": "OK: 1%",
       "Rakuten": "OK: 10%",
       "Mr Rebates": "OK: 1%"
     },
     "Farfetch": {
-      "Rakuten": "OK: 2%",
+      "Rakuten": "OK: 10%",
       "RebatesMe": "OK: 2%",
       "Mr Rebates": "OK: 1%"
     },
@@ -237,7 +237,7 @@
     },
     "The North Face": {
       "Rakuten": "OK: 10%",
-      "Mr Rebates": "PARSE_FAILED (fetched 31948 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 30696 chars) - kept previous value"
     },
     "Patagonia": {
       "Rakuten": "OK: 2%",
@@ -249,52 +249,52 @@
     },
     "Scheels": {
       "Rakuten": "OK: 3%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 5%",
       "Mr Rebates": "OK: 1%"
     },
     "Apple": {
       "TopCashback": "OK: 4%",
       "Rakuten": "OK: 2%",
-      "Mr Rebates": "PARSE_FAILED (fetched 33363 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 33813 chars) - kept previous value"
     },
     "Adidas": {
       "TopCashback": "OK: 11%",
       "Rakuten": "OK: 4%",
       "RebatesMe": "OK: 4%",
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "Mr Rebates": "OK: 3%"
     },
     "Staples": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 4%",
-      "Rakuten": "OK: 4%",
+      "Rakuten": "OK: 2%",
       "RebatesMe": "OK: 1%",
       "Mr Rebates": "OK: 3%"
     },
     "Neiman Marcus": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "FETCH_FAILED - kept previous value",
       "TopCashback": "OK: 5%",
       "Rakuten": "OK: 10%",
       "RebatesMe": "OK: 2%",
       "Mr Rebates": "OK: 1%"
     },
     "Saks Fifth Avenue": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 5%",
       "Rakuten": "OK: 10%",
       "RebatesMe": "OK: 4%",
       "Mr Rebates": "OK: 1%"
     },
     "Ann Taylor": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "FETCH_FAILED - kept previous value",
       "Rakuten": "OK: 10%",
       "TopCashback": "OK: 1%",
       "RebatesMe": "OK: 1%",
       "Mr Rebates": "OK: 1%"
     },
     "Bloomingdale's": {
-      "BeFrugal": "DISABLED - excluded from fail-safe check",
+      "BeFrugal": "OK: 10%",
       "TopCashback": "OK: 4%",
       "RebatesMe": "OK: 7%",
       "Rakuten": "OK: 2%",
