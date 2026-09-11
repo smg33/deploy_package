@@ -56,7 +56,7 @@
     font-size:16px;
     line-height:1.6;
     color:var(--ink-soft);
-    max-width:60ch;
+    max-width:85ch;
   }
   .updated-note{
     font-size:12px;
@@ -356,6 +356,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </svg>
       <span class="logo">Savvli<span class="dot">.</span></span>
     </a>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <input type="text" name="store" placeholder="Search a store..." aria-label="Search a store">
+      <button type="submit" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </form>
     <nav class="header-nav-row" aria-label="Main">
       <a href="browse-stores.html">Browse</a>
       <a href="compare.html">Compare</a>
