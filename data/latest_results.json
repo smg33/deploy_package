@@ -256,7 +256,7 @@
       },
       {
         "provider": "Rakuten",
-        "rate": "3.5%",
+        "rate": "2.5%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -308,7 +308,7 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "7%",
+        "rate": "12%",
         "meta": "Cash back, no minimum"
       }
     ]
@@ -779,7 +779,7 @@
     "offers": [
       {
         "provider": "Rakuten",
-        "rate": "10%",
+        "rate": "2%",
         "meta": "Cash back, paid quarterly"
       },
       {

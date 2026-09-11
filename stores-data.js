@@ -1,5 +1,5 @@
 // Auto-generated daily by scripts/scrape_rates.py - do not edit by hand
-// Last updated: 2026-09-11T13:18:22.075226+00:00
+// Last updated: 2026-09-11T16:39:09.905108+00:00
 const STORES = {
   "Nike": { verified: "2026-09-11", offers: [
     { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
@@ -61,7 +61,7 @@ const STORES = {
   ]},
   "Wayfair": { verified: "2026-09-11", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
-    { provider: "Rakuten", rate: "3.5%", meta: "Cash back, paid quarterly" },
+    { provider: "Rakuten", rate: "2.5%", meta: "Cash back, paid quarterly" },
     { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
   ]},
   "Home Depot": { verified: "2026-09-11", offers: [
@@ -73,7 +73,7 @@ const STORES = {
     { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
     { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Rakuten", rate: "6%", meta: "Cash back, paid quarterly" },
-    { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
+    { provider: "TopCashback", rate: "12%", meta: "Cash back, no minimum" },
   ]},
   "Booking.com": { verified: "2026-09-11", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
@@ -188,7 +188,7 @@ const STORES = {
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
   "Farfetch": { verified: "2026-09-11", offers: [
-    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
