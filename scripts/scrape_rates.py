@@ -185,8 +185,25 @@ def parse_rebatesme(html, store_name=None):
 
 
 def parse_capitaloneshopping(html, store_name=None):
-    """NOT YET VERIFIED against a live page - generic pattern."""
-    match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*[Cc]ash\s*[Bb]ack', html)
+    """
+    VERIFIED against real raw HTML fetched via curl (Oriental Trading page,
+    Sept 2026) - not a browser/JS-rendered view. The old URL pattern in
+    stores_config was wrong (/s/{slug} 302-redirects to /not-found,
+    confirmed via curl -I) - the real pattern is /s/{full-domain.com}/coupon
+    (confirmed working - returns HTTP 200).
+
+    The real rate lives in a semantic, developer-intended anchor:
+      <p data-testid="coupon-content-title" ...>Get 2% back on purchases
+      when you shop on Oriental Trading.</p>
+    "data-testid" attributes are specifically meant to be stable hooks
+    (usually used for the site's own automated testing), which makes this
+    a more reliable long-term anchor than the page's internal React state
+    encoding, which is more likely to shift with implementation changes.
+    """
+    match = re.search(
+        r'data-testid="coupon-content-title"[^>]*>Get (\d+(?:\.\d+)?)% back',
+        html
+    )
     if match:
         return f"{match.group(1)}%"
     return None
