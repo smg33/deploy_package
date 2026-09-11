@@ -67,6 +67,18 @@ STORE_DOMAINS = {
     "Adidas": "adidas.com", "Staples": "staples.com", "Neiman Marcus": "neimanmarcus.com",
     "Saks Fifth Avenue": "saksfifthavenue.com", "Ann Taylor": "anntaylor.com",
     "Bloomingdale's": "bloomingdales.com",
+    "Stila": "stilacosmetics.com", "O'Neill": "oneill.com", "Upwork": "upwork.com",
+    "e.l.f. Cosmetics": "elfcosmetics.com", "Quay": "quayaustralia.com",
+    "Moen": "moen.com", "TurboTax": "turbotax.intuit.com", "Carhartt": "carhartt.com",
+    "Finish Line": "finishline.com", "Bombas": "bombas.com", "Farm Rio": "farmrio.com",
+    "Jimmy Choo": "jimmychoo.com", "Alexandre Birman": "alexandrebirman.com",
+    "AppSumo": "appsumo.com",
+    "Dolce Vita": "dolcevita.com", "Vivid Seats": "vividseats.com",
+    "NOBULL": "nobullproject.com", "Quicken": "quicken.com", "Vitamix": "vitamix.com",
+    "Sixt": "sixt.com", "Bobbi Brown": "bobbibrowncosmetics.com",
+    "Lancome": "lancome-usa.com", "Maui Jim": "mauijim.com",
+    "Blue Apron": "blueapron.com", "Norton": "norton.com", "FTD": "ftd.com",
+    "Ticketmaster": "ticketmaster.com", "Instacart": "instacart.com", "Petco": "petco.com",
 }
 
 PROVIDER_COLORS = {
