@@ -701,15 +701,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     "Nike": "nike.com",
     "Target": "target.com",
     "Sephora": "sephora.com",
-    "ASOS": "asos.com",
     "Expedia": "expedia.com",
-    "Wayfair": "wayfair.com"
+    "Wayfair": "wayfair.com",
+    "Bloomingdale's": "bloomingdales.com"
   };
   function faviconUrlFor(domain){
     return `https://www.google.com/s2/favicons?sz=64&domain=${encodeURIComponent(domain)}`;
   }
 
-  ["Nike", "Target", "Sephora", "ASOS", "Expedia", "Wayfair"].forEach(name => {
+  ["Nike", "Target", "Sephora", "Expedia", "Wayfair", "Bloomingdale's"].forEach(name => {
     const chip = document.createElement('button');
     chip.className = 'chip';
     const domain = STORE_DOMAINS[name];
