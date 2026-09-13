@@ -1262,13 +1262,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Deep-link support: ?store=Name redirects to the real static page when
   // one exists (old bookmarks/shared links converge on the one canonical
   // URL), otherwise falls back to the inline "checking rates" view.
+  //
+  // Handles three cases:
+  // 1. Exact match with real offers -> redirect to the real store page
+  // 2. Exact/case-insensitive match with zero offers -> inline "checking
+  //    rates" message (store is known, just no verified rate yet)
+  // 3. No match at all, even case-insensitive -> real "we don't have
+  //    this store yet" message instead of silently doing nothing, which
+  //    is what happened before if someone typed a name with no
+  //    autocomplete matches and just hit Enter, or if JS failed to load
+  //    and the plain form submitted whatever they'd typed.
+  function findStoreKey(name) {
+    if (STORES[name]) return name;
+    const lower = name.toLowerCase();
+    return storeNames.find(n => n.toLowerCase() === lower) || null;
+  }
+
+  function renderNotFound(searchedName) {
+    wrap.classList.add('active');
+    resultsStoreName.textContent = searchedName;
+    resultsUpdated.textContent = '';
+    cardListEl.innerHTML = `
+      <div class="empty" style="grid-column:1/-1;">
+        We don't track "${escapeHtml(searchedName)}" yet.
+        <a href="suggest-store.html">Suggest this store</a> and we'll look into adding it.
+      </div>
+    `;
+    resultsEl.classList.add('show');
+    document.title = 'Store not found - Savvli';
+  }
+
   const urlParams = new URLSearchParams(window.location.search);
   const storeParam = urlParams.get('store');
-  if (storeParam && STORES[storeParam]) {
-    if (STORES[storeParam].offers.length > 0) {
-      window.location.replace(slugifyStore(storeParam) + '-cash-back.html');
+  if (storeParam) {
+    const matchedKey = findStoreKey(storeParam);
+    if (matchedKey && STORES[matchedKey].offers.length > 0) {
+      window.location.replace(slugifyStore(matchedKey) + '-cash-back.html');
+    } else if (matchedKey) {
+      runSearch(matchedKey, false);
     } else {
-      runSearch(storeParam, false);
+      renderNotFound(storeParam);
     }
   }
 

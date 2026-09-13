@@ -486,3 +486,32 @@
     margin-top:8px;
   }
 
+/* ===== Header search suggestions dropdown (used on every page) ===== */
+
+  .header-search{ position:relative; }
+  .header-suggestions{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0; right:0;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(20,18,27,0.08);
+    overflow:hidden;
+    z-index:30;
+    display:none;
+  }
+  .header-suggestions.show{ display:block; }
+  .header-suggestion-item{
+    padding:10px 16px;
+    font-size:13.5px;
+    cursor:pointer;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .header-suggestion-item:hover, .header-suggestion-item.highlighted{ background:var(--lav-soft); }
+  .header-suggestion-item + .header-suggestion-item{ border-top:1px solid var(--line); }
+  .header-suggestion-item .hint{ font-size:11px; color:var(--ink-soft); }
+
