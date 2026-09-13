@@ -1,6 +1,6 @@
 {
   "Nike": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -10,7 +10,7 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "6%",
+        "rate": "10%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -20,18 +20,18 @@
       },
       {
         "provider": "Rakuten",
-        "rate": "6%",
+        "rate": "10%",
         "meta": "Cash back, paid quarterly"
       },
       {
         "provider": "Mr Rebates",
-        "rate": "5%",
+        "rate": "8%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
   },
   "Old Navy": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -57,7 +57,7 @@
     ]
   },
   "Lululemon": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -68,7 +68,7 @@
     ]
   },
   "ASOS": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -89,7 +89,7 @@
     ]
   },
   "Best Buy": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -115,7 +115,7 @@
     ]
   },
   "Dell": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -126,7 +126,7 @@
     ]
   },
   "Samsung": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -152,7 +152,7 @@
     ]
   },
   "Sephora": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -183,7 +183,7 @@
     ]
   },
   "Ulta Beauty": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -209,7 +209,7 @@
     ]
   },
   "Target": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -225,7 +225,7 @@
     ]
   },
   "Walmart": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -246,7 +246,7 @@
     ]
   },
   "Wayfair": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -267,7 +267,7 @@
     ]
   },
   "Home Depot": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -288,7 +288,7 @@
     ]
   },
   "Expedia": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -314,7 +314,7 @@
     ]
   },
   "Booking.com": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -330,7 +330,7 @@
     ]
   },
   "eBay": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -346,7 +346,7 @@
     ]
   },
   "Kohl's": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -367,7 +367,7 @@
     ]
   },
   "Macy's": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -398,7 +398,7 @@
     ]
   },
   "Priceline": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -419,7 +419,7 @@
     ]
   },
   "Hotels.com": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -435,7 +435,7 @@
     ]
   },
   "Etsy": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -446,7 +446,7 @@
     ]
   },
   "CVS": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -462,7 +462,7 @@
     ]
   },
   "Zappos": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -478,7 +478,7 @@
     ]
   },
   "Temu": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -494,7 +494,7 @@
     ]
   },
   "Skechers": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -510,7 +510,7 @@
     ]
   },
   "Walgreens": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -536,7 +536,7 @@
     ]
   },
   "Nordstrom": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -546,7 +546,7 @@
       },
       {
         "provider": "Rakuten",
-        "rate": "2%",
+        "rate": "10%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -557,7 +557,7 @@
     ]
   },
   "Gap": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -578,7 +578,7 @@
     ]
   },
   "PetSmart": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -604,7 +604,7 @@
     ]
   },
   "Chewy": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -620,7 +620,7 @@
     ]
   },
   "Viator": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -641,7 +641,7 @@
     ]
   },
   "Kiehl's": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -657,7 +657,7 @@
     ]
   },
   "Zulily": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -673,7 +673,7 @@
     ]
   },
   "Alo": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -684,7 +684,7 @@
     ]
   },
   "Athleta": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -705,7 +705,7 @@
     ]
   },
   "StubHub": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -721,7 +721,7 @@
     ]
   },
   "Vineyard Vines": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -737,7 +737,7 @@
     ]
   },
   "Banana Republic": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -753,7 +753,7 @@
     ]
   },
   "Bergdorf Goodman": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -774,7 +774,7 @@
     ]
   },
   "Farfetch": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -795,7 +795,7 @@
     ]
   },
   "Shopbop": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -816,7 +816,7 @@
     ]
   },
   "Net-a-Porter": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -827,7 +827,7 @@
     ]
   },
   "DVF": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -848,7 +848,7 @@
     ]
   },
   "Dick's Sporting Goods": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -864,7 +864,7 @@
     ]
   },
   "The North Face": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -875,7 +875,7 @@
     ]
   },
   "Patagonia": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -886,7 +886,7 @@
     ]
   },
   "JanSport": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -902,7 +902,7 @@
     ]
   },
   "Scheels": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -928,7 +928,7 @@
     ]
   },
   "Apple": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -944,7 +944,7 @@
     ]
   },
   "Adidas": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -975,7 +975,7 @@
     ]
   },
   "Staples": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1006,7 +1006,7 @@
     ]
   },
   "Neiman Marcus": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1032,7 +1032,7 @@
     ]
   },
   "Saks Fifth Avenue": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1063,7 +1063,7 @@
     ]
   },
   "Ann Taylor": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1089,7 +1089,7 @@
     ]
   },
   "Bloomingdale's": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1109,7 +1109,7 @@
       },
       {
         "provider": "Rakuten",
-        "rate": "2%",
+        "rate": "10%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -1120,7 +1120,7 @@
     ]
   },
   "Stila": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1131,7 +1131,7 @@
     ]
   },
   "O'Neill": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1162,7 +1162,7 @@
     ]
   },
   "Upwork": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1183,7 +1183,7 @@
     ]
   },
   "e.l.f. Cosmetics": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1209,7 +1209,7 @@
     ]
   },
   "Quay": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1220,7 +1220,7 @@
     ]
   },
   "Moen": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1251,7 +1251,7 @@
     ]
   },
   "TurboTax": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1282,7 +1282,7 @@
     ]
   },
   "Carhartt": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1313,7 +1313,7 @@
     ]
   },
   "Finish Line": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1339,7 +1339,7 @@
     ]
   },
   "Bombas": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1365,7 +1365,7 @@
     ]
   },
   "Farm Rio": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1381,7 +1381,7 @@
     ]
   },
   "Jimmy Choo": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1397,7 +1397,7 @@
     ]
   },
   "Alexandre Birman": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1413,7 +1413,7 @@
     ]
   },
   "AppSumo": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1439,7 +1439,7 @@
     ]
   },
   "Dolce Vita": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1465,7 +1465,7 @@
     ]
   },
   "Vivid Seats": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1481,7 +1481,7 @@
     ]
   },
   "NOBULL": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1512,7 +1512,7 @@
     ]
   },
   "Quicken": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1533,7 +1533,7 @@
     ]
   },
   "Vitamix": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1564,7 +1564,7 @@
     ]
   },
   "Sixt": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1580,7 +1580,7 @@
     ]
   },
   "Bobbi Brown": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1601,7 +1601,7 @@
     ]
   },
   "Lancome": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1627,7 +1627,7 @@
     ]
   },
   "Maui Jim": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1643,7 +1643,7 @@
     ]
   },
   "Blue Apron": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1659,7 +1659,7 @@
     ]
   },
   "Norton": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1675,7 +1675,7 @@
     ]
   },
   "FTD": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1706,7 +1706,7 @@
     ]
   },
   "Ticketmaster": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1727,7 +1727,7 @@
     ]
   },
   "Instacart": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
@@ -1748,7 +1748,7 @@
     ]
   },
   "Petco": {
-    "verified": "2026-09-12",
+    "verified": "2026-09-13",
     "category": "General merchandise",
     "offers": [
       {
