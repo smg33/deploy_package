@@ -89,6 +89,7 @@ STORE_DOMAINS = {
     "Sunglass Hut": "sunglasshut.com", "H&M": "hm.com", "Bluemercury": "bluemercury.com",
     "Jos. A. Bank": "josbank.com", "MAC Cosmetics": "maccosmetics.com", "Reebok": "reebok.com",
     "New Balance": "newbalance.com", "Under Armour": "underarmour.com", "DoorDash": "doordash.com",
+    "Stuart Weitzman": "stuartweitzman.com",
 }
 
 PROVIDER_COLORS = {

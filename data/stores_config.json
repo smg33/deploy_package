@@ -1733,5 +1733,22 @@
       "BeFrugal": "Cash back, paid via check or PayPal",
       "Mr Rebates": "Cash back, paid via PayPal"
     }
+  },
+  "Stuart Weitzman": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/stuart-weitzman",
+      "TopCashback": "https://www.topcashback.com/stuart-weitzman/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/stuart-weitzman",
+      "BeFrugal": "https://www.befrugal.com/store/stuart-weitzman/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Stuart+Weitzman"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
   }
 }
