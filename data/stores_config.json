@@ -1257,5 +1257,481 @@
       "BeFrugal": "Cash back, paid via check or PayPal",
       "Mr Rebates": "Cash back, paid via PayPal"
     }
+  },
+  "American Eagle": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/american-eagle",
+      "TopCashback": "https://www.topcashback.com/american-eagle/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/american-eagle",
+      "BeFrugal": "https://www.befrugal.com/store/american-eagle/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=American+Eagle"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Merit Beauty": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/merit-beauty",
+      "TopCashback": "https://www.topcashback.com/merit-beauty/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/merit-beauty",
+      "BeFrugal": "https://www.befrugal.com/store/merit-beauty/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Merit+Beauty"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "UGG": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/ugg",
+      "TopCashback": "https://www.topcashback.com/ugg/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/ugg",
+      "BeFrugal": "https://www.befrugal.com/store/ugg/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=UGG"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Coach": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/coach",
+      "TopCashback": "https://www.topcashback.com/coach/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/coach",
+      "BeFrugal": "https://www.befrugal.com/store/coach/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Coach"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Saatva": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/saatva",
+      "TopCashback": "https://www.topcashback.com/saatva/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/saatva",
+      "BeFrugal": "https://www.befrugal.com/store/saatva/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Saatva"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "TJ Maxx": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/tj-maxx",
+      "TopCashback": "https://www.topcashback.com/tj-maxx/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/tj-maxx",
+      "BeFrugal": "https://www.befrugal.com/store/tj-maxx/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=TJ+Maxx"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Grubhub": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/grubhub",
+      "TopCashback": "https://www.topcashback.com/grubhub/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/grubhub",
+      "BeFrugal": "https://www.befrugal.com/store/grubhub/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Grubhub"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Rent the Runway": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/rent-the-runway",
+      "TopCashback": "https://www.topcashback.com/rent-the-runway/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/rent-the-runway",
+      "BeFrugal": "https://www.befrugal.com/store/rent-the-runway/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Rent+the+Runway"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Le Specs": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/le-specs",
+      "TopCashback": "https://www.topcashback.com/le-specs/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/le-specs",
+      "BeFrugal": "https://www.befrugal.com/store/le-specs/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Le+Specs"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Free People": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/free-people",
+      "TopCashback": "https://www.topcashback.com/free-people/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/free-people",
+      "BeFrugal": "https://www.befrugal.com/store/free-people/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Free+People"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Le Creuset": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/le-creuset",
+      "TopCashback": "https://www.topcashback.com/le-creuset/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/le-creuset",
+      "BeFrugal": "https://www.befrugal.com/store/le-creuset/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Le+Creuset"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Theory": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/theory",
+      "TopCashback": "https://www.topcashback.com/theory/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/theory",
+      "BeFrugal": "https://www.befrugal.com/store/theory/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Theory"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Anine Bing": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/anine-bing",
+      "TopCashback": "https://www.topcashback.com/anine-bing/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/anine-bing",
+      "BeFrugal": "https://www.befrugal.com/store/anine-bing/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Anine+Bing"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Tarte Cosmetics": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/tarte-cosmetics",
+      "TopCashback": "https://www.topcashback.com/tarte-cosmetics/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/tarte-cosmetics",
+      "BeFrugal": "https://www.befrugal.com/store/tarte-cosmetics/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Tarte+Cosmetics"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Brooks Running": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/brooks-running",
+      "TopCashback": "https://www.topcashback.com/brooks-running/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/brooks-running",
+      "BeFrugal": "https://www.befrugal.com/store/brooks-running/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Brooks+Running"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Madewell": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/madewell",
+      "TopCashback": "https://www.topcashback.com/madewell/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/madewell",
+      "BeFrugal": "https://www.befrugal.com/store/madewell/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Madewell"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "On Running": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/on-running",
+      "TopCashback": "https://www.topcashback.com/on-running/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/on-running",
+      "BeFrugal": "https://www.befrugal.com/store/on-running/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=On+Running"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Shutterfly": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/shutterfly",
+      "TopCashback": "https://www.topcashback.com/shutterfly/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/shutterfly",
+      "BeFrugal": "https://www.befrugal.com/store/shutterfly/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Shutterfly"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "YOOX": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/yoox",
+      "TopCashback": "https://www.topcashback.com/yoox/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/yoox",
+      "BeFrugal": "https://www.befrugal.com/store/yoox/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=YOOX"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Sunglass Hut": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/sunglass-hut",
+      "TopCashback": "https://www.topcashback.com/sunglass-hut/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/sunglass-hut",
+      "BeFrugal": "https://www.befrugal.com/store/sunglass-hut/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Sunglass+Hut"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "H&M": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/hm",
+      "TopCashback": "https://www.topcashback.com/hm/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/hm",
+      "BeFrugal": "https://www.befrugal.com/store/hm/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=H%26M"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Bluemercury": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/bluemercury",
+      "TopCashback": "https://www.topcashback.com/bluemercury/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/bluemercury",
+      "BeFrugal": "https://www.befrugal.com/store/bluemercury/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bluemercury"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Jos. A. Bank": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/jos-a-bank",
+      "TopCashback": "https://www.topcashback.com/jos-a-bank/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/jos-a-bank",
+      "BeFrugal": "https://www.befrugal.com/store/jos-a-bank/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Jos.+A.+Bank"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "MAC Cosmetics": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/mac-cosmetics",
+      "TopCashback": "https://www.topcashback.com/mac-cosmetics/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/mac-cosmetics",
+      "BeFrugal": "https://www.befrugal.com/store/mac-cosmetics/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=MAC+Cosmetics"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Reebok": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/reebok",
+      "TopCashback": "https://www.topcashback.com/reebok/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/reebok",
+      "BeFrugal": "https://www.befrugal.com/store/reebok/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Reebok"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "New Balance": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/new-balance",
+      "TopCashback": "https://www.topcashback.com/new-balance/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/new-balance",
+      "BeFrugal": "https://www.befrugal.com/store/new-balance/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=New+Balance"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Under Armour": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/under-armour",
+      "TopCashback": "https://www.topcashback.com/under-armour/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/under-armour",
+      "BeFrugal": "https://www.befrugal.com/store/under-armour/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Under+Armour"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "DoorDash": {
+    "category": "General merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/doordash",
+      "TopCashback": "https://www.topcashback.com/doordash/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/doordash",
+      "BeFrugal": "https://www.befrugal.com/store/doordash/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=DoorDash"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
   }
 }

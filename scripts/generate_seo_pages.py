@@ -79,6 +79,16 @@ STORE_DOMAINS = {
     "Lancome": "lancome-usa.com", "Maui Jim": "mauijim.com",
     "Blue Apron": "blueapron.com", "Norton": "norton.com", "FTD": "ftd.com",
     "Ticketmaster": "ticketmaster.com", "Instacart": "instacart.com", "Petco": "petco.com",
+    "American Eagle": "ae.com", "Merit Beauty": "meritbeauty.com", "UGG": "ugg.com",
+    "Coach": "coach.com", "Saatva": "saatva.com", "TJ Maxx": "tjmaxx.tjx.com",
+    "Grubhub": "grubhub.com", "Rent the Runway": "renttherunway.com", "Le Specs": "lespecs.com",
+    "Free People": "freepeople.com", "Le Creuset": "lecreuset.com", "Theory": "theory.com",
+    "Anine Bing": "aninebing.com", "Tarte Cosmetics": "tartecosmetics.com",
+    "Brooks Running": "brooksrunning.com", "Madewell": "madewell.com",
+    "On Running": "on-running.com", "Shutterfly": "shutterfly.com", "YOOX": "yoox.com",
+    "Sunglass Hut": "sunglasshut.com", "H&M": "hm.com", "Bluemercury": "bluemercury.com",
+    "Jos. A. Bank": "josbank.com", "MAC Cosmetics": "maccosmetics.com", "Reebok": "reebok.com",
+    "New Balance": "newbalance.com", "Under Armour": "underarmour.com", "DoorDash": "doordash.com",
 }
 
 PROVIDER_COLORS = {
