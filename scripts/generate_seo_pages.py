@@ -456,16 +456,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     document.addEventListener('keydown', (e) => {{ if(e.key === 'Escape') closeMenu(); }});
   }})();
 </script>
+<script src="stores-data.js"></script>
+<script src="header-search.js"></script>
 </body>
 </html>
 '''
 
 
+# The 35 hand-authored content pages that live outside this generator -
+# comparisons, category roundups, guides, and legal/company pages. Kept
+# here as an explicit list so the sitemap can include them too, since the
+# generator has no other way of knowing they exist. Update this list if
+# pages are added or removed.
+STATIC_PAGES = [
+    "about.html", "are-cash-back-sites-safe.html", "befrugal-vs-rebatesme.html",
+    "best-cash-back-beauty.html", "best-cash-back-electronics.html",
+    "best-cash-back-fashion.html", "best-cash-back-general-merchandise.html",
+    "best-cash-back-home-and-retail.html", "best-cash-back-travel.html",
+    "browse-stores.html", "capital-one-shopping-vs-befrugal.html",
+    "capital-one-shopping-vs-rebatesme.html", "capital-one-shopping-vs-topcashback.html",
+    "cash-back-glossary.html", "changelog.html", "compare.html", "contact.html",
+    "guides.html", "how-it-works.html", "how-to-maximize-cash-back.html",
+    "mr-rebates-vs-befrugal.html", "mr-rebates-vs-capital-one-shopping.html",
+    "mr-rebates-vs-rebatesme.html", "mr-rebates-vs-topcashback.html", "privacy.html",
+    "rakuten-vs-befrugal.html", "rakuten-vs-capital-one-shopping.html",
+    "rakuten-vs-mr-rebates.html", "rakuten-vs-rebatesme.html", "rakuten-vs-topcashback.html",
+    "suggest-store.html", "terms.html", "topcashback-vs-befrugal.html",
+    "topcashback-vs-rebatesme.html", "what-is-cash-back.html",
+]
+
+
 def build_sitemap(generated_entries):
     """
     Builds sitemap.xml from the exact same set of pages that were just
-    generated - so it can never list a page that doesn't exist, or miss
-    one that does. Includes the homepage plus every qualifying store page.
+    generated (so it can never list a store page that doesn't exist, or
+    miss one that does) plus the homepage and the known list of static
+    content pages above, so the sitemap is comprehensive rather than only
+    covering the generator's own output.
     """
     from datetime import date
 
@@ -479,6 +506,14 @@ def build_sitemap(generated_entries):
     <priority>1.0</priority>
   </url>'''
     ]
+
+    for page in STATIC_PAGES:
+        url_entries.append(f'''  <url>
+    <loc>https://savvli.com/{page}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>''')
 
     for store_name, out_path, verified_date in generated_entries:
         lastmod = verified_date or today
@@ -596,7 +631,7 @@ def generate():
         print(f"  {store_name}")
 
     build_sitemap(generated)
-    print(f"\nWrote sitemap.xml with {len(generated) + 1} URLs (including homepage)")
+    print(f"\nWrote sitemap.xml with {len(generated) + len(STATIC_PAGES) + 1} URLs (homepage + {len(STATIC_PAGES)} static pages + {len(generated)} store pages)")
 
 
 if __name__ == "__main__":
