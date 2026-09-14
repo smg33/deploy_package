@@ -1,427 +1,573 @@
 // Auto-generated daily by scripts/scrape_rates.py - do not edit by hand
-// Last updated: 2026-09-13T13:53:15.629289+00:00
+// Last updated: 2026-09-14T15:58:15.250498+00:00
 const STORES = {
-  "Nike": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Nike": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "10%", meta: "Cash back, paid via PayPal" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "8%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Old Navy": { verified: "2026-09-13", offers: [
+  "Old Navy": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Lululemon": { verified: "2026-09-13", offers: [
-    { provider: "Rakuten", rate: "2%", meta: "Base rate - can spike to 15% during promotions" },
+  "Lululemon": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Base rate - can spike to 15% during promotions" },
   ]},
-  "ASOS": { verified: "2026-09-13", offers: [
+  "ASOS": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Best Buy": { verified: "2026-09-13", offers: [
+  "Best Buy": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "12%", meta: "Cash back, no minimum" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Dell": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Dell": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "Samsung": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Samsung": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Sephora": { verified: "2026-09-13", offers: [
+  "Sephora": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
-    { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
-    { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+    { provider: "TopCashback", rate: "2.5%", meta: "Cash back, no minimum" },
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "RebatesMe", rate: "3.5%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Ulta Beauty": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Ulta Beauty": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
   ]},
-  "Target": { verified: "2026-09-13", offers: [
+  "Target": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
     { provider: "Rakuten", rate: "1%", meta: "Cash back, paid quarterly" },
   ]},
-  "Walmart": { verified: "2026-09-13", offers: [
+  "Walmart": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
-    { provider: "BeFrugal", rate: "13%", meta: "Up to 15% in select categories - base rate shown" },
+    { provider: "BeFrugal", rate: "7%", meta: "Up to 15% in select categories - base rate shown" },
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Wayfair": { verified: "2026-09-13", offers: [
+  "Wayfair": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
-    { provider: "Rakuten", rate: "2.5%", meta: "Cash back, paid quarterly" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "Home Depot": { verified: "2026-09-13", offers: [
+  "Home Depot": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Expedia": { verified: "2026-09-13", offers: [
+  "Expedia": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
-    { provider: "Rakuten", rate: "6%", meta: "Cash back, paid quarterly" },
-    { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
   ]},
-  "Booking.com": { verified: "2026-09-13", offers: [
+  "Booking.com": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "eBay": { verified: "2026-09-13", offers: [
-    { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
+  "eBay": { verified: "2026-09-14", offers: [
+    { provider: "TopCashback", rate: "1.5%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Kohl's": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Kohl's": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Macy's": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Macy's": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "RebatesMe", rate: "15%", meta: "Cash back, paid via PayPal" },
-    { provider: "TopCashback", rate: "12%", meta: "Cash back, no minimum" },
-    { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Priceline": { verified: "2026-09-13", offers: [
-    { provider: "Rakuten", rate: "8%", meta: "Cash back, paid quarterly" },
+  "Priceline": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Hotels.com": { verified: "2026-09-13", offers: [
+  "Hotels.com": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Etsy": { verified: "2026-09-13", offers: [
+  "Etsy": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "1%", meta: "Cash back, paid quarterly" },
   ]},
-  "CVS": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "CVS": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Rakuten", rate: "3%", meta: "Cash back, paid quarterly" },
   ]},
-  "Zappos": { verified: "2026-09-13", offers: [
-    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+  "Zappos": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Temu": { verified: "2026-09-13", offers: [
+  "Temu": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "50%", meta: "Base rate - can spike much higher during promotions" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Skechers": { verified: "2026-09-13", offers: [
+  "Skechers": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Walgreens": { verified: "2026-09-13", offers: [
+  "Walgreens": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "RebatesMe", rate: "7%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Nordstrom": { verified: "2026-09-13", offers: [
+  "Nordstrom": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "2.4%", meta: "Cash back, no minimum" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
-    { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
+    { provider: "RebatesMe", rate: "3.5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Gap": { verified: "2026-09-13", offers: [
+  "Gap": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "PetSmart": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "PetSmart": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Chewy": { verified: "2026-09-13", offers: [
+  "Chewy": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "1%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Viator": { verified: "2026-09-13", offers: [
+  "Viator": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "14%", meta: "Cash back, paid quarterly" },
-    { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
+    { provider: "TopCashback", rate: "9%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Kiehl's": { verified: "2026-09-13", offers: [
+  "Kiehl's": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "12%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Zulily": { verified: "2026-09-13", offers: [
+  "Zulily": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "1.2%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Alo": { verified: "2026-09-13", offers: [
+  "Alo": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
   ]},
-  "Athleta": { verified: "2026-09-13", offers: [
+  "Athleta": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "StubHub": { verified: "2026-09-13", offers: [
+  "StubHub": { verified: "2026-09-14", offers: [
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
   ]},
-  "Vineyard Vines": { verified: "2026-09-13", offers: [
+  "Vineyard Vines": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Banana Republic": { verified: "2026-09-13", offers: [
+  "Banana Republic": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Bergdorf Goodman": { verified: "2026-09-13", offers: [
+  "Bergdorf Goodman": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Farfetch": { verified: "2026-09-13", offers: [
+  "Farfetch": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Shopbop": { verified: "2026-09-13", offers: [
+  "Shopbop": { verified: "2026-09-14", offers: [
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
     { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Net-a-Porter": { verified: "2026-09-13", offers: [
+  "Net-a-Porter": { verified: "2026-09-14", offers: [
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "DVF": { verified: "2026-09-13", offers: [
+  "DVF": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "40%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Dick's Sporting Goods": { verified: "2026-09-13", offers: [
+  "Dick's Sporting Goods": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "The North Face": { verified: "2026-09-13", offers: [
+  "The North Face": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
   ]},
-  "Patagonia": { verified: "2026-09-13", offers: [
+  "Patagonia": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
   ]},
-  "JanSport": { verified: "2026-09-13", offers: [
+  "JanSport": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "3%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Scheels": { verified: "2026-09-13", offers: [
+  "Scheels": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "3%", meta: "Cash back, paid quarterly" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "7%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Apple": { verified: "2026-09-13", offers: [
+  "Apple": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
   ]},
-  "Adidas": { verified: "2026-09-13", offers: [
+  "Adidas": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "11%", meta: "Cash back, no minimum" },
-    { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Staples": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Staples": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
-    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Neiman Marcus": { verified: "2026-09-13", offers: [
+  "Neiman Marcus": { verified: "2026-09-14", offers: [
     { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Saks Fifth Avenue": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Saks Fifth Avenue": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Ann Taylor": { verified: "2026-09-13", offers: [
+  "Ann Taylor": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "1%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Bloomingdale's": { verified: "2026-09-13", offers: [
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Bloomingdale's": { verified: "2026-09-14", offers: [
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "7%", meta: "Cash back, paid via PayPal" },
-    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Stila": { verified: "2026-09-13", offers: [
+  "Stila": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
   ]},
-  "O'Neill": { verified: "2026-09-13", offers: [
+  "O'Neill": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "5%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Upwork": { verified: "2026-09-13", offers: [
-    { provider: "Rakuten", rate: "5%", meta: "Cash back, paid quarterly" },
+  "Upwork": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "e.l.f. Cosmetics": { verified: "2026-09-13", offers: [
+  "e.l.f. Cosmetics": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Quay": { verified: "2026-09-13", offers: [
+  "Quay": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
   ]},
-  "Moen": { verified: "2026-09-13", offers: [
+  "Moen": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "5%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "10%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "TurboTax": { verified: "2026-09-13", offers: [
+  "TurboTax": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "5%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Carhartt": { verified: "2026-09-13", offers: [
+  "Carhartt": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "2.5%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Finish Line": { verified: "2026-09-13", offers: [
+  "Finish Line": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "5%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Bombas": { verified: "2026-09-13", offers: [
+  "Bombas": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "10%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Farm Rio": { verified: "2026-09-13", offers: [
+  "Farm Rio": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Jimmy Choo": { verified: "2026-09-13", offers: [
+  "Jimmy Choo": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Alexandre Birman": { verified: "2026-09-13", offers: [
+  "Alexandre Birman": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
   ]},
-  "AppSumo": { verified: "2026-09-13", offers: [
+  "AppSumo": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "6%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "Dolce Vita": { verified: "2026-09-13", offers: [
+  "Dolce Vita": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Vivid Seats": { verified: "2026-09-13", offers: [
+  "Vivid Seats": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
   ]},
-  "NOBULL": { verified: "2026-09-13", offers: [
+  "NOBULL": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "4%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Quicken": { verified: "2026-09-13", offers: [
+  "Quicken": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "8%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Vitamix": { verified: "2026-09-13", offers: [
-    { provider: "Rakuten", rate: "9%", meta: "Cash back, paid quarterly" },
+  "Vitamix": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "11%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Sixt": { verified: "2026-09-13", offers: [
+  "Sixt": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "12%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "8%", meta: "Cash back, no minimum" },
   ]},
-  "Bobbi Brown": { verified: "2026-09-13", offers: [
+  "Bobbi Brown": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Lancome": { verified: "2026-09-13", offers: [
+  "Lancome": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "12%", meta: "Cash back, no minimum" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Maui Jim": { verified: "2026-09-13", offers: [
+  "Maui Jim": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Blue Apron": { verified: "2026-09-13", offers: [
+  "Blue Apron": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
     { provider: "Mr Rebates", rate: "15%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Norton": { verified: "2026-09-13", offers: [
-    { provider: "Rakuten", rate: "20%", meta: "Cash back, paid quarterly" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+  "Norton": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "90%", meta: "Cash back, paid quarterly" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "FTD": { verified: "2026-09-13", offers: [
+  "FTD": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "15%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "10%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "5%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
   ]},
-  "Ticketmaster": { verified: "2026-09-13", offers: [
+  "Ticketmaster": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "3%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "Instacart": { verified: "2026-09-13", offers: [
+  "Instacart": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "1%", meta: "Cash back, paid quarterly" },
     { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
   ]},
-  "Petco": { verified: "2026-09-13", offers: [
+  "Petco": { verified: "2026-09-14", offers: [
     { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
     { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
     { provider: "RebatesMe", rate: "1.6%", meta: "Cash back, paid via PayPal" },
-    { provider: "BeFrugal", rate: "13%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
     { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "American Eagle": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Merit Beauty": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+  ]},
+  "UGG": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "1%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Coach": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+  ]},
+  "Saatva": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+  ]},
+  "TJ Maxx": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+  ]},
+  "Grubhub": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+    { provider: "RebatesMe", rate: "5%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+  ]},
+  "Rent the Runway": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
+  ]},
+  "Le Specs": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
+  ]},
+  "Free People": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+  ]},
+  "Le Creuset": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "4%", meta: "Cash back, no minimum" },
+    { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Theory": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Anine Bing": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Tarte Cosmetics": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "15%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "15%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Brooks Running": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "13%", meta: "Cash back, no minimum" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Madewell": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "1.5%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "On Running": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+  ]},
+  "Shutterfly": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "3%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "YOOX": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Sunglass Hut": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "7%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "6%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "H&M": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+  ]},
+  "Bluemercury": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "2%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "9%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Mr Rebates", rate: "8%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Jos. A. Bank": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "3%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "2%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "MAC Cosmetics": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "2%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Reebok": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "4%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "6%", meta: "Cash back, no minimum" },
+    { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+    { provider: "Mr Rebates", rate: "5%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "New Balance": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "RebatesMe", rate: "2%", meta: "Cash back, paid via PayPal" },
+    { provider: "Mr Rebates", rate: "1%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "Under Armour": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "TopCashback", rate: "5%", meta: "Cash back, no minimum" },
+    { provider: "Mr Rebates", rate: "3%", meta: "Cash back, paid via PayPal" },
+  ]},
+  "DoorDash": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "RebatesMe", rate: "8%", meta: "Cash back, paid via PayPal" },
+    { provider: "BeFrugal", rate: "10%", meta: "Cash back, paid via check or PayPal" },
+  ]},
+  "Stuart Weitzman": { verified: "2026-09-14", offers: [
+    { provider: "Rakuten", rate: "10%", meta: "Cash back, paid quarterly" },
+    { provider: "RebatesMe", rate: "6%", meta: "Cash back, paid via PayPal" },
   ]},
 };
