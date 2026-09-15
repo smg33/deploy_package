@@ -742,33 +742,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (badgeSearch) badgeSearch.innerHTML = badgeHTML;
   })();
 
-  // Best cash back rate today - scans every store's every offer for the
-  // single highest rate currently in the real data. Fully automatic, no
-  // manual curation - updates itself every time the scraper runs.
-  (function(){
-    let best = null; // { storeName, provider, rate, rateNum }
-    storeNames.forEach(name => {
-      (STORES[name].offers || []).forEach(offer => {
-        const rateNum = parseFloat(offer.rate);
-        if (!best || rateNum > best.rateNum) {
-          best = { storeName: name, provider: offer.provider, rate: offer.rate, rateNum };
-        }
-      });
-    });
-
-    if (best) {
-      const dealEl = document.getElementById('dealOfDay');
-      document.getElementById('dealStore').textContent = best.storeName;
-      document.getElementById('dealRateText').textContent = `${best.rate} via ${best.provider}`;
-      const cta = document.getElementById('dealCta');
-      cta.href = getProviderLink(best.provider, best.storeName);
-      cta.textContent = `Activate ${best.rate} \u2192`;
-      cta.target = '_blank';
-      cta.rel = 'noopener sponsored';
-      cta.addEventListener('click', () => trackShopClick(best.provider, best.storeName));
-      dealEl.style.display = 'flex';
-    }
-  })();
   const wrap = document.getElementById('wrap');
   const input = document.getElementById('searchInput');
   const clearBtn = document.getElementById('clearBtn');
@@ -1087,6 +1060,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     "Bloomingdale's|Rakuten": "https://www.rakuten.com/shop/bloomingdales",
     "Bloomingdale's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bloomingdale%27s"
   };
+
+  // Best cash back rate today - scans every store's every offer for the
+  // single highest rate currently in the real data. Fully automatic, no
+  // manual curation - updates itself every time the scraper runs. Runs
+  // here specifically because it needs STORE_DEEP_LINKS (declared just
+  // above) and getProviderLink() (which reads it) - calling this any
+  // earlier in the script throws a ReferenceError, since const bindings
+  // aren't usable before their own declaration line runs.
+  (function(){
+    let best = null; // { storeName, provider, rate, rateNum }
+    storeNames.forEach(name => {
+      (STORES[name].offers || []).forEach(offer => {
+        const rateNum = parseFloat(offer.rate);
+        if (!best || rateNum > best.rateNum) {
+          best = { storeName: name, provider: offer.provider, rate: offer.rate, rateNum };
+        }
+      });
+    });
+
+    if (best) {
+      const dealEl = document.getElementById('dealOfDay');
+      document.getElementById('dealStore').textContent = best.storeName;
+      document.getElementById('dealRateText').textContent = `${best.rate} via ${best.provider}`;
+      const cta = document.getElementById('dealCta');
+      cta.href = getProviderLink(best.provider, best.storeName);
+      cta.textContent = `Activate ${best.rate} \u2192`;
+      cta.target = '_blank';
+      cta.rel = 'noopener sponsored';
+      cta.addEventListener('click', () => trackShopClick(best.provider, best.storeName));
+      dealEl.style.display = 'flex';
+    }
+  })();
 
   // New-member referral bonuses - only added once we have a real,
   // verified link and terms from the platform's own account/dashboard.
