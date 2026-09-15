@@ -46,14 +46,25 @@ REQUEST_TIMEOUT = 15
 
 def parse_rakuten(html, store_name=None):
     """
-    VERIFIED against a real fetched page (rakuten.com/shop/nike, Sept 2026).
-    Real pattern found: "Nike6% Cash Backwas 2%Shop Now" - the store name is
-    immediately followed by the current rate, then optionally "was X%".
-    We look for the FIRST "N% Cash Back" occurrence after stripping the page
-    down, since that's consistently the primary/current rate for the store
-    at the top of the page, before the per-product listings repeat it.
+    RE-VERIFIED against real raw HTML (rakuten.com/shop/bloomingdales,
+    Sept 2026) after a real bug was found in production: this parser
+    previously searched the whole page for the first "N% Cash Back" match,
+    which on a real run grabbed a GENERIC, SITEWIDE new-member welcome-
+    bonus string ("...extra 10% Cash Back...", found in a shared JSON
+    config block that appears earlier in the page than the real content)
+    instead of the actual store-specific rate. This wasn't caught
+    initially because the original Nike verification happened to not
+    collide with whatever Rakuten's sitewide bonus number was at the
+    time - it only broke once that unrelated sitewide number happened to
+    look like a plausible real rate.
+
+    The real, reliable anchor is the page's own <title> tag, which
+    reliably states the actual store-specific rate:
+      <title>Bloomingdale's Coupons, Promo Codes & 2% Cash Back...</title>
+    Restricting the search to inside <title> avoids the sitewide bonus
+    text entirely, since that lives in a JSON blob, not the title tag.
     """
-    match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*Cash Back', html)
+    match = re.search(r'<title>[^<]*?(\d+(?:\.\d+)?)%\s*Cash Back[^<]*?</title>', html)
     if match:
         return f"{match.group(1)}%"
     return None
