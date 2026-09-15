@@ -282,55 +282,24 @@
   .wrap.active .popular{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
   .popular span{ font-size:12px; font-weight:500; color:#8A8792; align-self:center; margin-right:2px; }
 
-  .deal-of-day{
-    background:#fff;
-    border:1.5px solid var(--lav);
-    border-radius:14px;
-    padding:16px 20px;
+  .deal-of-day-wrap{
     display:flex;
+    flex-direction:column;
     align-items:center;
-    gap:16px;
     margin-bottom:40px;
     transition:opacity .3s ease, height .3s ease, margin .3s ease;
   }
-  .wrap.active .deal-of-day{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; padding:0; border:none; }
-  .deal-icon{
-    width:36px; height:36px;
-    border-radius:10px;
-    background:var(--lav-soft);
+  .wrap.active .deal-of-day-wrap{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
+  .deal-heading{
     display:flex;
     align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-    color:var(--lav-deep);
-  }
-  .deal-text{ flex:1; min-width:0; }
-  .deal-label{
-    font-size:11px;
+    gap:6px;
+    font-size:12px;
     font-weight:500;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
     color:var(--lav-deep);
-    margin-bottom:2px;
+    margin-bottom:10px;
   }
-  .deal-detail{ font-size:15px; color:var(--ink); }
-  .deal-detail #dealStore{ font-weight:600; }
-  .deal-cta{
-    background:var(--ink);
-    color:#fff;
-    font-size:13px;
-    font-weight:500;
-    padding:9px 18px;
-    border-radius:999px;
-    text-decoration:none;
-    white-space:nowrap;
-    flex-shrink:0;
-  }
-  .deal-cta:hover{ background:var(--lav-deep); }
-  @media (max-width:560px){
-    .deal-of-day{ flex-wrap:wrap; }
-    .deal-cta{ width:100%; text-align:center; }
-  }
+  .deal-card{ width:200px; }
   .chip{
     display:inline-flex;
     align-items:center;
@@ -631,15 +600,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span>Popular:</span>
   </div>
 
-  <div class="deal-of-day" id="dealOfDay" style="display:none;">
-    <div class="deal-icon">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+  <div class="deal-of-day-wrap" id="dealOfDayWrap" style="display:none;">
+    <div class="deal-heading">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+      Best cash back rate today
     </div>
-    <div class="deal-text">
-      <div class="deal-label">Best cash back rate today</div>
-      <div class="deal-detail"><span id="dealStore"></span> &middot; <span id="dealRateText"></span></div>
+    <div class="card best deal-card" id="dealOfDay">
+      <div class="ribbon">Store of the day</div>
+      <div class="card-top">
+        <span class="provider-badge" id="dealProviderBadge"></span>
+        <span class="provider-name" id="dealProvider"></span>
+      </div>
+      <div class="rate" id="dealRateText"></div>
+      <div class="rate-label">Cash back</div>
+      <div class="provider-meta" id="dealStore"></div>
+      <a href="#" id="dealCta" class="go-btn">Activate &rarr;</a>
     </div>
-    <a href="#" id="dealCta" class="deal-cta">Activate &rarr;</a>
   </div>
 
   <div class="results" id="results">
@@ -1080,16 +1056,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 
     if (best) {
-      const dealEl = document.getElementById('dealOfDay');
-      document.getElementById('dealStore').textContent = best.storeName;
-      document.getElementById('dealRateText').textContent = `${best.rate} via ${best.provider}`;
+      const badge = document.getElementById('dealProviderBadge');
+      badge.style.background = PROVIDER_COLORS[best.provider] || '#6E56CF';
+      badge.textContent = providerInitials(best.provider);
+      document.getElementById('dealProvider').textContent = best.provider;
+      document.getElementById('dealRateText').textContent = best.rate;
+      document.getElementById('dealStore').textContent = `at ${best.storeName}`;
       const cta = document.getElementById('dealCta');
       cta.href = getProviderLink(best.provider, best.storeName);
       cta.textContent = `Activate ${best.rate} \u2192`;
       cta.target = '_blank';
       cta.rel = 'noopener sponsored';
       cta.addEventListener('click', () => trackShopClick(best.provider, best.storeName));
-      dealEl.style.display = 'flex';
+      document.getElementById('dealOfDayWrap').style.display = 'flex';
     }
   })();
 
