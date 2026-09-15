@@ -281,6 +281,56 @@
   }
   .wrap.active .popular{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
   .popular span{ font-size:12px; font-weight:500; color:#8A8792; align-self:center; margin-right:2px; }
+
+  .deal-of-day{
+    background:#fff;
+    border:1.5px solid var(--lav);
+    border-radius:14px;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:40px;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+  }
+  .wrap.active .deal-of-day{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; padding:0; border:none; }
+  .deal-icon{
+    width:36px; height:36px;
+    border-radius:10px;
+    background:var(--lav-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color:var(--lav-deep);
+  }
+  .deal-text{ flex:1; min-width:0; }
+  .deal-label{
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--lav-deep);
+    margin-bottom:2px;
+  }
+  .deal-detail{ font-size:15px; color:var(--ink); }
+  .deal-detail #dealStore{ font-weight:600; }
+  .deal-cta{
+    background:var(--ink);
+    color:#fff;
+    font-size:13px;
+    font-weight:500;
+    padding:9px 18px;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .deal-cta:hover{ background:var(--lav-deep); }
+  @media (max-width:560px){
+    .deal-of-day{ flex-wrap:wrap; }
+    .deal-cta{ width:100%; text-align:center; }
+  }
   .chip{
     display:inline-flex;
     align-items:center;
@@ -581,6 +631,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span>Popular:</span>
   </div>
 
+  <div class="deal-of-day" id="dealOfDay" style="display:none;">
+    <div class="deal-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+    </div>
+    <div class="deal-text">
+      <div class="deal-label">Best cash back rate today</div>
+      <div class="deal-detail"><span id="dealStore"></span> &middot; <span id="dealRateText"></span></div>
+    </div>
+    <a href="#" id="dealCta" class="deal-cta">Activate &rarr;</a>
+  </div>
+
   <div class="results" id="results">
     <div class="results-head">
       <h1 id="resultsStoreName"></h1>
@@ -679,6 +740,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (badge) badge.innerHTML = badgeHTML;
     const badgeSearch = document.getElementById('statBadgeSearch');
     if (badgeSearch) badgeSearch.innerHTML = badgeHTML;
+  })();
+
+  // Best cash back rate today - scans every store's every offer for the
+  // single highest rate currently in the real data. Fully automatic, no
+  // manual curation - updates itself every time the scraper runs.
+  (function(){
+    let best = null; // { storeName, provider, rate, rateNum }
+    storeNames.forEach(name => {
+      (STORES[name].offers || []).forEach(offer => {
+        const rateNum = parseFloat(offer.rate);
+        if (!best || rateNum > best.rateNum) {
+          best = { storeName: name, provider: offer.provider, rate: offer.rate, rateNum };
+        }
+      });
+    });
+
+    if (best) {
+      const dealEl = document.getElementById('dealOfDay');
+      document.getElementById('dealStore').textContent = best.storeName;
+      document.getElementById('dealRateText').textContent = `${best.rate} via ${best.provider}`;
+      const cta = document.getElementById('dealCta');
+      cta.href = getProviderLink(best.provider, best.storeName);
+      cta.textContent = `Activate ${best.rate} \u2192`;
+      cta.target = '_blank';
+      cta.rel = 'noopener sponsored';
+      cta.addEventListener('click', () => trackShopClick(best.provider, best.storeName));
+      dealEl.style.display = 'flex';
+    }
   })();
   const wrap = document.getElementById('wrap');
   const input = document.getElementById('searchInput');
