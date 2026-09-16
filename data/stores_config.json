@@ -1,6 +1,6 @@
 {
   "Nike": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/nike/",
       "TopCashback": "https://www.topcashback.com/nike/",
@@ -17,7 +17,7 @@
     }
   },
   "Old Navy": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/old-navy/",
       "TopCashback": "https://www.topcashback.com/old-navy/",
@@ -34,7 +34,7 @@
     }
   },
   "Lululemon": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/lululemon",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Lululemon"
@@ -45,7 +45,7 @@
     }
   },
   "ASOS": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "TopCashback": "https://www.topcashback.com/asos/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/asos",
@@ -60,7 +60,7 @@
     }
   },
   "Best Buy": {
-    "category": "General merchandise",
+    "category": "Electronics & Tech",
     "urls": {
       "TopCashback": "https://www.topcashback.com/best-buy/",
       "BeFrugal": "https://www.befrugal.com/store/best-buy/",
@@ -77,7 +77,7 @@
     }
   },
   "Dell": {
-    "category": "General merchandise",
+    "category": "Electronics & Tech",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/dell/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dell"
@@ -88,7 +88,7 @@
     }
   },
   "Samsung": {
-    "category": "General merchandise",
+    "category": "Electronics & Tech",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/samsung/",
       "Rakuten": "https://www.rakuten.com/shop/samsung",
@@ -103,7 +103,7 @@
     }
   },
   "Sephora": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/sephora",
       "TopCashback": "https://www.topcashback.com/sephora/",
@@ -120,7 +120,7 @@
     }
   },
   "Ulta Beauty": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/ulta-beauty/",
       "TopCashback": "https://www.topcashback.com/ulta-beauty/",
@@ -137,7 +137,7 @@
     }
   },
   "Target": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "TopCashback": "https://www.topcashback.com/target/",
       "Rakuten": "https://www.rakuten.com/shop/target",
@@ -150,7 +150,7 @@
     }
   },
   "Walmart": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "TopCashback": "https://www.topcashback.com/walmart/",
       "BeFrugal": "https://www.befrugal.com/store/walmart/",
@@ -163,7 +163,7 @@
     }
   },
   "Wayfair": {
-    "category": "General merchandise",
+    "category": "Home & Furniture",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/wayfair",
       "Capital One Shopping": "https://capitaloneshopping.com/s/wayfair.com/coupon",
@@ -182,7 +182,7 @@
     }
   },
   "Home Depot": {
-    "category": "General merchandise",
+    "category": "Home Improvement & Hardware",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/home-depot/",
       "TopCashback": "https://www.topcashback.com/home-depot/",
@@ -197,7 +197,7 @@
     }
   },
   "Expedia": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/expedia",
       "BeFrugal": "https://www.befrugal.com/store/expedia/",
@@ -216,7 +216,7 @@
     }
   },
   "Booking.com": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/bookingcom",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Booking.com"
@@ -227,7 +227,7 @@
     }
   },
   "eBay": {
-    "category": "General merchandise",
+    "category": "General Merchandise",
     "urls": {
       "TopCashback": "https://www.topcashback.com/ebay/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=eBay"
@@ -238,7 +238,7 @@
     }
   },
   "Kohl's": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/kohls/",
       "TopCashback": "https://www.topcashback.com/kohls/",
@@ -251,7 +251,7 @@
     }
   },
   "Macy's": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/macys/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/macys",
@@ -268,7 +268,7 @@
     }
   },
   "Priceline": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/priceline",
       "TopCashback": "https://www.topcashback.com/priceline/",
@@ -281,7 +281,7 @@
     }
   },
   "Hotels.com": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/hotelscom",
       "TopCashback": "https://www.topcashback.com/hotelscom/",
@@ -294,7 +294,7 @@
     }
   },
   "Etsy": {
-    "category": "General merchandise",
+    "category": "General Merchandise",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/etsy",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Etsy"
@@ -305,7 +305,7 @@
     }
   },
   "CVS": {
-    "category": "General merchandise",
+    "category": "Health & Wellness",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/cvs/",
       "TopCashback": "https://www.topcashback.com/cvs/",
@@ -320,7 +320,7 @@
     }
   },
   "Zappos": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/zappos",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Zappos"
@@ -331,7 +331,7 @@
     }
   },
   "Marriott Bonvoy": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "TopCashback": "https://www.topcashback.com/marriott-bonvoy/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Marriott+Bonvoy"
@@ -342,7 +342,7 @@
     }
   },
   "Temu": {
-    "category": "General merchandise",
+    "category": "General Merchandise",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/temu",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Temu"
@@ -353,7 +353,7 @@
     }
   },
   "Skechers": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "TopCashback": "https://www.topcashback.com/skechers/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Skechers"
@@ -364,7 +364,7 @@
     }
   },
   "Walgreens": {
-    "category": "General merchandise",
+    "category": "Health & Wellness",
     "urls": {
       "TopCashback": "https://www.topcashback.com/walgreens/",
       "BeFrugal": "https://www.befrugal.com/store/walgreens/",
@@ -379,7 +379,7 @@
     }
   },
   "Nordstrom": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "TopCashback": "https://www.topcashback.com/nordstrom/",
       "Rakuten": "https://www.rakuten.com/shop/nordstrom",
@@ -394,7 +394,7 @@
     }
   },
   "Gap": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/gap",
       "TopCashback": "https://www.topcashback.com/gap/",
@@ -407,7 +407,7 @@
     }
   },
   "PetSmart": {
-    "category": "General merchandise",
+    "category": "Pet Supplies",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/petsmart/",
       "Rakuten": "https://www.rakuten.com/shop/petsmart",
@@ -422,7 +422,7 @@
     }
   },
   "Chewy": {
-    "category": "General merchandise",
+    "category": "Pet Supplies",
     "urls": {
       "TopCashback": "https://www.topcashback.com/chewy/",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Chewy"
@@ -433,7 +433,7 @@
     }
   },
   "Viator": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/viator",
       "TopCashback": "https://www.topcashback.com/viator/",
@@ -446,7 +446,7 @@
     }
   },
   "Kiehl's": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/kiehls",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Kiehl%27s"
@@ -457,7 +457,7 @@
     }
   },
   "Zulily": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/zulily",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Zulily"
@@ -468,7 +468,7 @@
     }
   },
   "Alo": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/alo",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Alo",
@@ -481,7 +481,7 @@
     }
   },
   "Athleta": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/athleta",
       "TopCashback": "https://www.topcashback.com/athleta/",
@@ -494,7 +494,7 @@
     }
   },
   "StubHub": {
-    "category": "General merchandise",
+    "category": "Entertainment & Tickets",
     "urls": {
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=StubHub",
       "TopCashback": "https://www.topcashback.com/stubhub/"
@@ -505,7 +505,7 @@
     }
   },
   "Vineyard Vines": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/vineyard-vines",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Vineyard+Vines"
@@ -516,7 +516,7 @@
     }
   },
   "Banana Republic": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/banana-republic",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Banana+Republic"
@@ -527,7 +527,7 @@
     }
   },
   "Bergdorf Goodman": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/bergdorf-goodman/",
       "RebatesMe": "https://www.rebatesme.com/en/stores/bergdorf-goodman",
@@ -542,7 +542,7 @@
     }
   },
   "Farfetch": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/farfetch",
       "RebatesMe": "https://www.rebatesme.com/en/stores/farfetch",
@@ -555,7 +555,7 @@
     }
   },
   "Shopbop": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "RebatesMe": "https://www.rebatesme.com/en/stores/shopbop",
       "TopCashback": "https://www.topcashback.com/shopbop/",
@@ -568,7 +568,7 @@
     }
   },
   "Net-a-Porter": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Net-a-Porter"
     },
@@ -577,7 +577,7 @@
     }
   },
   "DVF": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/dvf",
       "RebatesMe": "https://www.rebatesme.com/en/stores/dvf",
@@ -592,7 +592,7 @@
     }
   },
   "Dick's Sporting Goods": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/dicks-sporting-goods",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dick%27s+Sporting+Goods"
@@ -603,7 +603,7 @@
     }
   },
   "The North Face": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/the-north-face",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=The+North+Face"
@@ -614,7 +614,7 @@
     }
   },
   "Patagonia": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/patagonia",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Patagonia"
@@ -625,7 +625,7 @@
     }
   },
   "JanSport": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/jansport",
       "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=JanSport"
@@ -636,7 +636,7 @@
     }
   },
   "Scheels": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/scheels",
       "BeFrugal": "https://www.befrugal.com/store/scheels/",
@@ -651,7 +651,7 @@
     }
   },
   "Apple": {
-    "category": "General merchandise",
+    "category": "Electronics & Tech",
     "urls": {
       "TopCashback": "https://www.topcashback.com/apple/",
       "Rakuten": "https://www.rakuten.com/shop/apple",
@@ -664,7 +664,7 @@
     }
   },
   "Adidas": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "TopCashback": "https://www.topcashback.com/adidas/",
       "Rakuten": "https://www.rakuten.com/shop/adidas",
@@ -681,7 +681,7 @@
     }
   },
   "Staples": {
-    "category": "General merchandise",
+    "category": "Office & Craft Supplies",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/staples/",
       "TopCashback": "https://www.topcashback.com/staples/",
@@ -698,7 +698,7 @@
     }
   },
   "Neiman Marcus": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/neiman-marcus/",
       "TopCashback": "https://www.topcashback.com/neiman-marcus/",
@@ -715,7 +715,7 @@
     }
   },
   "Saks Fifth Avenue": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/saks-fifth-avenue/",
       "TopCashback": "https://www.topcashback.com/saks-fifth-avenue/",
@@ -732,7 +732,7 @@
     }
   },
   "Ann Taylor": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/ann-taylor/",
       "Rakuten": "https://www.rakuten.com/shop/ann-taylor",
@@ -749,7 +749,7 @@
     }
   },
   "Bloomingdale's": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "BeFrugal": "https://www.befrugal.com/store/bloomingdales/",
       "TopCashback": "https://www.topcashback.com/bloomingdales/",
@@ -766,7 +766,7 @@
     }
   },
   "Stila": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/stila",
       "TopCashback": "https://www.topcashback.com/stila/",
@@ -783,7 +783,7 @@
     }
   },
   "O'Neill": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/oneill",
       "TopCashback": "https://www.topcashback.com/oneill/",
@@ -800,7 +800,7 @@
     }
   },
   "Upwork": {
-    "category": "General merchandise",
+    "category": "Software & Digital Services",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/upwork",
       "TopCashback": "https://www.topcashback.com/upwork/",
@@ -817,7 +817,7 @@
     }
   },
   "e.l.f. Cosmetics": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/elf-cosmetics",
       "TopCashback": "https://www.topcashback.com/elf-cosmetics/",
@@ -834,7 +834,7 @@
     }
   },
   "Quay": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/quay",
       "TopCashback": "https://www.topcashback.com/quay/",
@@ -851,7 +851,7 @@
     }
   },
   "Moen": {
-    "category": "General merchandise",
+    "category": "Home Improvement & Hardware",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/moen",
       "TopCashback": "https://www.topcashback.com/moen/",
@@ -868,7 +868,7 @@
     }
   },
   "TurboTax": {
-    "category": "General merchandise",
+    "category": "Software & Digital Services",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/turbotax",
       "TopCashback": "https://www.topcashback.com/turbotax/",
@@ -885,7 +885,7 @@
     }
   },
   "Carhartt": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/carhartt",
       "TopCashback": "https://www.topcashback.com/carhartt/",
@@ -902,7 +902,7 @@
     }
   },
   "Finish Line": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/finish-line",
       "TopCashback": "https://www.topcashback.com/finish-line/",
@@ -919,7 +919,7 @@
     }
   },
   "Bombas": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/bombas",
       "TopCashback": "https://www.topcashback.com/bombas/",
@@ -936,7 +936,7 @@
     }
   },
   "Farm Rio": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/farm-rio",
       "TopCashback": "https://www.topcashback.com/farm-rio/",
@@ -953,7 +953,7 @@
     }
   },
   "Jimmy Choo": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/jimmy-choo",
       "TopCashback": "https://www.topcashback.com/jimmy-choo/",
@@ -970,7 +970,7 @@
     }
   },
   "Alexandre Birman": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/alexandre-birman",
       "TopCashback": "https://www.topcashback.com/alexandre-birman/",
@@ -987,7 +987,7 @@
     }
   },
   "AppSumo": {
-    "category": "General merchandise",
+    "category": "Software & Digital Services",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/appsumo",
       "TopCashback": "https://www.topcashback.com/appsumo/",
@@ -1004,7 +1004,7 @@
     }
   },
   "Dolce Vita": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/dolce-vita",
       "TopCashback": "https://www.topcashback.com/dolce-vita/",
@@ -1021,7 +1021,7 @@
     }
   },
   "Vivid Seats": {
-    "category": "General merchandise",
+    "category": "Entertainment & Tickets",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/vivid-seats",
       "TopCashback": "https://www.topcashback.com/vivid-seats/",
@@ -1038,7 +1038,7 @@
     }
   },
   "NOBULL": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/nobull",
       "TopCashback": "https://www.topcashback.com/nobull/",
@@ -1055,7 +1055,7 @@
     }
   },
   "Quicken": {
-    "category": "General merchandise",
+    "category": "Software & Digital Services",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/quicken",
       "TopCashback": "https://www.topcashback.com/quicken/",
@@ -1072,7 +1072,7 @@
     }
   },
   "Vitamix": {
-    "category": "General merchandise",
+    "category": "Home & Furniture",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/vitamix",
       "TopCashback": "https://www.topcashback.com/vitamix/",
@@ -1089,7 +1089,7 @@
     }
   },
   "Sixt": {
-    "category": "General merchandise",
+    "category": "Travel & Hotels",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/sixt",
       "TopCashback": "https://www.topcashback.com/sixt/",
@@ -1106,7 +1106,7 @@
     }
   },
   "Bobbi Brown": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/bobbi-brown",
       "TopCashback": "https://www.topcashback.com/bobbi-brown/",
@@ -1123,7 +1123,7 @@
     }
   },
   "Lancome": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/lancome",
       "TopCashback": "https://www.topcashback.com/lancome/",
@@ -1140,7 +1140,7 @@
     }
   },
   "Maui Jim": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/maui-jim",
       "TopCashback": "https://www.topcashback.com/maui-jim/",
@@ -1157,7 +1157,7 @@
     }
   },
   "Blue Apron": {
-    "category": "General merchandise",
+    "category": "Food Delivery & Grocery",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/blue-apron",
       "TopCashback": "https://www.topcashback.com/blue-apron/",
@@ -1174,7 +1174,7 @@
     }
   },
   "Norton": {
-    "category": "General merchandise",
+    "category": "Software & Digital Services",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/norton",
       "TopCashback": "https://www.topcashback.com/norton/",
@@ -1191,7 +1191,7 @@
     }
   },
   "FTD": {
-    "category": "General merchandise",
+    "category": "Gifts & Flowers",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/ftd",
       "TopCashback": "https://www.topcashback.com/ftd/",
@@ -1208,7 +1208,7 @@
     }
   },
   "Ticketmaster": {
-    "category": "General merchandise",
+    "category": "Entertainment & Tickets",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/ticketmaster",
       "TopCashback": "https://www.topcashback.com/ticketmaster/",
@@ -1225,7 +1225,7 @@
     }
   },
   "Instacart": {
-    "category": "General merchandise",
+    "category": "Food Delivery & Grocery",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/instacart",
       "TopCashback": "https://www.topcashback.com/instacart/",
@@ -1242,7 +1242,7 @@
     }
   },
   "Petco": {
-    "category": "General merchandise",
+    "category": "Pet Supplies",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/petco",
       "TopCashback": "https://www.topcashback.com/petco/",
@@ -1259,7 +1259,7 @@
     }
   },
   "American Eagle": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/american-eagle",
       "TopCashback": "https://www.topcashback.com/american-eagle/",
@@ -1276,7 +1276,7 @@
     }
   },
   "Merit Beauty": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/merit-beauty",
       "TopCashback": "https://www.topcashback.com/merit-beauty/",
@@ -1293,7 +1293,7 @@
     }
   },
   "UGG": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/ugg",
       "TopCashback": "https://www.topcashback.com/ugg/",
@@ -1310,7 +1310,7 @@
     }
   },
   "Coach": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/coach",
       "TopCashback": "https://www.topcashback.com/coach/",
@@ -1327,7 +1327,7 @@
     }
   },
   "Saatva": {
-    "category": "General merchandise",
+    "category": "Home & Furniture",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/saatva",
       "TopCashback": "https://www.topcashback.com/saatva/",
@@ -1344,7 +1344,7 @@
     }
   },
   "TJ Maxx": {
-    "category": "General merchandise",
+    "category": "Department Stores & Mass Retail",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/tj-maxx",
       "TopCashback": "https://www.topcashback.com/tj-maxx/",
@@ -1361,7 +1361,7 @@
     }
   },
   "Grubhub": {
-    "category": "General merchandise",
+    "category": "Food Delivery & Grocery",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/grubhub",
       "TopCashback": "https://www.topcashback.com/grubhub/",
@@ -1378,7 +1378,7 @@
     }
   },
   "Rent the Runway": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/rent-the-runway",
       "TopCashback": "https://www.topcashback.com/rent-the-runway/",
@@ -1395,7 +1395,7 @@
     }
   },
   "Le Specs": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/le-specs",
       "TopCashback": "https://www.topcashback.com/le-specs/",
@@ -1412,7 +1412,7 @@
     }
   },
   "Free People": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/free-people",
       "TopCashback": "https://www.topcashback.com/free-people/",
@@ -1429,7 +1429,7 @@
     }
   },
   "Le Creuset": {
-    "category": "General merchandise",
+    "category": "Home & Furniture",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/le-creuset",
       "TopCashback": "https://www.topcashback.com/le-creuset/",
@@ -1446,7 +1446,7 @@
     }
   },
   "Theory": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/theory",
       "TopCashback": "https://www.topcashback.com/theory/",
@@ -1463,7 +1463,7 @@
     }
   },
   "Anine Bing": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/anine-bing",
       "TopCashback": "https://www.topcashback.com/anine-bing/",
@@ -1480,7 +1480,7 @@
     }
   },
   "Tarte Cosmetics": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/tarte-cosmetics",
       "TopCashback": "https://www.topcashback.com/tarte-cosmetics/",
@@ -1497,7 +1497,7 @@
     }
   },
   "Brooks Running": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/brooks-running",
       "TopCashback": "https://www.topcashback.com/brooks-running/",
@@ -1514,7 +1514,7 @@
     }
   },
   "Madewell": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/madewell",
       "TopCashback": "https://www.topcashback.com/madewell/",
@@ -1531,7 +1531,7 @@
     }
   },
   "On Running": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/on-running",
       "TopCashback": "https://www.topcashback.com/on-running/",
@@ -1548,7 +1548,7 @@
     }
   },
   "Shutterfly": {
-    "category": "General merchandise",
+    "category": "Gifts & Flowers",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/shutterfly",
       "TopCashback": "https://www.topcashback.com/shutterfly/",
@@ -1565,7 +1565,7 @@
     }
   },
   "YOOX": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/yoox",
       "TopCashback": "https://www.topcashback.com/yoox/",
@@ -1582,7 +1582,7 @@
     }
   },
   "Sunglass Hut": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/sunglass-hut",
       "TopCashback": "https://www.topcashback.com/sunglass-hut/",
@@ -1599,7 +1599,7 @@
     }
   },
   "H&M": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/hm",
       "TopCashback": "https://www.topcashback.com/hm/",
@@ -1616,7 +1616,7 @@
     }
   },
   "Bluemercury": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/bluemercury",
       "TopCashback": "https://www.topcashback.com/bluemercury/",
@@ -1633,7 +1633,7 @@
     }
   },
   "Jos. A. Bank": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/jos-a-bank",
       "TopCashback": "https://www.topcashback.com/jos-a-bank/",
@@ -1650,7 +1650,7 @@
     }
   },
   "MAC Cosmetics": {
-    "category": "General merchandise",
+    "category": "Beauty & Cosmetics",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/mac-cosmetics",
       "TopCashback": "https://www.topcashback.com/mac-cosmetics/",
@@ -1667,7 +1667,7 @@
     }
   },
   "Reebok": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/reebok",
       "TopCashback": "https://www.topcashback.com/reebok/",
@@ -1684,7 +1684,7 @@
     }
   },
   "New Balance": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/new-balance",
       "TopCashback": "https://www.topcashback.com/new-balance/",
@@ -1701,7 +1701,7 @@
     }
   },
   "Under Armour": {
-    "category": "General merchandise",
+    "category": "Sporting Goods & Activewear",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/under-armour",
       "TopCashback": "https://www.topcashback.com/under-armour/",
@@ -1718,7 +1718,7 @@
     }
   },
   "DoorDash": {
-    "category": "General merchandise",
+    "category": "Food Delivery & Grocery",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/doordash",
       "TopCashback": "https://www.topcashback.com/doordash/",
@@ -1735,7 +1735,7 @@
     }
   },
   "Stuart Weitzman": {
-    "category": "General merchandise",
+    "category": "Apparel & Fashion",
     "urls": {
       "Rakuten": "https://www.rakuten.com/shop/stuart-weitzman",
       "TopCashback": "https://www.topcashback.com/stuart-weitzman/",
@@ -1749,6 +1749,323 @@
       "RebatesMe": "Cash back, paid via PayPal",
       "BeFrugal": "Cash back, paid via check or PayPal",
       "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "GameStop": {
+    "category": "Electronics & Tech",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/gamestop.com",
+      "TopCashback": "https://www.topcashback.com/gamestop/",
+      "BeFrugal": "https://www.befrugal.com/store/gamestop/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/gamestop",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=GameStop"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Urban Outfitters": {
+    "category": "Apparel & Fashion",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/store/urbanoutfitters",
+      "TopCashback": "https://www.topcashback.com/urban-outfitters/",
+      "BeFrugal": "https://www.befrugal.com/store/urban-outfitters/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "Foot Locker": {
+    "category": "Sporting Goods & Activewear",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/footlocker.com",
+      "TopCashback": "https://www.topcashback.com/foot-locker/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/foot-locker"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "Lowe's": {
+    "category": "Home Improvement & Hardware",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/lowes",
+      "TopCashback": "https://www.topcashback.com/lowes/",
+      "BeFrugal": "https://www.befrugal.com/store/lowes/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes lumber, decking, installations",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "Ace Hardware": {
+    "category": "Home Improvement & Hardware",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/acehardware",
+      "TopCashback": "https://www.topcashback.com/ace-hardware/",
+      "BeFrugal": "https://www.befrugal.com/store/acehardware/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "Nectar": {
+    "category": "Home & Furniture",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/nectarsleep.com",
+      "TopCashback": "https://www.topcashback.com/nectar-sleep-mattress/",
+      "BeFrugal": "https://www.befrugal.com/store/nectarsleepmattresses/",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Nectar"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "QVC": {
+    "category": "Department Stores & Mass Retail",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/qvc.com",
+      "TopCashback": "https://www.topcashback.com/qvc/",
+      "BeFrugal": "https://www.befrugal.com/store/qvc/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - reduced on free-shipping orders",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "Groupon": {
+    "category": "General Merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/groupon",
+      "TopCashback": "https://www.topcashback.com/groupon/",
+      "BeFrugal": "https://www.befrugal.com/store/groupon/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/groupon",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Groupon"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes Groupon+ and gift cards",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Bed Bath & Beyond": {
+    "category": "Home & Furniture",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/store/bedbathandbeyond",
+      "TopCashback": "https://www.topcashback.com/bed-bath-and-beyond/",
+      "BeFrugal": "https://www.befrugal.com/store/bedbathandbeyond/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/bed-bath-and-beyond"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "Overstock": {
+    "category": "Home & Furniture",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/overstock.com",
+      "TopCashback": "https://www.topcashback.com/overstock/",
+      "BeFrugal": "https://www.befrugal.com/store/overstock/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/overstock",
+      "Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Overstock"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal",
+      "Mr Rebates": "Cash back, paid via PayPal"
+    }
+  },
+  "Serta": {
+    "category": "Home & Furniture",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/serta",
+      "TopCashback": "https://www.topcashback.com/serta/",
+      "BeFrugal": "https://www.befrugal.com/store/serta/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/serta"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes gift cards",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "Aveda": {
+    "category": "Beauty & Cosmetics",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/aveda.com",
+      "TopCashback": "https://www.topcashback.com/aveda/",
+      "BeFrugal": "https://www.befrugal.com/store/aveda/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/aveda"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes gift cards",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "Origins": {
+    "category": "Beauty & Cosmetics",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/origins",
+      "TopCashback": "https://www.topcashback.com/origins-us/",
+      "BeFrugal": "https://www.befrugal.com/store/origins/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "AliExpress": {
+    "category": "General Merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/aliexpress",
+      "TopCashback": "https://www.topcashback.com/aliexpress/",
+      "BeFrugal": "https://www.befrugal.com/store/aliexpress/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "Clarins": {
+    "category": "Beauty & Cosmetics",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/clarins",
+      "TopCashback": "https://www.topcashback.com/clarins-usa/",
+      "BeFrugal": "https://www.befrugal.com/store/clarins/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/clarins"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes gift cards",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "LegalZoom": {
+    "category": "Software & Digital Services",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/legalzoom",
+      "TopCashback": "https://www.topcashback.com/legalzoom/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum"
+    }
+  },
+  "iHerb": {
+    "category": "Health & Wellness",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/iherb",
+      "TopCashback": "https://www.topcashback.com/iherb/",
+      "BeFrugal": "https://www.befrugal.com/store/iherb/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/iherb"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes some countries",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "Champs Sports": {
+    "category": "Sporting Goods & Activewear",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/champssports",
+      "TopCashback": "https://www.topcashback.com/champs-sports/",
+      "BeFrugal": "https://www.befrugal.com/store/champs/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/champs-sports"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes select SKUs",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "Oriental Trading": {
+    "category": "General Merchandise",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/orientaltradingcompany",
+      "TopCashback": "https://www.topcashback.com/oriental-trading-company/",
+      "BeFrugal": "https://www.befrugal.com/store/orientaltrading/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "Fenty Beauty": {
+    "category": "Beauty & Cosmetics",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/fentybeauty",
+      "TopCashback": "https://www.topcashback.com/fenty-beauty/",
+      "BeFrugal": "https://www.befrugal.com/store/fentybeauty/",
+      "RebatesMe": "https://www.rebatesme.com/en/stores/fenty-beauty"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes gift cards",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal",
+      "RebatesMe": "Cash back, paid via PayPal"
+    }
+  },
+  "L'Occitane": {
+    "category": "Beauty & Cosmetics",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/loccitane.com",
+      "TopCashback": "https://www.topcashback.com/loccitane/",
+      "BeFrugal": "https://www.befrugal.com/store/loccitane/"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - excludes gifts with purchase",
+      "TopCashback": "Cash back, no minimum",
+      "BeFrugal": "Cash back, paid via check or PayPal"
+    }
+  },
+  "CruiseBound": {
+    "category": "Travel & Hotels",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/cruisebound"
+    },
+    "meta": {
+      "Rakuten": "Cash back after travel completed - fare only, no gift cards"
+    }
+  },
+  "Frame": {
+    "category": "Apparel & Fashion",
+    "urls": {
+      "Rakuten": "https://www.rakuten.com/shop/frame-store"
+    },
+    "meta": {
+      "Rakuten": "Cash back, paid quarterly - US stores only"
     }
   }
 }

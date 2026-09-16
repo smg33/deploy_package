@@ -300,6 +300,15 @@
     margin-bottom:10px;
   }
   .deal-card{ width:200px; }
+  .deal-card .provider-meta{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .deal-card .provider-meta .store-name-highlight{
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+  }
   .chip{
     display:inline-flex;
     align-items:center;
@@ -1061,7 +1070,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       badge.textContent = providerInitials(best.provider);
       document.getElementById('dealProvider').textContent = best.provider;
       document.getElementById('dealRateText').textContent = best.rate;
-      document.getElementById('dealStore').textContent = `at ${best.storeName}`;
+      document.getElementById('dealStore').innerHTML = `at <span class="store-name-highlight">${escapeHtml(best.storeName)}</span>`;
       const cta = document.getElementById('dealCta');
       cta.href = getProviderLink(best.provider, best.storeName);
       cta.textContent = `Activate ${best.rate} \u2192`;
