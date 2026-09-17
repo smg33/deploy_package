@@ -32,10 +32,99 @@ never drift out of sync with real data - the fix for the multi-place-data
 problem discovered with the original hand-built nike-cash-back.html.
 """
 
+import hashlib
 import json
 import re
 import sys
 from html import escape as html_escape
+
+# --- Category-aware tips/FAQ content -----------------------------------
+# WHY THIS EXISTS: the original tips_text/faq_answer_1/faq_answer_2 below
+# used one fixed sentence structure for every store, with only the store
+# name/provider/rate swapped in. Diffed across sample pages, ~92% of the
+# words were byte-identical across every store - a mail-merge, not real
+# per-page content, and the kind of pattern Google's "scaled content
+# abuse" policy (added in the March 2024 core update) is written to catch.
+#
+# This doesn't fully solve that - it's a real but partial fix. CATEGORY_TIP
+# adds one genuinely category-specific, true sentence (not invented
+# per-store facts) to the tips paragraph. The *_TEMPLATES lists give 3
+# sentence-structure variants each, chosen deterministically per store via
+# a hash so the same store always renders the same way across rebuilds.
+# Combined, a store's page is shaped by (category x structure), not just
+# (store name x rate) - real differentiation, though stores sharing both a
+# category and a hashed structure slot will still look similar. Closing
+# that the rest of the way needs actual per-store facts, not more templates.
+CATEGORY_TIP = {
+    "Apparel & Fashion": "Rates often jump during seasonal sales, so if your purchase isn't urgent it can pay to wait for a promo window.",
+    "Sporting Goods & Activewear": "Clearance and outlet sections sometimes carry a lower cash back rate than full-price items, so it's worth checking before a big order.",
+    "Beauty & Cosmetics": "Free gifts-with-purchase and beauty add-ons are usually excluded from the total, so the rate applies to the rest of your order.",
+    "Electronics & Tech": "Pre-orders and open-box or refurbished listings are commonly excluded, even when the store itself is fully covered.",
+    "Home Improvement & Hardware": "Big-ticket items like appliances, installations, or special orders are often excluded or capped separately from the standard rate.",
+    "Home & Furniture": "Financed purchases and delivery or installation fees are typically excluded from the cash back total.",
+    "Travel & Hotels": "Cash back on travel bookings usually posts after your trip is completed, not at the time of booking.",
+    "Department Stores & Mass Retail": "Gift cards are almost always excluded from cash back, even when the rest of the store is covered.",
+    "Health & Wellness": "Prescription purchases are typically excluded from cash back, even when the rest of the store counts.",
+    "Software & Digital Services": "Renewal or multi-year plans sometimes carry a different rate than the first-time signup rate shown here.",
+    "Entertainment & Tickets": "Resale or third-party marketplace listings on the site sometimes don't qualify, even when official listings do.",
+    "Pet Supplies": "Auto-ship or subscription orders are sometimes excluded or capped at a lower rate than one-time purchases.",
+    "Food Delivery & Grocery": "Tips and delivery fees typically don't count toward the total - it's based on the food or order subtotal.",
+    "General Merchandise": "Items sold by third-party marketplace sellers are sometimes excluded, even when items sold directly by the store qualify.",
+    "Gifts & Flowers": "Same-day or rush delivery fees are typically excluded from the cash back total.",
+    "Office & Craft Supplies": "Bulk or business-account orders sometimes run under separate terms from standard retail cash back.",
+}
+CATEGORY_TIP_FALLBACK = "Rates and exclusions can vary by category, so it's worth a quick check before a big purchase."
+
+TIPS_TEMPLATES = [
+    "{provider} has the best rate right now at {rate} for {store}. {cat_tip} Clear your cookies before you click through - cash back tracking breaks easily with ad blockers or a second tab open.",
+    "Right now {provider} pays the most for {store}, at {rate}. {cat_tip} Activate the link before you start shopping; cash back sites can't credit a purchase that started before you clicked through.",
+    "The best current rate for {store} is {rate}, through {provider}. {cat_tip} As with any cash back purchase, avoid coupon sites that aren't on this list - stacking an unrelated code can sometimes void tracking.",
+]
+FAQ1_TEMPLATES = [
+    "Click activate on {provider}'s {rate} offer above, then shop at {store} like normal - the cash back tracks itself once your order goes through.",
+    "Start at {provider}'s {rate} link above rather than going to {store} directly. From there, shop as usual and the order tracks on its own.",
+    "Use {provider}'s {rate} offer above to get to {store} - don't navigate there separately first. The rest of the checkout works exactly like normal.",
+]
+FAQ2_TEMPLATES = [
+    "{provider}, at {rate}. That can change, so with {n} providers tracked here for {store}, it's worth a quick check before anything big.",
+    "Right now it's {provider} at {rate}. Rates move often though, which is why we track {n} providers for {store} instead of just one.",
+    "{provider} currently leads at {rate} for {store}. We keep {n} providers on this page specifically because that ranking shifts.",
+]
+
+
+def _pick_template(templates, store_name, salt):
+    """Deterministic per-store choice so re-running the generator doesn't
+    shuffle a store's page text on every rebuild."""
+    idx = int(hashlib.md5((store_name + salt).encode()).hexdigest(), 16) % len(templates)
+    return templates[idx]
+
+
+def render_store_copy(store_name, category, provider, rate, provider_count, escape_html=False):
+    """Returns (tips_text, faq_answer_1, faq_answer_2) built from a
+    category-aware, per-store-hashed template. See CATEGORY_TIP comment
+    above for why this exists and what it does/doesn't fix.
+
+    The template chosen is always hashed off the raw store_name, so the
+    JSON-LD call (escape_html=False, for the <script type="application/
+    ld+json"> block, which needs plain text - entities like &#x27; would
+    show up literally in a Google rich snippet) and the visible-HTML call
+    (escape_html=True, for the <p> tags, guarding against store names like
+    "H&M") pick the same variant and stay word-for-word in sync - a
+    mismatch between what Google reads in the schema and what a person
+    sees on the page looks spammy even when each half is fine alone.
+    """
+    cat_tip = CATEGORY_TIP.get(category, CATEGORY_TIP_FALLBACK)
+    disp_store = html_escape(store_name) if escape_html else store_name
+    disp_provider = html_escape(provider) if escape_html else provider
+    disp_rate = html_escape(rate) if escape_html else rate
+    tips_text = _pick_template(TIPS_TEMPLATES, store_name, "tips").format(
+        provider=disp_provider, rate=disp_rate, store=disp_store, cat_tip=cat_tip)
+    faq_answer_1 = _pick_template(FAQ1_TEMPLATES, store_name, "faq1").format(
+        provider=disp_provider, rate=disp_rate, store=disp_store)
+    faq_answer_2 = _pick_template(FAQ2_TEMPLATES, store_name, "faq2").format(
+        provider=disp_provider, rate=disp_rate, store=disp_store, n=provider_count)
+    return tips_text, faq_answer_1, faq_answer_2
+
 
 # Same set the frontend (index.html) treats as trustworthy right now.
 # Keep these two lists in sync by hand until/unless this becomes a shared
@@ -187,19 +276,19 @@ def build_offer_cards_html(offers, store_name, store_urls):
     return "\n".join(cards)
 
 
-def build_faq_jsonld(store_name, best_offer, provider_count):
+def build_faq_jsonld(store_name, faq_answer_1, faq_answer_2):
     """
-    Uses real, per-store data (the actual current top offer and how many
-    providers we track for this store) so each page's FAQ answer is
-    genuinely different in substance, not just a name swapped into an
-    identical sentence - the same near-duplicate-content risk that likely
-    contributed to some of the site's early comparison pages landing in
-    "Crawled - currently not indexed" in Search Console.
-    """
-    best_provider = best_offer["provider"]
-    best_rate = best_offer["rate"]
-    best_meta = best_offer["meta"][0].lower() + best_offer["meta"][1:]
+    Takes the same faq_answer_1/faq_answer_2 text that renders visibly on
+    the page (from render_store_copy), so the FAQ schema Google reads and
+    the FAQ text a person actually sees always match - a mismatch there
+    looks spammy even when each half is fine on its own.
 
+    Previously this function derived its own separate copy of the FAQ
+    answers, using the single fixed sentence structure that was ~92%
+    identical across every store page - the same near-duplicate-content
+    risk that likely contributed to some of the site's early comparison
+    pages landing in "Crawled - currently not indexed" in Search Console.
+    """
     return json.dumps({
         "@type": "FAQPage",
         "mainEntity": [
@@ -208,12 +297,7 @@ def build_faq_jsonld(store_name, best_offer, provider_count):
                 "name": f"How do I get {store_name} cash back?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": (
-                        f"Click activate on {best_provider}'s {best_rate} "
-                        f"offer above. Shop at {store_name} like normal, and "
-                        "the cash back tracks itself once your order goes "
-                        "through."
-                    ),
+                    "text": faq_answer_1,
                 },
             },
             {
@@ -221,12 +305,7 @@ def build_faq_jsonld(store_name, best_offer, provider_count):
                 "name": f"Which site pays the most for {store_name}?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": (
-                        f"{best_provider}, at {best_rate}. That could change, "
-                        f"though. We track {provider_count} providers here "
-                        "because rates shift constantly, so it's worth a "
-                        "quick check before anything big."
-                    ),
+                    "text": faq_answer_2,
                 },
             },
         ],
@@ -584,26 +663,19 @@ def generate():
 
         best_offer = max(verified_offers, key=lambda o: float(o["rate"].rstrip("%")))
         provider_count = len(verified_offers)
+        category = config.get(store_name, {}).get("category", "General Merchandise")
 
-        faq_jsonld = build_faq_jsonld(store_name, best_offer, provider_count)
+        # Plain-text version for the JSON-LD schema.
+        _, raw_faq_answer_1, raw_faq_answer_2 = render_store_copy(
+            store_name, category, best_offer["provider"], best_offer["rate"],
+            provider_count, escape_html=False,
+        )
+        faq_jsonld = build_faq_jsonld(store_name, raw_faq_answer_1, raw_faq_answer_2)
 
-        best_meta_lower = best_offer["meta"][0].lower() + best_offer["meta"][1:]
-        tips_text = (
-            f'{html_escape(best_offer["provider"])} has the best rate right now: '
-            f'{html_escape(best_offer["rate"])}, {html_escape(best_meta_lower)}. '
-            "Clear your cookies before you click through. Cash back sites are picky "
-            "about tracking, and rates move more than people expect, so it's worth "
-            "checking back before anything big."
-        )
-        faq_answer_1 = (
-            f'Click activate on {html_escape(best_offer["provider"])}\'s '
-            f'{html_escape(best_offer["rate"])} offer above. Shop at {html_escape(store_name)} '
-            "like normal, and the cash back tracks itself once your order goes through."
-        )
-        faq_answer_2 = (
-            f'{html_escape(best_offer["provider"])}, at {html_escape(best_offer["rate"])}. '
-            f"That could change, though. We track {provider_count} providers here because "
-            "rates shift constantly, so it's worth a quick check before anything big."
+        # HTML-escaped version (same hashed template variant) for the page itself.
+        tips_text, faq_answer_1, faq_answer_2 = render_store_copy(
+            store_name, category, best_offer["provider"], best_offer["rate"],
+            provider_count, escape_html=True,
         )
 
         verified_date = store_data.get("verified") or "recently"
