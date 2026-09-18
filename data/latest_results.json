@@ -1,16 +1,16 @@
 {
   "Nike": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
         "provider": "TopCashback",
-        "rate": "10%",
+        "rate": "8%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -20,18 +20,18 @@
       },
       {
         "provider": "Rakuten",
-        "rate": "8%",
+        "rate": "6%",
         "meta": "Cash back, paid quarterly"
       },
       {
         "provider": "Mr Rebates",
-        "rate": "8%",
+        "rate": "6%",
         "meta": "Cash back, paid via PayPal"
       }
     ]
   },
   "Old Navy": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -68,7 +68,7 @@
     ]
   },
   "ASOS": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -89,7 +89,7 @@
     ]
   },
   "Best Buy": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Electronics & Tech",
     "offers": [
       {
@@ -126,12 +126,12 @@
     ]
   },
   "Samsung": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Electronics & Tech",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -152,7 +152,7 @@
     ]
   },
   "Sephora": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -167,7 +167,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -183,12 +183,12 @@
     ]
   },
   "Ulta Beauty": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -209,7 +209,7 @@
     ]
   },
   "Target": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
@@ -225,7 +225,7 @@
     ]
   },
   "Walmart": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
@@ -235,7 +235,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Up to 15% in select categories - base rate shown"
       },
       {
@@ -246,7 +246,7 @@
     ]
   },
   "Wayfair": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -261,13 +261,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Home Depot": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home Improvement & Hardware",
     "offers": [
       {
@@ -288,7 +288,7 @@
     ]
   },
   "Expedia": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -298,7 +298,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -314,7 +314,7 @@
     ]
   },
   "Booking.com": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -330,7 +330,7 @@
     ]
   },
   "eBay": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "General Merchandise",
     "offers": [
       {
@@ -346,12 +346,12 @@
     ]
   },
   "Kohl's": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -367,12 +367,12 @@
     ]
   },
   "Macy's": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -398,7 +398,7 @@
     ]
   },
   "Priceline": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -419,7 +419,7 @@
     ]
   },
   "Hotels.com": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -435,7 +435,7 @@
     ]
   },
   "Etsy": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "General Merchandise",
     "offers": [
       {
@@ -446,12 +446,12 @@
     ]
   },
   "CVS": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Health & Wellness",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -462,7 +462,7 @@
     ]
   },
   "Zappos": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -478,7 +478,7 @@
     ]
   },
   "Temu": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "General Merchandise",
     "offers": [
       {
@@ -494,7 +494,7 @@
     ]
   },
   "Skechers": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -510,7 +510,7 @@
     ]
   },
   "Walgreens": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Health & Wellness",
     "offers": [
       {
@@ -520,7 +520,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -536,7 +536,7 @@
     ]
   },
   "Nordstrom": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
@@ -557,7 +557,7 @@
     ]
   },
   "Gap": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -578,12 +578,12 @@
     ]
   },
   "PetSmart": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Pet Supplies",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -604,7 +604,7 @@
     ]
   },
   "Chewy": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Pet Supplies",
     "offers": [
       {
@@ -620,7 +620,7 @@
     ]
   },
   "Viator": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -641,7 +641,7 @@
     ]
   },
   "Kiehl's": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -657,7 +657,7 @@
     ]
   },
   "Zulily": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -684,7 +684,7 @@
     ]
   },
   "Athleta": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -705,7 +705,7 @@
     ]
   },
   "StubHub": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Entertainment & Tickets",
     "offers": [
       {
@@ -721,7 +721,7 @@
     ]
   },
   "Vineyard Vines": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -737,7 +737,7 @@
     ]
   },
   "Banana Republic": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -753,7 +753,7 @@
     ]
   },
   "Bergdorf Goodman": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
@@ -774,7 +774,7 @@
     ]
   },
   "Farfetch": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -795,7 +795,7 @@
     ]
   },
   "Shopbop": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -816,7 +816,7 @@
     ]
   },
   "Net-a-Porter": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -827,7 +827,7 @@
     ]
   },
   "DVF": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -848,7 +848,7 @@
     ]
   },
   "Dick's Sporting Goods": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -875,7 +875,7 @@
     ]
   },
   "Patagonia": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -886,7 +886,7 @@
     ]
   },
   "JanSport": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -902,7 +902,7 @@
     ]
   },
   "Scheels": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -912,7 +912,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -928,7 +928,7 @@
     ]
   },
   "Apple": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Electronics & Tech",
     "offers": [
       {
@@ -944,12 +944,12 @@
     ]
   },
   "Adidas": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
         "provider": "TopCashback",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -964,7 +964,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -975,12 +975,12 @@
     ]
   },
   "Staples": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Office & Craft Supplies",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1006,12 +1006,12 @@
     ]
   },
   "Neiman Marcus": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
         "provider": "TopCashback",
-        "rate": "5%",
+        "rate": "6%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -1021,7 +1021,7 @@
       },
       {
         "provider": "RebatesMe",
-        "rate": "2%",
+        "rate": "6%",
         "meta": "Cash back, paid via PayPal"
       },
       {
@@ -1032,17 +1032,17 @@
     ]
   },
   "Saks Fifth Avenue": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
         "provider": "TopCashback",
-        "rate": "5%",
+        "rate": "6%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -1063,7 +1063,7 @@
     ]
   },
   "Ann Taylor": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1089,12 +1089,12 @@
     ]
   },
   "Bloomingdale's": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1131,7 +1131,7 @@
     ]
   },
   "O'Neill": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1151,7 +1151,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1162,7 +1162,7 @@
     ]
   },
   "Upwork": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Software & Digital Services",
     "offers": [
       {
@@ -1177,13 +1177,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "e.l.f. Cosmetics": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -1193,12 +1193,12 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "7%",
+        "rate": "14%",
         "meta": "Cash back, no minimum"
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1220,7 +1220,7 @@
     ]
   },
   "Moen": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home Improvement & Hardware",
     "offers": [
       {
@@ -1240,7 +1240,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1251,7 +1251,7 @@
     ]
   },
   "TurboTax": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Software & Digital Services",
     "offers": [
       {
@@ -1271,7 +1271,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1282,7 +1282,7 @@
     ]
   },
   "Carhartt": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1302,7 +1302,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1313,7 +1313,7 @@
     ]
   },
   "Finish Line": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -1339,7 +1339,7 @@
     ]
   },
   "Bombas": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1354,7 +1354,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1365,7 +1365,7 @@
     ]
   },
   "Farm Rio": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1381,7 +1381,7 @@
     ]
   },
   "Jimmy Choo": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1397,7 +1397,7 @@
     ]
   },
   "Alexandre Birman": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1413,7 +1413,7 @@
     ]
   },
   "AppSumo": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Software & Digital Services",
     "offers": [
       {
@@ -1433,13 +1433,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Dolce Vita": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1465,7 +1465,7 @@
     ]
   },
   "Vivid Seats": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Entertainment & Tickets",
     "offers": [
       {
@@ -1481,7 +1481,7 @@
     ]
   },
   "NOBULL": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -1501,7 +1501,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1512,7 +1512,7 @@
     ]
   },
   "Quicken": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Software & Digital Services",
     "offers": [
       {
@@ -1533,7 +1533,7 @@
     ]
   },
   "Vitamix": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -1553,7 +1553,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1564,7 +1564,7 @@
     ]
   },
   "Sixt": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -1580,7 +1580,7 @@
     ]
   },
   "Bobbi Brown": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -1601,7 +1601,7 @@
     ]
   },
   "Lancome": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -1616,7 +1616,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1627,7 +1627,7 @@
     ]
   },
   "Maui Jim": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1643,7 +1643,7 @@
     ]
   },
   "Blue Apron": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Food Delivery & Grocery",
     "offers": [
       {
@@ -1659,7 +1659,7 @@
     ]
   },
   "Norton": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Software & Digital Services",
     "offers": [
       {
@@ -1669,13 +1669,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "FTD": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Gifts & Flowers",
     "offers": [
       {
@@ -1695,7 +1695,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1706,7 +1706,7 @@
     ]
   },
   "Ticketmaster": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Entertainment & Tickets",
     "offers": [
       {
@@ -1721,13 +1721,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Instacart": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Food Delivery & Grocery",
     "offers": [
       {
@@ -1742,13 +1742,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Petco": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Pet Supplies",
     "offers": [
       {
@@ -1768,7 +1768,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -1779,7 +1779,7 @@
     ]
   },
   "American Eagle": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1811,7 +1811,7 @@
     ]
   },
   "UGG": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1837,7 +1837,7 @@
     ]
   },
   "Coach": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1847,13 +1847,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Saatva": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -1868,7 +1868,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
@@ -1885,7 +1885,7 @@
     ]
   },
   "Grubhub": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Food Delivery & Grocery",
     "offers": [
       {
@@ -1900,13 +1900,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Rent the Runway": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1922,7 +1922,7 @@
     ]
   },
   "Le Specs": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1949,7 +1949,7 @@
     ]
   },
   "Le Creuset": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -1970,7 +1970,7 @@
     ]
   },
   "Theory": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -1996,7 +1996,7 @@
     ]
   },
   "Anine Bing": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2017,7 +2017,7 @@
     ]
   },
   "Tarte Cosmetics": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2043,7 +2043,7 @@
     ]
   },
   "Brooks Running": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -2064,12 +2064,12 @@
     ]
   },
   "Madewell": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
         "provider": "Rakuten",
-        "rate": "12%",
+        "rate": "2%",
         "meta": "Cash back, paid quarterly"
       },
       {
@@ -2084,7 +2084,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2106,7 +2106,7 @@
     ]
   },
   "Shutterfly": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Gifts & Flowers",
     "offers": [
       {
@@ -2126,7 +2126,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2137,7 +2137,7 @@
     ]
   },
   "YOOX": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2152,7 +2152,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2163,7 +2163,7 @@
     ]
   },
   "Sunglass Hut": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2189,7 +2189,7 @@
     ]
   },
   "H&M": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2200,7 +2200,7 @@
     ]
   },
   "Bluemercury": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2220,7 +2220,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2231,7 +2231,7 @@
     ]
   },
   "Jos. A. Bank": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2257,7 +2257,7 @@
     ]
   },
   "MAC Cosmetics": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2283,7 +2283,7 @@
     ]
   },
   "Reebok": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -2303,7 +2303,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2314,7 +2314,7 @@
     ]
   },
   "New Balance": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -2335,7 +2335,7 @@
     ]
   },
   "Under Armour": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -2356,7 +2356,7 @@
     ]
   },
   "DoorDash": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Food Delivery & Grocery",
     "offers": [
       {
@@ -2371,13 +2371,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Stuart Weitzman": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2393,12 +2393,12 @@
     ]
   },
   "GameStop": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Electronics & Tech",
     "offers": [
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2409,7 +2409,7 @@
     ]
   },
   "Urban Outfitters": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
@@ -2420,7 +2420,7 @@
     ]
   },
   "Foot Locker": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -2436,7 +2436,7 @@
     ]
   },
   "Lowe's": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home Improvement & Hardware",
     "offers": [
       {
@@ -2451,13 +2451,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Ace Hardware": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home Improvement & Hardware",
     "offers": [
       {
@@ -2472,13 +2472,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Nectar": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -2493,13 +2493,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "QVC": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Department Stores & Mass Retail",
     "offers": [
       {
@@ -2514,13 +2514,13 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       }
     ]
   },
   "Groupon": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "General Merchandise",
     "offers": [
       {
@@ -2535,7 +2535,7 @@
       },
       {
         "provider": "BeFrugal",
-        "rate": "10%",
+        "rate": "7%",
         "meta": "Cash back, paid via check or PayPal"
       },
       {
@@ -2551,7 +2551,7 @@
     ]
   },
   "Bed Bath & Beyond": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -2572,7 +2572,7 @@
     ]
   },
   "Overstock": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -2603,7 +2603,7 @@
     ]
   },
   "Serta": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Home & Furniture",
     "offers": [
       {
@@ -2629,7 +2629,7 @@
     ]
   },
   "Aveda": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2639,7 +2639,7 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "1%",
+        "rate": "6%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -2655,7 +2655,7 @@
     ]
   },
   "Origins": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2676,7 +2676,7 @@
     ]
   },
   "AliExpress": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "General Merchandise",
     "offers": [
       {
@@ -2697,7 +2697,7 @@
     ]
   },
   "Clarins": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2718,7 +2718,7 @@
     ]
   },
   "LegalZoom": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Software & Digital Services",
     "offers": [
       {
@@ -2734,7 +2734,7 @@
     ]
   },
   "iHerb": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Health & Wellness",
     "offers": [
       {
@@ -2744,7 +2744,7 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "3%",
+        "rate": "10%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -2760,7 +2760,7 @@
     ]
   },
   "Champs Sports": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Sporting Goods & Activewear",
     "offers": [
       {
@@ -2781,7 +2781,7 @@
     ]
   },
   "Oriental Trading": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "General Merchandise",
     "offers": [
       {
@@ -2797,7 +2797,7 @@
     ]
   },
   "Fenty Beauty": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2807,7 +2807,7 @@
       },
       {
         "provider": "TopCashback",
-        "rate": "6%",
+        "rate": "12%",
         "meta": "Cash back, no minimum"
       },
       {
@@ -2818,7 +2818,7 @@
     ]
   },
   "L'Occitane": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Beauty & Cosmetics",
     "offers": [
       {
@@ -2839,7 +2839,7 @@
     ]
   },
   "CruiseBound": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Travel & Hotels",
     "offers": [
       {
@@ -2850,7 +2850,7 @@
     ]
   },
   "Frame": {
-    "verified": "2026-09-17",
+    "verified": "2026-09-18",
     "category": "Apparel & Fashion",
     "offers": [
       {
