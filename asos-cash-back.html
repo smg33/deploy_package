@@ -91,6 +91,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .store-tips p{ font-size:13px; line-height:1.7; color:var(--ink-soft); }
   @media (max-width:640px){ .store-extra{ grid-template-columns:1fr; gap:24px; } }
   @media (max-width:480px){ .store-hero-row h1{ font-size:24px; } .store-logo{ width:42px; height:42px; } .store-logo img{ width:22px; height:22px; } .store-intro{ margin-left:0; } }
+  .amount-shell{ margin:0 0 24px 62px; }
+  .amount-box{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    background:#F1F1F3;
+    border:1px solid #D9D9DB;
+    border-radius:999px;
+    padding:14px 16px;
+    white-space:nowrap;
+    width:fit-content;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  .amount-box span{
+    font-size:13px;
+    color:var(--lav);
+    font-weight:600;
+  }
+  .amount-box input{
+    width:140px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:14px;
+    color:#4A4A4D;
+  }
+  .amount-box input::placeholder{ color:#A5A5AA; }
+  .dollar-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border-radius:8px;
+    padding:4px 0;
+    text-align:center;
+    margin-top:8px;
+  }
+  .card.best .dollar-pill{
+    color:var(--lav-deep);
+    background:var(--lav-soft);
+    font-weight:600;
+  }
+  @media (max-width:480px){ .amount-shell{ margin-left:0; width:100%; } .amount-box{ width:100%; } .amount-box input{ width:100%; } }
 </style>
 </head>
 
@@ -139,7 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="wrap">
 
   <header class="site-header">
-    <a href="index.html"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <a href="/"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><linearGradient id="tagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stop-color="#8FA0EA"/><stop offset="100%" stop-color="#6E56CF"/>
         </linearGradient></defs>
@@ -168,8 +213,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
   <p class="store-intro">Compare rates across RebatesMe, Rakuten, and Mr Rebates to get the most back at ASOS.</p>
 
+  <div class="amount-shell">
+    <div class="amount-box">
+      <span>$</span>
+      <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see dollar savings" min="0">
+    </div>
+  </div>
+
   <div id="cardList">
-    <div class="card best">
+    <div class="card best" data-rate-pct="3">
       <div class="ribbon">Best rate</div>
       <div class="card-top">
         <span class="provider-badge" style="background:#4C5A73">R</span>
@@ -177,12 +229,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div class="rate">3%</div>
       <div class="rate-label">Cash back</div>
+      <div class="dollar-pill" style="display:none"></div>
       <div class="provider-meta">Cash back, paid via PayPal</div>
       <a class="go-btn" href="https://www.rebatesme.com/en/stores/asos" target="_blank" rel="noopener sponsored">Shop &amp; earn 3% &rarr;</a>
-      <a class="referral-link" href="https://www.rebatesme.com/r/fonked" target="_blank" rel="noopener">Sign-up bonus &rarr;</a>
+      <a class="referral-link" href="https://www.rebatesme.com/r/fonked" target="_blank" rel="noopener">RebatesMe bonus &rarr;</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-rate-pct="2">
       
       <div class="card-top">
         <span class="provider-badge" style="background:#7B4FE0">R</span>
@@ -190,12 +243,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div class="rate">2%</div>
       <div class="rate-label">Cash back</div>
+      <div class="dollar-pill" style="display:none"></div>
       <div class="provider-meta">Cash back, paid quarterly</div>
       <a class="go-btn" href="https://www.rakuten.com/shop/asos" target="_blank" rel="noopener sponsored">Activate 2% &rarr;</a>
-      <a class="referral-link" href="https://www.rakuten.com/r/SHEARA151" target="_blank" rel="noopener">Sign-up bonus &rarr;</a>
+      <a class="referral-link" href="https://www.rakuten.com/r/SHEARA151" target="_blank" rel="noopener">Rakuten bonus &rarr;</a>
     </div>
 
-    <div class="card">
+    <div class="card" data-rate-pct="1">
       
       <div class="card-top">
         <span class="provider-badge" style="background:#3D8B6A">MR</span>
@@ -203,9 +257,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
       <div class="rate">1%</div>
       <div class="rate-label">Cash back</div>
+      <div class="dollar-pill" style="display:none"></div>
       <div class="provider-meta">Cash back, paid via PayPal</div>
       <a class="go-btn" href="https://www.mrrebates.com/search_stores.asp?t_search=ASOS" target="_blank" rel="noopener sponsored">Activate 1% &rarr;</a>
-      <a class="referral-link" href="http://www.mrrebates.com?refid=1313693" target="_blank" rel="noopener">Sign-up bonus &rarr;</a>
+      <a class="referral-link" href="http://www.mrrebates.com?refid=1313693" target="_blank" rel="noopener">Mr Rebates bonus &rarr;</a>
     </div>
   </div>
 
@@ -288,6 +343,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     menuBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
     document.addEventListener('click', (e) => { if(!e.target.closest('.nav-menu') && !e.target.closest('.menu-btn')){ closeMenu(); } });
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+  })();
+</script>
+<script>
+  // Purchase amount calculator - mirrors the homepage's amountInput/
+  // dollar-pill behavior so the $ savings a person sees while searching
+  // on the homepage doesn't just vanish once they land here. Also reads
+  // ?amount= from the URL, since the homepage now navigates here via a
+  // real page load (not an inline re-render) - the query param is how
+  // the typed amount survives that navigation.
+  (function(){
+    const input = document.getElementById('amountInput');
+    if (!input) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = parseFloat(params.get('amount'));
+    if (!isNaN(fromUrl) && fromUrl > 0) {
+      input.value = fromUrl;
+    }
+
+    function updatePills(){
+      const val = parseFloat(input.value);
+      const amount = (!isNaN(val) && val > 0) ? val : null;
+      document.querySelectorAll('.card[data-rate-pct]').forEach(card => {
+        const pill = card.querySelector('.dollar-pill');
+        if (!pill) return;
+        if (amount === null) {
+          pill.style.display = 'none';
+          pill.textContent = '';
+          return;
+        }
+        const ratePct = parseFloat(card.getAttribute('data-rate-pct'));
+        const dollarAmount = (amount * ratePct / 100).toFixed(2);
+        pill.textContent = `= $${dollarAmount}`;
+        pill.style.display = '';
+      });
+    }
+
+    input.addEventListener('input', updatePills);
+    updatePills();
   })();
 </script>
 <script src="stores-data.js"></script>

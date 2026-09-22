@@ -253,15 +253,23 @@ def build_offer_cards_html(offers, store_name, store_urls):
             # Short, per-card link - keeps the clear "this card's bonus"
             # pairing (each provider has its own unique referral URL) but
             # without repeating the same full sentence on every card.
+            # "{Provider} bonus" replaces the old plain "Sign-up bonus" -
+            # keeps the word "bonus" (the actual incentive) while naming
+            # the provider, so existing members can tell at a glance which
+            # bonus this is without losing the hook that makes someone
+            # click in the first place.
+            # Only the visible label changed; href is still the same
+            # referral URL/code as before.
             referral_html = (
                 f'<a class="referral-link" href="{html_escape(referral["url"])}" '
-                f'target="_blank" rel="noopener">Sign-up bonus &rarr;</a>'
+                f'target="_blank" rel="noopener">{html_escape(provider)} bonus &rarr;</a>'
             )
         ribbon_html = '<div class="ribbon">Best rate</div>' if is_best else ""
         card_class = "card best" if is_best else "card"
         cta_text = "Shop &amp; earn" if is_best else "Activate"
+        rate_num = rate.rstrip("%").strip()
         cards.append(f'''
-    <div class="{card_class}">
+    <div class="{card_class}" data-rate-pct="{html_escape(rate_num)}">
       {ribbon_html}
       <div class="card-top">
         <span class="provider-badge" style="background:{color}">{html_escape(initials)}</span>
@@ -269,6 +277,7 @@ def build_offer_cards_html(offers, store_name, store_urls):
       </div>
       <div class="rate">{html_escape(rate)}</div>
       <div class="rate-label">Cash back</div>
+      <div class="dollar-pill" style="display:none"></div>
       <div class="provider-meta">{html_escape(meta)}</div>
       <a class="go-btn" href="{html_escape(url)}" target="_blank" rel="noopener sponsored">{cta_text} {html_escape(rate)} &rarr;</a>
       {referral_html}
@@ -385,6 +394,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .store-tips p{{ font-size:13px; line-height:1.7; color:var(--ink-soft); }}
   @media (max-width:640px){{ .store-extra{{ grid-template-columns:1fr; gap:24px; }} }}
   @media (max-width:480px){{ .store-hero-row h1{{ font-size:24px; }} .store-logo{{ width:42px; height:42px; }} .store-logo img{{ width:22px; height:22px; }} .store-intro{{ margin-left:0; }} }}
+  .amount-shell{{ margin:0 0 24px 62px; }}
+  .amount-box{{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    background:#F1F1F3;
+    border:1px solid #D9D9DB;
+    border-radius:999px;
+    padding:14px 16px;
+    white-space:nowrap;
+    width:fit-content;
+    max-width:100%;
+    box-sizing:border-box;
+  }}
+  .amount-box span{{
+    font-size:13px;
+    color:var(--lav);
+    font-weight:600;
+  }}
+  .amount-box input{{
+    width:140px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:14px;
+    color:#4A4A4D;
+  }}
+  .amount-box input::placeholder{{ color:#A5A5AA; }}
+  .dollar-pill{{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border-radius:8px;
+    padding:4px 0;
+    text-align:center;
+    margin-top:8px;
+  }}
+  .card.best .dollar-pill{{
+    color:var(--lav-deep);
+    background:var(--lav-soft);
+    font-weight:600;
+  }}
+  @media (max-width:480px){{ .amount-shell{{ margin-left:0; width:100%; }} .amount-box{{ width:100%; }} .amount-box input{{ width:100%; }} }}
 </style>
 </head>
 
@@ -433,7 +487,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="wrap">
 
   <header class="site-header">
-    <a href="index.html"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <a href="/"><svg class="logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><linearGradient id="tagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stop-color="#8FA0EA"/><stop offset="100%" stop-color="#6E56CF"/>
         </linearGradient></defs>
@@ -461,6 +515,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="verified-badge">Verified {verified_date}</span>
   </div>
   <p class="store-intro">Compare rates across {provider_list} to get the most back at {store_name}.</p>
+
+  <div class="amount-shell">
+    <div class="amount-box">
+      <span>$</span>
+      <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see dollar savings" min="0">
+    </div>
+  </div>
 
   <div id="cardList">{cards_html}
   </div>
@@ -544,6 +605,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     menuBtn.addEventListener('click', (e) => {{ e.stopPropagation(); toggleMenu(); }});
     document.addEventListener('click', (e) => {{ if(!e.target.closest('.nav-menu') && !e.target.closest('.menu-btn')){{ closeMenu(); }} }});
     document.addEventListener('keydown', (e) => {{ if(e.key === 'Escape') closeMenu(); }});
+  }})();
+</script>
+<script>
+  // Purchase amount calculator - mirrors the homepage's amountInput/
+  // dollar-pill behavior so the $ savings a person sees while searching
+  // on the homepage doesn't just vanish once they land here. Also reads
+  // ?amount= from the URL, since the homepage now navigates here via a
+  // real page load (not an inline re-render) - the query param is how
+  // the typed amount survives that navigation.
+  (function(){{
+    const input = document.getElementById('amountInput');
+    if (!input) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const fromUrl = parseFloat(params.get('amount'));
+    if (!isNaN(fromUrl) && fromUrl > 0) {{
+      input.value = fromUrl;
+    }}
+
+    function updatePills(){{
+      const val = parseFloat(input.value);
+      const amount = (!isNaN(val) && val > 0) ? val : null;
+      document.querySelectorAll('.card[data-rate-pct]').forEach(card => {{
+        const pill = card.querySelector('.dollar-pill');
+        if (!pill) return;
+        if (amount === null) {{
+          pill.style.display = 'none';
+          pill.textContent = '';
+          return;
+        }}
+        const ratePct = parseFloat(card.getAttribute('data-rate-pct'));
+        const dollarAmount = (amount * ratePct / 100).toFixed(2);
+        pill.textContent = `= $${{dollarAmount}}`;
+        pill.style.display = '';
+      }});
+    }}
+
+    input.addEventListener('input', updatePills);
+    updatePills();
   }})();
 </script>
 <script src="stores-data.js"></script>

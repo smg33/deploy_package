@@ -300,6 +300,15 @@
     margin-bottom:10px;
   }
   .deal-card{ width:200px; }
+  .deal-card .provider-meta{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .deal-card .provider-meta .store-name-highlight{
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+  }
   .chip{
     display:inline-flex;
     align-items:center;
@@ -546,7 +555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="wrap" id="wrap">
 
   <header class="mini-header">
-    <a href="index.html" class="mini-logo" aria-label="Savvli home">
+    <a href="/" class="mini-logo" aria-label="Savvli home">
       <svg class="mini-logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="miniTagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
@@ -673,6 +682,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://x.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></a>
       <a href="https://www.instagram.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
       <a href="https://www.facebook.com/get.savvli" target="_blank" rel="noopener" aria-label="Savvli on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/><circle cx="12" cy="12" r="9"/></svg></a>
+      <a href="https://www.pinterest.com/savvli" target="_blank" rel="noopener" aria-label="Savvli on Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 17c1-3 1.7-5.6 2.2-7.7.3-1.2 2-1.1 2.3.1.4 1.7-.4 3.6-2.2 3.6-.9 0-1.6-.5-1.9-1.2"/></svg></a>
       <a href="https://www.producthunt.com/products/savvli" target="_blank" rel="noopener" aria-label="Savvli on Product Hunt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="9"/><path d="M10 8h2.5a2.5 2.5 0 0 1 0 5H10V8zM10 13v3"/></svg></a>
     </div>
   </div>
@@ -817,7 +827,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function goToStore(name){
     const store = STORES[name];
     if (store && store.offers.length > 0) {
-      window.location.href = slugifyStore(name) + '-cash-back.html';
+      let url = slugifyStore(name) + '-cash-back.html';
+      // Carry the typed purchase amount through to the static store page -
+      // it used to just vanish here once search stopped rendering results
+      // inline and started navigating to the real page instead.
+      const amount = getSpendAmount();
+      if (amount !== null) {
+        url += '?amount=' + encodeURIComponent(amount);
+      }
+      window.location.href = url;
       return;
     }
     runSearch(name);
@@ -1086,7 +1104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       badge.textContent = providerInitials(best.provider);
       document.getElementById('dealProvider').textContent = best.provider;
       document.getElementById('dealRateText').textContent = best.rate;
-      document.getElementById('dealStore').textContent = `at ${best.storeName}`;
+      document.getElementById('dealStore').innerHTML = `at <span class="store-name-highlight">${escapeHtml(best.storeName)}</span>`;
       const cta = document.getElementById('dealCta');
       cta.href = getProviderLink(best.provider, best.storeName);
       cta.textContent = `Activate ${best.rate} \u2192`;
@@ -1103,27 +1121,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const REFERRAL_LINKS = {
     "Rakuten": {
       url: "https://www.rakuten.com/r/SHEARA151",
-      text: "New here? Sign up & earn a bonus"
+      text: "Rakuten bonus \u2192"
     },
     "Mr Rebates": {
       url: "http://www.mrrebates.com?refid=1313693",
-      text: "New here? Sign up & earn a bonus"
+      text: "Mr Rebates bonus \u2192"
     },
     "Capital One Shopping": {
       url: "https://capitaloneshopping.com/r/98716fac-1c11-4403-a86c-f0c23b8ef46d",
-      text: "New here? Sign up & earn a bonus"
+      text: "Capital One Shopping bonus \u2192"
     },
     "TopCashback": {
       url: "https://www.topcashback.com/ref/member845906671136",
-      text: "New here? Sign up & earn a bonus"
+      text: "TopCashback bonus \u2192"
     },
     "BeFrugal": {
       url: "https://www.befrugal.com/rs/NXRWXBM/",
-      text: "New here? Sign up & earn a bonus"
+      text: "BeFrugal bonus \u2192"
     },
     "RebatesMe": {
       url: "https://www.rebatesme.com/r/fonked",
-      text: "New here? Sign up & earn a bonus"
+      text: "RebatesMe bonus \u2192"
     }
   };
 
