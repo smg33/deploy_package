@@ -300,15 +300,6 @@
     margin-bottom:10px;
   }
   .deal-card{ width:200px; }
-  .deal-card .provider-meta{
-    font-size:12px;
-    color:var(--ink-soft);
-  }
-  .deal-card .provider-meta .store-name-highlight{
-    font-size:17px;
-    font-weight:600;
-    color:var(--ink);
-  }
   .chip{
     display:inline-flex;
     align-items:center;
@@ -1046,23 +1037,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     "Bloomingdale's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bloomingdale%27s"
   };
 
-  // Best cash back rate today - scans every store's every offer for the
-  // single highest rate currently in the real data. Fully automatic, no
-  // manual curation - updates itself every time the scraper runs. Runs
-  // here specifically because it needs STORE_DEEP_LINKS (declared just
-  // above) and getProviderLink() (which reads it) - calling this any
-  // earlier in the script throws a ReferenceError, since const bindings
-  // aren't usable before their own declaration line runs.
+  // Best cash back rate today - picks from the strongest CURRENT offers,
+  // but two things changed from a plain "highest number wins" scan:
+  //
+  // 1. STORE_OF_DAY_EXCLUDE skips stores whose advertised rate is
+  //    typically a new-customer-only or per-order-capped promo rate
+  //    rather than something a normal repeat shopper actually gets -
+  //    Temu and other marketplace-style stores are the classic case
+  //    (checked against how their cashback offers are structured
+  //    elsewhere: a boosted first-order rate, a much lower standard
+  //    rate, and a hard dollar cap per transaction). Showing that
+  //    boosted number as this site's single biggest, most prominent
+  //    claim overstates what most visitors would actually receive.
+  //    Add a store name here if the same pattern shows up elsewhere.
+  // 2. Instead of always picking the single global max (which just
+  //    freezes on whichever store has the single highest number,
+  //    forever), this rotates - deterministically, by date, so it's
+  //    the same for everyone on a given day and doesn't jump around
+  //    on refresh - among the top eligible offers. Still always a
+  //    genuinely strong, real rate, just not stuck on one store.
+  const STORE_OF_DAY_EXCLUDE = new Set(["Temu", "AliExpress"]);
+  const STORE_OF_DAY_POOL_SIZE = 5;
   (function(){
-    let best = null; // { storeName, provider, rate, rateNum }
+    const candidates = [];
     storeNames.forEach(name => {
+      if (STORE_OF_DAY_EXCLUDE.has(name)) return;
       (STORES[name].offers || []).forEach(offer => {
         const rateNum = parseFloat(offer.rate);
-        if (!best || rateNum > best.rateNum) {
-          best = { storeName: name, provider: offer.provider, rate: offer.rate, rateNum };
-        }
+        candidates.push({ storeName: name, provider: offer.provider, rate: offer.rate, rateNum });
       });
     });
+    candidates.sort((a, b) => b.rateNum - a.rateNum);
+    const pool = candidates.slice(0, STORE_OF_DAY_POOL_SIZE);
+
+    let best = null;
+    if (pool.length > 0) {
+      // Date-seeded index so the pick is stable for the whole day and
+      // the same for every visitor, but changes day to day.
+      const dayStamp = new Date().toISOString().slice(0, 10); // e.g. "2026-09-22"
+      let seed = 0;
+      for (let i = 0; i < dayStamp.length; i++) seed = (seed * 31 + dayStamp.charCodeAt(i)) >>> 0;
+      best = pool[seed % pool.length];
+    }
 
     if (best) {
       const badge = document.getElementById('dealProviderBadge');
@@ -1070,7 +1086,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       badge.textContent = providerInitials(best.provider);
       document.getElementById('dealProvider').textContent = best.provider;
       document.getElementById('dealRateText').textContent = best.rate;
-      document.getElementById('dealStore').innerHTML = `at <span class="store-name-highlight">${escapeHtml(best.storeName)}</span>`;
+      document.getElementById('dealStore').textContent = `at ${best.storeName}`;
       const cta = document.getElementById('dealCta');
       cta.href = getProviderLink(best.provider, best.storeName);
       cta.textContent = `Activate ${best.rate} \u2192`;
