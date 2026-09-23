@@ -243,6 +243,15 @@ def build_offer_cards_html(offers, store_name, store_urls):
         provider = offer["provider"]
         rate = offer["rate"]
         meta = offer["meta"]
+        # "Cash back, paid via PayPal" -> "Paid via PayPal" - the card
+        # already has a bold "CASH BACK" label right above this text, so
+        # repeating those two words here was pure redundancy, and
+        # trimming them is what makes room for this line to share a row
+        # with the dollar amount instead of always wrapping to its own
+        # line (see the meta-row CSS/JS below).
+        if meta.lower().startswith("cash back, "):
+            meta = meta[len("cash back, "):]
+            meta = meta[0].upper() + meta[1:]
         is_best = i == 0
         color = PROVIDER_COLORS.get(provider, "#6E56CF")
         initials = provider_initials(provider)
@@ -277,8 +286,10 @@ def build_offer_cards_html(offers, store_name, store_urls):
       </div>
       <div class="rate">{html_escape(rate)}</div>
       <div class="rate-label">Cash back</div>
-      <div class="dollar-pill" style="display:none"></div>
-      <div class="provider-meta">{html_escape(meta)}</div>
+      <div class="meta-row">
+        <span class="dollar-pill" style="display:none"></span>
+        <span class="provider-meta">{html_escape(meta)}</span>
+      </div>
       <a class="go-btn" href="{html_escape(url)}" target="_blank" rel="noopener sponsored">{cta_text} {html_escape(rate)} &rarr;</a>
       {referral_html}
     </div>''')
@@ -452,7 +463,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-weight:600;
   }}
   .amount-box input{{
-    width:100px;
+    width:160px;
     border:none;
     outline:none;
     background:transparent;
@@ -461,21 +472,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color:var(--ink);
   }}
   .amount-box input::placeholder{{ color:#A5A5AA; font-weight:400; }}
+  .meta-row{{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:8px;
+    margin-bottom:12px;
+  }}
+  .meta-row .provider-meta{{
+    margin-top:0;
+    margin-bottom:0;
+  }}
   .dollar-pill{{
     font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    font-weight:500;
+    font-size:12px;
+    font-weight:600;
     color:var(--ink-soft);
     background:var(--paper);
-    border-radius:8px;
-    padding:4px 0;
-    text-align:center;
-    margin-top:8px;
+    border-radius:6px;
+    padding:2px 7px;
   }}
   .card.best .dollar-pill{{
     color:var(--lav-deep);
     background:var(--lav-soft);
-    font-weight:600;
   }}
   .calc-bar--stacked{{ flex-direction:column; align-items:stretch; }}
   .calc-bar--stacked .amount-box{{ width:100%; }}
@@ -566,13 +587,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="calc-left">
       <div class="calc-icon" aria-hidden="true">&#129518;</div>
       <div>
-        <h2>See your savings</h2>
+        <h2>See your cash back</h2>
         <p>Enter your purchase amount</p>
       </div>
     </div>
     <div class="amount-box">
       <span>$</span>
-      <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see dollar savings" min="0">
+      <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see cash back in dollars" min="0">
     </div>
   </div>
 
@@ -690,7 +711,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }}
         const ratePct = parseFloat(card.getAttribute('data-rate-pct'));
         const dollarAmount = (amount * ratePct / 100).toFixed(2);
-        pill.textContent = `= $${{dollarAmount}}`;
+        pill.textContent = `$${{dollarAmount}}`;
         pill.style.display = '';
       }});
     }}
