@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+<title>Savvli - Compare Cash Back Rates Across Every Platform</title>
+<meta name="description" content="Savvli - built for savvy shoppers who maximize cash back by checking who pays the most before they buy.">
+<link rel="canonical" href="https://savvli.com/">
+<meta name="robots" content="index, follow">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Savvli">
+<meta property="og:title" content="Savvli - Compare Cash Back Rates Across Every Platform">
+<meta property="og:description" content="Savvli - built for savvy shoppers who maximize cash back by checking who pays the most before they buy.">
+<meta property="og:url" content="https://savvli.com/">
+<meta property="og:image" content="https://savvli.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Savvli - Compare Cash Back Rates Across Every Platform">
+<meta name="twitter:description" content="Savvli - built for savvy shoppers who maximize cash back by checking who pays the most before they buy.">
+<meta name="twitter:image" content="https://savvli.com/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F6FC;
+    --ink:#14121B;
+    --ink-soft:#5B5665;
+    --line:#E5E1F0;
+    --lav:#6E56CF;
+    --lav-soft:#ECE7FA;
+    --lav-deep:#4C3A9E;
+    --green:#2F7D53;
+    --green-soft:#E3EFE7;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  .wrap{ position:relative; z-index:1; }
+
+  .mini-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:24px 0 0;
+    flex-wrap:wrap;
+    row-gap:12px;
+  }
+  .mini-header a.mini-logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+  }
+  .mini-logo-mark{ width:24px; height:24px; flex-shrink:0; }
+  .mini-logo-text{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:18px;
+    color:var(--ink);
+  }
+  .mini-logo-text .dot{
+    color:var(--lav);
+    display:inline-block;
+    animation:pulse-dot 2.6s ease-in-out infinite;
+  }
+  @media (max-width:680px){
+    .mini-header{ padding-left:44px; }
+  }
+  @media (max-width:480px){
+    .mini-header{ padding-left:40px; }
+  }
+
+  /* --- header / hero --- */
+  .hero{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding-top:64px;
+    padding-bottom:8px;
+    transition:padding .4s ease;
+  }
+  .wrap.active .hero{
+    padding-top:36px;
+    padding-bottom:0;
+  }
+
+  @keyframes pulse-dot{
+    0%, 100%{ transform:scale(1); opacity:1; }
+    50%{ transform:scale(1.35); opacity:0.7; }
+  }
+
+  .tagline{
+    margin-top:0;
+    color:var(--ink-soft);
+    font-size:30px;
+    font-weight:500;
+    line-height:1.3;
+    white-space:normal;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+    overflow:hidden;
+  }
+  .tagline-accent{ color:var(--lav-deep); font-weight:600; white-space:nowrap; }
+  .wrap.active .tagline{ opacity:0; height:0; margin:0; }
+
+  .stat-badge-search-wrap{
+    display:flex;
+    justify-content:center;
+    margin-top:14px;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+    overflow:hidden;
+  }
+  .wrap.active .stat-badge-search-wrap{ opacity:0; height:0; margin:0; pointer-events:none; }
+  .stat-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--lav-deep);
+    background:var(--lav-soft);
+    padding:6px 14px;
+    border-radius:999px;
+  }
+  .stat-badge .dot-pulse{
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--lav);
+    animation:pulse-dot 2.6s ease-in-out infinite;
+  }
+
+  /* --- search --- */
+  .search-row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .search-shell{
+    width:100%;
+    margin-top:32px;
+    position:relative;
+    transition:margin-top .5s ease;
+  }
+  .wrap.active .search-shell{ margin-top:20px; }
+  .amount-shell{
+    flex-shrink:0;
+    margin-top:32px;
+    transition:margin-top .5s ease;
+  }
+  .wrap.active .amount-shell{ margin-top:20px; }
+  .amount-box{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    background:#F1F1F3;
+    border:1px solid #D9D9DB;
+    border-radius:999px;
+    padding:14px 16px;
+    white-space:nowrap;
+  }
+  .amount-box span{
+    font-size:13px;
+    color:var(--lav);
+    font-weight:600;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .amount-box input{
+    width:140px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:14px;
+    color:#4A4A4D;
+  }
+  .amount-box input::placeholder{ color:#A5A5AA; }
+  @media (max-width:520px){
+    .search-row{ flex-direction:column; }
+    .amount-shell{ width:100%; margin-top:10px; }
+    .amount-box{ width:100%; box-sizing:border-box; }
+    .amount-box input{ width:100%; }
+  }
+
+  .search-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:14px 20px;
+    box-shadow:0 1px 2px rgba(20,18,27,0.04);
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .search-box:focus-within{
+    border-color:var(--ink);
+    box-shadow:0 2px 10px rgba(110,86,207,0.14);
+  }
+  .search-box svg{ flex-shrink:0; color:var(--lav); }
+  .search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:16px;
+    color:var(--ink);
+    background:transparent;
+  }
+  .search-box input::placeholder{ color:#A199B3; }
+  .clear-btn{
+    border:none;
+    background:none;
+    color:var(--ink-soft);
+    cursor:pointer;
+    font-size:18px;
+    line-height:1;
+    padding:2px;
+    display:none;
+  }
+  .clear-btn.show{ display:block; }
+
+  /* --- autocomplete --- */
+  .suggestions{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0; right:0;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:0 8px 24px rgba(20,18,27,0.08);
+    overflow:hidden;
+    z-index:10;
+    display:none;
+  }
+  .suggestions.show{ display:block; }
+  .suggestion-item{
+    padding:12px 20px;
+    font-size:15px;
+    cursor:pointer;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .suggestion-item:hover, .suggestion-item.highlighted{ background:var(--lav-soft); }
+  .suggestion-item + .suggestion-item{ border-top:1px solid var(--line); }
+  .suggestion-item .hint{ font-size:12px; color:var(--ink-soft); }
+
+  /* --- popular chips (only on homepage state) --- */
+  .popular{
+    margin-top:22px;
+    margin-bottom:40px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+  }
+  .wrap.active .popular{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
+  .popular span{ font-size:12px; font-weight:500; color:#8A8792; align-self:center; margin-right:2px; }
+
+  .deal-of-day-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:40px;
+    transition:opacity .3s ease, height .3s ease, margin .3s ease;
+  }
+  .wrap.active .deal-of-day-wrap{ opacity:0; height:0; margin:0; overflow:hidden; pointer-events:none; }
+  .deal-heading{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    font-weight:500;
+    color:var(--lav-deep);
+    margin-bottom:10px;
+  }
+  .deal-card{ width:200px; }
+  .deal-card .provider-meta{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .deal-card .provider-meta .store-name-highlight{
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    border:none;
+    background:#F1F1F3;
+    border-radius:999px;
+    padding:5px 14px 5px 5px;
+    font-size:12px;
+    font-weight:500;
+    color:#8A8792;
+    cursor:pointer;
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    transition:color .15s ease, background .15s ease, transform .15s ease;
+  }
+  .chip:hover{
+    background:var(--lav);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+  .chip-icon{
+    width:20px; height:20px;
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(20,18,27,0.12);
+    overflow:hidden;
+  }
+  .chip-icon img{
+    width:13px; height:13px;
+    object-fit:contain;
+    display:block;
+  }
+
+  /* --- results --- */
+  .results{
+    margin-top:36px;
+    display:none;
+  }
+  .results.show{ display:block; }
+
+  .results-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:16px;
+  }
+  .results-head h1{
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight:500;
+    font-size:22px;
+  }
+  .results-head .updated{
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .results-head .updated.unverified{
+    color:#B0403A;
+    font-weight:500;
+  }
+  .savvy-note{
+    font-size:12.5px;
+    color:var(--lav-deep);
+    font-weight:500;
+    margin-bottom:16px;
+  }
+
+  #cardList{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(160px, 200px));
+    gap:10px;
+    justify-content:start;
+  }
+
+  .dollar-pill{
+    font-family:'IBM Plex Mono Medium', monospace;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    background:var(--paper);
+    border-radius:8px;
+    padding:4px 0;
+    text-align:center;
+    margin-top:8px;
+  }
+  .card.best .dollar-pill{
+    color:var(--lav-deep);
+    background:var(--lav-soft);
+    font-weight:600;
+  }
+
+  /* empty state */
+  .empty{
+    text-align:center;
+    padding:32px 20px;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+
+  a:focus-visible, button:focus-visible, .chip:focus-visible, .suggestion-item:focus-visible{
+    outline:2px solid var(--lav);
+    outline-offset:2px;
+  }
+
+  @media (max-width:480px){
+    .logo{ font-size:36px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; }
+  }
+</style>
+<!-- Consent Mode default state (must load before GA4) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T8GZ45Q7');</script>
+<!-- End Google Tag Manager -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://savvli.com/#organization",
+      "name": "Savvli",
+      "url": "https://savvli.com",
+      "logo": "https://savvli.com/logo.png",
+      "description": "Savvli compares cash-back rates across major cash-back platforms so shoppers can find the highest rate for any store in one search.",
+      "sameAs": [
+        "https://x.com/get_savvli",
+        "https://www.producthunt.com/products/savvli"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://savvli.com/#website",
+      "url": "https://savvli.com",
+      "name": "Savvli",
+      "description": "Compare cash-back rates across Rakuten, TopCashback, BeFrugal, and more in one search.",
+      "publisher": { "@id": "https://savvli.com/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://savvli.com/?store={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://savvli.com/#application",
+      "name": "Savvli",
+      "url": "https://savvli.com",
+      "applicationCategory": "ShoppingApplication",
+      "description": "Free tool to compare cash-back rates across major shopping platforms for any store.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8GZ45Q7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to understand how Savvli is used. You can accept or decline analytics cookies - either way, the site works the same.</p>
+  <div class="cookie-actions">
+    <button id="cookie-decline">Decline</button>
+    <button id="cookie-accept">Accept</button>
+  </div>
+</div>
+<script>
+  (function(){
+    var CONSENT_KEY = 'savvli_consent';
+    var banner = document.getElementById('cookie-banner');
+    var accepted = localStorage.getItem(CONSENT_KEY);
+
+    function updateConsent(state){
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': state,
+          'ad_storage': state,
+          'ad_user_data': state,
+          'ad_personalization': state
+        });
+      }
+    }
+
+    if (!accepted) {
+      banner.classList.add('show');
+    } else if (accepted === 'granted') {
+      updateConsent('granted');
+    }
+
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem(CONSENT_KEY, 'granted');
+      updateConsent('granted');
+      banner.classList.remove('show');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function(){
+      localStorage.setItem(CONSENT_KEY, 'denied');
+      banner.classList.remove('show');
+    });
+  })();
+</script>
+
+
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+  <svg class="icon-bars" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<nav class="nav-menu" id="navMenu" role="menu" aria-label="Main">
+  <a href="browse-stores.html" role="menuitem">Browse stores</a>
+  <a href="compare.html" role="menuitem">Compare platforms</a>
+  <a href="guides.html" role="menuitem">Learn</a>
+  <a href="how-it-works.html" role="menuitem">How it works</a>
+  <a href="about.html" role="menuitem">About</a>
+  <a href="suggest-store.html" role="menuitem">Suggest a store</a>
+</nav>
+
+<div class="wrap" id="wrap">
+
+  <header class="mini-header">
+    <a href="/" class="mini-logo" aria-label="Savvli home">
+      <svg class="mini-logo-mark" viewBox="0 0 854.844825 1012.790962" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="miniTagGrad" x1="0" y1="0" x2="854.844825" y2="1012.790962" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#8FA0EA"/>
+            <stop offset="100%" stop-color="#6E56CF"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(-279.615392,1073.887818) scale(0.1,-0.1)" fill="url(#miniTagGrad)" stroke="none">
+          <path d="M9322 10729 c-704 -58 -1344 -523 -1602 -1165 -41 -101 -39 -105 57 -142 277 -106 535 -44 672 163 293 445 919 640 1451 453 841 -297 1075 -1308 469 -2024 -113 -134 -315 -299 -331 -271 -4 8 -68 169 -142 358 -220 564 -287 731 -318 794 -41 81 -136 174 -218 213 -151 72 -209 70 -746 -18 -496 -82 -772 -122 -1269 -185 -198 -25 -419 -54 -491 -66 -1025 -158 -1718 -879 -1750 -1824 -25 -720 338 -1329 1121 -1882 145 -102 234 -158 585 -368 594 -355 856 -539 1065 -749 347 -348 496 -701 457 -1081 -85 -814 -943 -1291 -1745 -969 -114 46 -137 59 -457 249 -193 115 -1455 859 -1770 1043 -80 46 -288 170 -462 274 l-317 189 123 202 c528 866 713 1171 871 1432 100 165 200 330 223 367 42 68 42 68 7 127 -109 185 -193 459 -233 761 -8 55 -8 55 -389 -580 -613 -1023 -898 -1494 -1218 -2016 -184 -298 -207 -413 -120 -584 68 -136 96 -156 635 -465 70 -40 907 -534 1145 -675 99 -59 376 -222 615 -362 1008 -591 1612 -946 1875 -1102 307 -182 356 -205 460 -213 200 -15 322 59 471 289 690 1059 857 1341 932 1573 228 706 17 1477 -563 2060 -235 237 -487 418 -970 697 -721 417 -1114 706 -1322 970 -591 749 -261 1708 657 1907 75 16 1238 212 1760 296 368 59 484 39 564 -97 30 -52 330 -838 322 -845 -31 -31 -327 -53 -471 -34 -123 16 -291 62 -410 112 -195 82 -373 53 -469 -74 -135 -181 -76 -388 138 -487 407 -188 875 -239 1314 -144 72 16 127 23 131 18 7 -7 284 -708 406 -1029 32 -84 44 -220 26 -305 -21 -99 -54 -161 -256 -480 -110 -173 -263 -416 -341 -539 l-141 -225 43 -94 c92 -197 171 -452 209 -676 8 -49 16 -91 18 -92 1 -1 44 66 96 149 52 84 147 235 211 337 691 1089 746 1182 803 1351 70 203 76 490 16 701 -7 24 -71 192 -142 373 -219 561 -289 739 -303 777 -13 37 -13 37 99 111 557 367 891 919 937 1547 67 925 -578 1763 -1494 1939 -95 19 -346 43 -401 40 -11 -1 -66 -6 -123 -10z"/>
+        </g>
+      </svg>
+      <span class="mini-logo-text">Savvli<span class="dot">.</span></span>
+    </a>
+    <nav class="header-nav-row" aria-label="Main">
+      <a href="browse-stores.html">Browse</a>
+      <a href="compare.html">Compare</a>
+      <a href="guides.html">Learn</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="about.html">About</a>
+      <a href="suggest-store.html" class="nav-cta">Suggest a store</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="tagline">Type a store. See who <span class="tagline-accent">pays the most back</span>.</div>
+  </div>
+
+
+  <div class="search-row">
+    <div class="search-shell">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="text" placeholder="Search a store - Nike, Target, Sephora..." autocomplete="off" aria-label="Search a store" role="combobox" aria-expanded="false" aria-controls="suggestions" aria-autocomplete="list">
+        <button class="clear-btn" id="clearBtn" aria-label="Clear search">&times;</button>
+      </div>
+      <div class="suggestions" id="suggestions" role="listbox"></div>
+    </div>
+    <div class="amount-shell">
+      <div class="amount-box">
+        <span>$</span>
+        <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see cash back in dollars" min="0">
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-badge-search-wrap">
+    <div class="stat-badge" id="statBadgeSearch"></div>
+  </div>
+
+  <div class="popular" id="popular">
+    <span>Popular:</span>
+  </div>
+
+  <div class="deal-of-day-wrap" id="dealOfDayWrap" style="display:none;">
+    <div class="deal-heading">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+      Best cash back rate today
+    </div>
+    <div class="card best deal-card" id="dealOfDay">
+      <div class="ribbon">Store of the day</div>
+      <div class="card-top">
+        <span class="provider-badge" id="dealProviderBadge"></span>
+        <span class="provider-name" id="dealProvider"></span>
+      </div>
+      <div class="rate" id="dealRateText"></div>
+      <div class="rate-label">Cash back</div>
+      <div class="provider-meta" id="dealStore"></div>
+      <a href="#" id="dealCta" class="go-btn">Activate &rarr;</a>
+    </div>
+  </div>
+
+  <div class="results" id="results">
+    <div class="results-head">
+      <h1 id="resultsStoreName"></h1>
+      <span class="updated" id="resultsUpdated"></span>
+    </div>
+    <p class="savvy-note">Savvy move - you checked first.</p>
+    <div id="cardList"></div>
+  </div>
+
+<div class="site-footer-v2">
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h3>Product</h3>
+      <ul>
+        <li><a href="browse-stores.html">Browse stores</a></li>
+        <li><a href="compare.html">Compare platforms</a></li>
+        <li><a href="guides.html">Guides</a></li>
+        <li><a href="suggest-store.html">Suggest a store</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Learn</h3>
+      <ul>
+        <li><a href="what-is-cash-back.html">What is cash back?</a></li>
+        <li><a href="are-cash-back-sites-safe.html">Are cash back sites safe?</a></li>
+        <li><a href="how-to-maximize-cash-back.html">How to maximize cash back</a></li>
+        <li><a href="cash-back-glossary.html">Glossary</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="how-it-works.html">How it works</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <div class="stat-badge" id="statBadge"></div>
+      <span>&copy; 2026 Savvli</span>
+      <span class="sep">&middot;</span>
+      <a href="terms.html">Terms</a>
+      <span class="sep">&middot;</span>
+      <a href="privacy.html">Privacy</a>
+      <span class="sep">&middot;</span>
+      <button type="button" onclick="localStorage.removeItem('savvli_consent'); location.reload();">Cookie preferences</button>
+    </div>
+    <div class="footer-social">
+      <a href="https://x.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></a>
+      <a href="https://www.instagram.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+      <a href="https://www.facebook.com/get.savvli" target="_blank" rel="noopener" aria-label="Savvli on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/><circle cx="12" cy="12" r="9"/></svg></a>
+      <a href="https://www.pinterest.com/savvli" target="_blank" rel="noopener" aria-label="Savvli on Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 17c1-3 1.7-5.6 2.2-7.7.3-1.2 2-1.1 2.3.1.4 1.7-.4 3.6-2.2 3.6-.9 0-1.6-.5-1.9-1.2"/></svg></a>
+      <a href="https://www.producthunt.com/products/savvli" target="_blank" rel="noopener" aria-label="Savvli on Product Hunt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="9"/><path d="M10 8h2.5a2.5 2.5 0 0 1 0 5H10V8zM10 13v3"/></svg></a>
+    </div>
+  </div>
+</div>
+</div>
+<script src="stores-data.js"></script>
+<script>
+  // Real data, generated daily by scripts/scrape_rates.py. Some providers'
+  // parsers are still unverified against real, raw HTML and have produced
+  // wrong rates before - hide those until they're fixed and verified the
+  // same way TopCashback and Rakuten already have been.
+  //
+  // RebatesMe was verified correct against real raw HTML, but is CURRENTLY
+  // failing on every real scraper run (likely IP-blocked specifically from
+  // GitHub Actions' servers, not a code bug - the same request from a home
+  // connection returns the real page). Hidden here so the site never shows
+  // its stale/wrong fallback data. The scraper keeps trying it in the
+  // background; re-add "RebatesMe" here once scrape_log.json shows it
+  // consistently succeeding again.
+  // Real data, generated daily by scripts/scrape_rates.py. BeFrugal and
+  // Capital One Shopping are still using unverified/broken parsers -
+  // hidden until fixed and verified the same way the others were.
+  // RebatesMe and Mr Rebates were both previously broken (wrong URL
+  // patterns causing the same wrong number for every store) - both fixed
+  // and confirmed showing genuinely varied, correct rates per store.
+  const VERIFIED_PROVIDERS = new Set(["TopCashback", "Rakuten", "RebatesMe", "Mr Rebates"]);
+  Object.keys(STORES).forEach(name => {
+    STORES[name].offers = STORES[name].offers.filter(o => VERIFIED_PROVIDERS.has(o.provider));
+    // Keep the store searchable even with zero verified offers right now -
+    // it's a temporary data gap, not proof Savvli doesn't track this store.
+    // renderCards() shows an honest "not available" message for this case.
+  });
+
+  const storeNames = Object.keys(STORES);
+
+  // Live stat badge - computed from actual data, never hardcoded
+  (function(){
+    const verifiedCount = storeNames.filter(name => STORES[name].verified).length;
+    const badgeHTML = `<span class="dot-pulse" aria-hidden="true"></span>${verifiedCount} stores verified and growing`;
+    const badge = document.getElementById('statBadge');
+    if (badge) badge.innerHTML = badgeHTML;
+    const badgeSearch = document.getElementById('statBadgeSearch');
+    if (badgeSearch) badgeSearch.innerHTML = badgeHTML;
+  })();
+
+  const wrap = document.getElementById('wrap');
+  const input = document.getElementById('searchInput');
+  const clearBtn = document.getElementById('clearBtn');
+  const suggestionsEl = document.getElementById('suggestions');
+  const resultsEl = document.getElementById('results');
+  const cardListEl = document.getElementById('cardList');
+  const resultsStoreName = document.getElementById('resultsStoreName');
+  const resultsUpdated = document.getElementById('resultsUpdated');
+  const popularEl = document.getElementById('popular');
+
+  let highlightedIndex = -1;
+  let currentSuggestions = [];
+
+  // Real favicons, fetched via Google's public favicon service - the same
+  // technique browsers use for site icons/speed-dial tabs. Only needs a
+  // domain per store, so adding a new store to the popular list later is
+  // a one-line addition, not a manual icon-sourcing task.
+  const STORE_DOMAINS = {
+    "Nike": "nike.com",
+    "Target": "target.com",
+    "Sephora": "sephora.com",
+    "Expedia": "expedia.com",
+    "Wayfair": "wayfair.com",
+    "Bloomingdale's": "bloomingdales.com"
+  };
+  function faviconUrlFor(domain){
+    return `https://www.google.com/s2/favicons?sz=64&domain=${encodeURIComponent(domain)}`;
+  }
+
+  ["Nike", "Target", "Sephora", "Expedia", "Wayfair", "Bloomingdale's"].forEach(name => {
+    const chip = document.createElement('button');
+    chip.className = 'chip';
+    const domain = STORE_DOMAINS[name];
+    const iconHtml = domain
+      ? `<span class="chip-icon"><img src="${faviconUrlFor(domain)}" alt="" loading="lazy"></span>`
+      : '';
+    chip.innerHTML = `${iconHtml}${escapeHtml(name)}`;
+    chip.addEventListener('click', () => goToStore(name));
+    popularEl.appendChild(chip);
+  });
+
+  function renderSuggestions(query){
+    if(!query){
+      suggestionsEl.classList.remove('show');
+      input.setAttribute('aria-expanded', 'false');
+      currentSuggestions = [];
+      return;
+    }
+    const q = query.toLowerCase();
+    currentSuggestions = storeNames.filter(n => n.toLowerCase().includes(q));
+    highlightedIndex = -1;
+
+    if(currentSuggestions.length === 0){
+      suggestionsEl.innerHTML = `<div class="empty">No store matches "${escapeHtml(query)}" yet.</div>`;
+      suggestionsEl.classList.add('show');
+      input.setAttribute('aria-expanded', 'true');
+      return;
+    }
+
+    suggestionsEl.innerHTML = currentSuggestions.map((name, i) => `
+      <div class="suggestion-item" role="option" data-index="${i}" tabindex="-1">
+        <span>${escapeHtml(name)}</span>
+        <span class="hint">${STORES[name].offers.length > 0 ? STORES[name].offers.length + ' offers' : 'checking rates...'}</span>
+      </div>
+    `).join('');
+
+    suggestionsEl.querySelectorAll('.suggestion-item').forEach((el, i) => {
+      el.addEventListener('click', () => goToStore(currentSuggestions[i]));
+    });
+
+    suggestionsEl.classList.add('show');
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Matches scripts/generate_seo_pages.py's slugify() exactly - both must
+  // produce the same filename or these links 404. "Kohl's" -> "kohls",
+  // "Booking.com" -> "booking-com".
+  function slugifyStore(name){
+    return name.toLowerCase()
+      .replace(/['\u2019]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  // Selecting a store now navigates to its real static SEO page (same
+  // page Google would land someone on) instead of rendering results
+  // inline - keeps exactly one canonical page/design per store instead
+  // of two different experiences with competing titles. Falls back to
+  // the old inline "checking rates" view only for stores with no
+  // verified offers yet, since no static page exists for those.
+  function goToStore(name){
+    const store = STORES[name];
+    if (store && store.offers.length > 0) {
+      let url = slugifyStore(name) + '-cash-back.html';
+      // Carry the typed purchase amount through to the static store page -
+      // it used to just vanish here once search stopped rendering results
+      // inline and started navigating to the real page instead.
+      const amount = getSpendAmount();
+      if (amount !== null) {
+        url += '?amount=' + encodeURIComponent(amount);
+      }
+      window.location.href = url;
+      return;
+    }
+    runSearch(name);
+  }
+
+  const PROVIDER_COLORS = {
+    "Rakuten": "#7B4FE0",
+    "Mr Rebates": "#3D8B6A",
+    "Capital One Shopping": "#B0403A",
+    "TopCashback": "#2F6FB5",
+    "BeFrugal": "#C97A2E",
+    "RebatesMe": "#4C5A73"
+  };
+
+  const PROVIDER_URLS = {
+    "Rakuten": "https://www.rakuten.com/",
+    "Mr Rebates": "https://www.mrrebates.com/",
+    "Capital One Shopping": "https://capitaloneshopping.com/",
+    "TopCashback": "https://www.topcashback.com/",
+    "BeFrugal": "https://www.befrugal.com/",
+    "RebatesMe": "https://www.rebatesme.com/"
+  };
+
+  // Real per-store URLs, generated straight from data/stores_config.json
+  // - the exact same URLs the scraper itself uses to fetch each rate.
+  // Guarantees "Shop & earn"/"Activate" always lands on the real store
+  // page for that provider, never a generic homepage guess. Falls back
+  // to a provider's homepage only if a store+provider combo is somehow
+  // missing here.
+  const STORE_DEEP_LINKS = {
+    "Nike|BeFrugal": "https://www.befrugal.com/rs/nike/",
+    "Nike|TopCashback": "https://www.topcashback.com/nike/",
+    "Nike|RebatesMe": "https://www.rebatesme.com/en/stores/nike",
+    "Nike|Rakuten": "https://www.rakuten.com/shop/nike",
+    "Nike|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Nike",
+    "Old Navy|BeFrugal": "https://www.befrugal.com/rs/old-navy/",
+    "Old Navy|TopCashback": "https://www.topcashback.com/old-navy/",
+    "Old Navy|RebatesMe": "https://www.rebatesme.com/en/stores/old-navy",
+    "Old Navy|Rakuten": "https://www.rakuten.com/shop/old-navy",
+    "Old Navy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Old+Navy",
+    "Lululemon|Rakuten": "https://www.rakuten.com/shop/lululemon",
+    "Lululemon|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Lululemon",
+    "ASOS|TopCashback": "https://www.topcashback.com/asos/",
+    "ASOS|RebatesMe": "https://www.rebatesme.com/en/stores/asos",
+    "ASOS|Rakuten": "https://www.rakuten.com/shop/asos",
+    "ASOS|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=ASOS",
+    "Best Buy|TopCashback": "https://www.topcashback.com/best-buy/",
+    "Best Buy|BeFrugal": "https://www.befrugal.com/rs/best-buy/",
+    "Best Buy|Rakuten": "https://www.rakuten.com/shop/best-buy",
+    "Best Buy|RebatesMe": "https://www.rebatesme.com/en/stores/best-buy",
+    "Best Buy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Best+Buy",
+    "Dell|BeFrugal": "https://www.befrugal.com/rs/dell/",
+    "Dell|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dell",
+    "Samsung|BeFrugal": "https://www.befrugal.com/rs/samsung/",
+    "Samsung|Rakuten": "https://www.rakuten.com/shop/samsung",
+    "Samsung|TopCashback": "https://www.topcashback.com/samsung/",
+    "Samsung|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Samsung",
+    "Sephora|Rakuten": "https://www.rakuten.com/shop/sephora",
+    "Sephora|TopCashback": "https://www.topcashback.com/sephora/",
+    "Sephora|BeFrugal": "https://www.befrugal.com/rs/sephora/",
+    "Sephora|RebatesMe": "https://www.rebatesme.com/en/stores/sephora",
+    "Sephora|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Sephora",
+    "Ulta Beauty|BeFrugal": "https://www.befrugal.com/rs/ulta-beauty/",
+    "Ulta Beauty|TopCashback": "https://www.topcashback.com/ulta-beauty/",
+    "Ulta Beauty|RebatesMe": "https://www.rebatesme.com/en/stores/ulta-beauty",
+    "Ulta Beauty|Rakuten": "https://www.rakuten.com/shop/ulta-beauty",
+    "Ulta Beauty|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Ulta+Beauty",
+    "Target|TopCashback": "https://www.topcashback.com/target/",
+    "Target|Rakuten": "https://www.rakuten.com/shop/target",
+    "Target|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Target",
+    "Walmart|TopCashback": "https://www.topcashback.com/walmart/",
+    "Walmart|BeFrugal": "https://www.befrugal.com/rs/walmart/",
+    "Walmart|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Walmart",
+    "Wayfair|RebatesMe": "https://www.rebatesme.com/en/stores/wayfair",
+    "Wayfair|Capital One Shopping": "https://capitaloneshopping.com/s/wayfair",
+    "Wayfair|Rakuten": "https://www.rakuten.com/shop/wayfair",
+    "Wayfair|TopCashback": "https://www.topcashback.com/wayfair/",
+    "Wayfair|BeFrugal": "https://www.befrugal.com/rs/wayfair/",
+    "Wayfair|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Wayfair",
+    "Home Depot|BeFrugal": "https://www.befrugal.com/rs/home-depot/",
+    "Home Depot|TopCashback": "https://www.topcashback.com/home-depot/",
+    "Home Depot|RebatesMe": "https://www.rebatesme.com/en/stores/home-depot",
+    "Home Depot|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Home+Depot",
+    "Expedia|RebatesMe": "https://www.rebatesme.com/en/stores/expedia",
+    "Expedia|BeFrugal": "https://www.befrugal.com/rs/expedia/",
+    "Expedia|Capital One Shopping": "https://capitaloneshopping.com/s/expedia",
+    "Expedia|Rakuten": "https://www.rakuten.com/shop/expedia",
+    "Expedia|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Expedia",
+    "Expedia|TopCashback": "https://www.topcashback.com/expedia/",
+    "Booking.com|RebatesMe": "https://www.rebatesme.com/en/stores/bookingcom",
+    "Booking.com|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Booking.com",
+    "eBay|TopCashback": "https://www.topcashback.com/ebay/",
+    "eBay|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=eBay",
+    "Kohl's|BeFrugal": "https://www.befrugal.com/rs/kohls/",
+    "Kohl's|TopCashback": "https://www.topcashback.com/kohls/",
+    "Kohl's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Kohl%27s",
+    "Macy's|BeFrugal": "https://www.befrugal.com/rs/macys/",
+    "Macy's|RebatesMe": "https://www.rebatesme.com/en/stores/macys",
+    "Macy's|TopCashback": "https://www.topcashback.com/macys/",
+    "Macy's|Rakuten": "https://www.rakuten.com/shop/macys",
+    "Macy's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Macy%27s",
+    "Priceline|Rakuten": "https://www.rakuten.com/shop/priceline",
+    "Priceline|TopCashback": "https://www.topcashback.com/priceline/",
+    "Priceline|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Priceline",
+    "Hotels.com|Rakuten": "https://www.rakuten.com/shop/hotelscom",
+    "Hotels.com|TopCashback": "https://www.topcashback.com/hotelscom/",
+    "Hotels.com|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Hotels.com",
+    "Etsy|Rakuten": "https://www.rakuten.com/shop/etsy",
+    "Etsy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Etsy",
+    "CVS|BeFrugal": "https://www.befrugal.com/rs/cvs/",
+    "CVS|TopCashback": "https://www.topcashback.com/cvs/",
+    "CVS|Rakuten": "https://www.rakuten.com/shop/cvs",
+    "CVS|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=CVS",
+    "Zappos|Rakuten": "https://www.rakuten.com/shop/zappos",
+    "Zappos|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Zappos",
+    "Marriott Bonvoy|TopCashback": "https://www.topcashback.com/marriott-bonvoy/",
+    "Marriott Bonvoy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Marriott+Bonvoy",
+    "Temu|RebatesMe": "https://www.rebatesme.com/en/stores/temu",
+    "Temu|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Temu",
+    "Skechers|TopCashback": "https://www.topcashback.com/skechers/",
+    "Skechers|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Skechers",
+    "Walgreens|TopCashback": "https://www.topcashback.com/walgreens/",
+    "Walgreens|BeFrugal": "https://www.befrugal.com/rs/walgreens/",
+    "Walgreens|RebatesMe": "https://www.rebatesme.com/en/stores/walgreens",
+    "Walgreens|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Walgreens",
+    "Nordstrom|TopCashback": "https://www.topcashback.com/nordstrom/",
+    "Nordstrom|Rakuten": "https://www.rakuten.com/shop/nordstrom",
+    "Nordstrom|RebatesMe": "https://www.rebatesme.com/en/stores/nordstrom",
+    "Nordstrom|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Nordstrom",
+    "Gap|RebatesMe": "https://www.rebatesme.com/en/stores/gap",
+    "Gap|TopCashback": "https://www.topcashback.com/gap/",
+    "Gap|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Gap",
+    "PetSmart|BeFrugal": "https://www.befrugal.com/rs/petsmart/",
+    "PetSmart|Rakuten": "https://www.rakuten.com/shop/petsmart",
+    "PetSmart|TopCashback": "https://www.topcashback.com/petsmart/",
+    "PetSmart|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=PetSmart",
+    "Chewy|TopCashback": "https://www.topcashback.com/chewy/",
+    "Chewy|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Chewy",
+    "Viator|Rakuten": "https://www.rakuten.com/shop/viator",
+    "Viator|TopCashback": "https://www.topcashback.com/viator/",
+    "Viator|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Viator",
+    "Kiehl's|RebatesMe": "https://www.rebatesme.com/en/stores/kiehls",
+    "Kiehl's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Kiehl%27s",
+    "Zulily|RebatesMe": "https://www.rebatesme.com/en/stores/zulily",
+    "Zulily|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Zulily",
+    "Alo|Rakuten": "https://www.rakuten.com/shop/alo",
+    "Alo|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Alo",
+    "Alo|TopCashback": "https://www.topcashback.com/alo/",
+    "Athleta|RebatesMe": "https://www.rebatesme.com/en/stores/athleta",
+    "Athleta|TopCashback": "https://www.topcashback.com/athleta/",
+    "Athleta|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Athleta",
+    "StubHub|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=StubHub",
+    "StubHub|TopCashback": "https://www.topcashback.com/stubhub/",
+    "Vineyard Vines|RebatesMe": "https://www.rebatesme.com/en/stores/vineyard-vines",
+    "Vineyard Vines|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Vineyard+Vines",
+    "Banana Republic|RebatesMe": "https://www.rebatesme.com/en/stores/banana-republic",
+    "Banana Republic|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Banana+Republic",
+    "Bergdorf Goodman|BeFrugal": "https://www.befrugal.com/rs/bergdorf-goodman/",
+    "Bergdorf Goodman|RebatesMe": "https://www.rebatesme.com/en/stores/bergdorf-goodman",
+    "Bergdorf Goodman|Rakuten": "https://www.rakuten.com/shop/bergdorf-goodman",
+    "Bergdorf Goodman|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bergdorf+Goodman",
+    "Farfetch|Rakuten": "https://www.rakuten.com/shop/farfetch",
+    "Farfetch|RebatesMe": "https://www.rebatesme.com/en/stores/farfetch",
+    "Farfetch|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Farfetch",
+    "Shopbop|RebatesMe": "https://www.rebatesme.com/en/stores/shopbop",
+    "Shopbop|TopCashback": "https://www.topcashback.com/shopbop/",
+    "Shopbop|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Shopbop",
+    "Net-a-Porter|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Net-a-Porter",
+    "DVF|Rakuten": "https://www.rakuten.com/shop/dvf",
+    "DVF|RebatesMe": "https://www.rebatesme.com/en/stores/dvf",
+    "DVF|TopCashback": "https://www.topcashback.com/dvf/",
+    "DVF|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=DVF",
+    "Dick's Sporting Goods|Rakuten": "https://www.rakuten.com/shop/dicks-sporting-goods",
+    "Dick's Sporting Goods|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Dick%27s+Sporting+Goods",
+    "The North Face|Rakuten": "https://www.rakuten.com/shop/the-north-face",
+    "The North Face|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=The+North+Face",
+    "Patagonia|Rakuten": "https://www.rakuten.com/shop/patagonia",
+    "Patagonia|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Patagonia",
+    "JanSport|Rakuten": "https://www.rakuten.com/shop/jansport",
+    "JanSport|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=JanSport",
+    "Scheels|Rakuten": "https://www.rakuten.com/shop/scheels",
+    "Scheels|BeFrugal": "https://www.befrugal.com/rs/scheels/",
+    "Scheels|TopCashback": "https://www.topcashback.com/scheels/",
+    "Scheels|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Scheels",
+    "Apple|TopCashback": "https://www.topcashback.com/apple/",
+    "Apple|Rakuten": "https://www.rakuten.com/shop/apple",
+    "Apple|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Apple",
+    "Adidas|TopCashback": "https://www.topcashback.com/adidas/",
+    "Adidas|Rakuten": "https://www.rakuten.com/shop/adidas",
+    "Adidas|RebatesMe": "https://www.rebatesme.com/en/stores/adidas",
+    "Adidas|BeFrugal": "https://www.befrugal.com/rs/adidas/",
+    "Adidas|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Adidas",
+    "Staples|BeFrugal": "https://www.befrugal.com/rs/staples/",
+    "Staples|TopCashback": "https://www.topcashback.com/staples/",
+    "Staples|Rakuten": "https://www.rakuten.com/shop/staples",
+    "Staples|RebatesMe": "https://www.rebatesme.com/en/stores/staples",
+    "Staples|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Staples",
+    "Neiman Marcus|BeFrugal": "https://www.befrugal.com/rs/neiman-marcus/",
+    "Neiman Marcus|TopCashback": "https://www.topcashback.com/neiman-marcus/",
+    "Neiman Marcus|Rakuten": "https://www.rakuten.com/shop/neiman-marcus",
+    "Neiman Marcus|RebatesMe": "https://www.rebatesme.com/en/stores/neiman-marcus",
+    "Neiman Marcus|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Neiman+Marcus",
+    "Saks Fifth Avenue|BeFrugal": "https://www.befrugal.com/rs/saks-fifth-avenue/",
+    "Saks Fifth Avenue|TopCashback": "https://www.topcashback.com/saks-fifth-avenue/",
+    "Saks Fifth Avenue|Rakuten": "https://www.rakuten.com/shop/saks-fifth-avenue",
+    "Saks Fifth Avenue|RebatesMe": "https://www.rebatesme.com/en/stores/saks-fifth-avenue",
+    "Saks Fifth Avenue|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Saks+Fifth+Avenue",
+    "Ann Taylor|BeFrugal": "https://www.befrugal.com/rs/ann-taylor/",
+    "Ann Taylor|Rakuten": "https://www.rakuten.com/shop/ann-taylor",
+    "Ann Taylor|TopCashback": "https://www.topcashback.com/ann-taylor/",
+    "Ann Taylor|RebatesMe": "https://www.rebatesme.com/en/stores/ann-taylor",
+    "Ann Taylor|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Ann+Taylor",
+    "Bloomingdale's|BeFrugal": "https://www.befrugal.com/rs/bloomingdales/",
+    "Bloomingdale's|TopCashback": "https://www.topcashback.com/bloomingdales/",
+    "Bloomingdale's|RebatesMe": "https://www.rebatesme.com/en/stores/bloomingdales",
+    "Bloomingdale's|Rakuten": "https://www.rakuten.com/shop/bloomingdales",
+    "Bloomingdale's|Mr Rebates": "https://www.mrrebates.com/search_stores.asp?t_search=Bloomingdale%27s"
+  };
+
+  // Best cash back rate today - picks from the strongest CURRENT offers,
+  // but two things changed from a plain "highest number wins" scan:
+  //
+  // 1. STORE_OF_DAY_EXCLUDE skips stores whose advertised rate is
+  //    typically a new-customer-only or per-order-capped promo rate
+  //    rather than something a normal repeat shopper actually gets -
+  //    Temu and other marketplace-style stores are the classic case
+  //    (checked against how their cashback offers are structured
+  //    elsewhere: a boosted first-order rate, a much lower standard
+  //    rate, and a hard dollar cap per transaction). Showing that
+  //    boosted number as this site's single biggest, most prominent
+  //    claim overstates what most visitors would actually receive.
+  //    Add a store name here if the same pattern shows up elsewhere.
+  // 2. Instead of always picking the single global max (which just
+  //    freezes on whichever store has the single highest number,
+  //    forever), this rotates - deterministically, by date, so it's
+  //    the same for everyone on a given day and doesn't jump around
+  //    on refresh - among the top eligible offers. Still always a
+  //    genuinely strong, real rate, just not stuck on one store.
+  const STORE_OF_DAY_EXCLUDE = new Set(["Temu", "AliExpress"]);
+  const STORE_OF_DAY_POOL_SIZE = 5;
+  (function(){
+    const candidates = [];
+    storeNames.forEach(name => {
+      if (STORE_OF_DAY_EXCLUDE.has(name)) return;
+      (STORES[name].offers || []).forEach(offer => {
+        const rateNum = parseFloat(offer.rate);
+        candidates.push({ storeName: name, provider: offer.provider, rate: offer.rate, rateNum });
+      });
+    });
+    candidates.sort((a, b) => b.rateNum - a.rateNum);
+    const pool = candidates.slice(0, STORE_OF_DAY_POOL_SIZE);
+
+    let best = null;
+    if (pool.length > 0) {
+      // Date-seeded index so the pick is stable for the whole day and
+      // the same for every visitor, but changes day to day.
+      const dayStamp = new Date().toISOString().slice(0, 10); // e.g. "2026-09-22"
+      let seed = 0;
+      for (let i = 0; i < dayStamp.length; i++) seed = (seed * 31 + dayStamp.charCodeAt(i)) >>> 0;
+      best = pool[seed % pool.length];
+    }
+
+    if (best) {
+      const badge = document.getElementById('dealProviderBadge');
+      badge.style.background = PROVIDER_COLORS[best.provider] || '#6E56CF';
+      badge.textContent = providerInitials(best.provider);
+      document.getElementById('dealProvider').textContent = best.provider;
+      document.getElementById('dealRateText').textContent = best.rate;
+      document.getElementById('dealStore').innerHTML = `at <span class="store-name-highlight">${escapeHtml(best.storeName)}</span>`;
+      const cta = document.getElementById('dealCta');
+      cta.href = getProviderLink(best.provider, best.storeName);
+      cta.textContent = `Activate ${best.rate} \u2192`;
+      cta.target = '_blank';
+      cta.rel = 'noopener sponsored';
+      cta.addEventListener('click', () => trackShopClick(best.provider, best.storeName));
+      document.getElementById('dealOfDayWrap').style.display = 'flex';
+    }
+  })();
+
+  // New-member referral bonuses - only added once we have a real,
+  // verified link and terms from the platform's own account/dashboard.
+  // Not every provider has one yet; that's intentional, not a bug.
+  const REFERRAL_LINKS = {
+    "Rakuten": {
+      url: "https://www.rakuten.com/r/SHEARA151",
+      text: "Rakuten bonus \u2192"
+    },
+    "Mr Rebates": {
+      url: "http://www.mrrebates.com?refid=1313693",
+      text: "Mr Rebates bonus \u2192"
+    },
+    "Capital One Shopping": {
+      url: "https://capitaloneshopping.com/r/98716fac-1c11-4403-a86c-f0c23b8ef46d",
+      text: "Capital One Shopping bonus \u2192"
+    },
+    "TopCashback": {
+      url: "https://www.topcashback.com/ref/member845906671136",
+      text: "TopCashback bonus \u2192"
+    },
+    "BeFrugal": {
+      url: "https://www.befrugal.com/rs/NXRWXBM/",
+      text: "BeFrugal bonus \u2192"
+    },
+    "RebatesMe": {
+      url: "https://www.rebatesme.com/r/fonked",
+      text: "RebatesMe bonus \u2192"
+    }
+  };
+
+  function getProviderLink(provider, storeName){
+    return STORE_DEEP_LINKS[storeName + "|" + provider] || PROVIDER_URLS[provider] || "#";
+  }
+
+  function formatFreshness(verifiedDate){
+    if (!verifiedDate) {
+      return "Rate not yet independently verified";
+    }
+    const verified = new Date(verifiedDate + 'T00:00:00');
+    const now = new Date();
+    const msPerDay = 1000 * 60 * 60 * 24;
+    const diffDays = Math.floor((new Date(now.toDateString()) - new Date(verified.toDateString())) / msPerDay);
+
+    if (diffDays <= 0) return "Verified today";
+    if (diffDays === 1) return "Verified yesterday";
+    if (diffDays < 7) return `Verified ${diffDays} days ago`;
+    if (diffDays < 14) return "Verified 1 week ago";
+    if (diffDays < 30) return `Verified ${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 60) return "Verified 1 month ago";
+    return `Verified ${Math.floor(diffDays / 30)} months ago`;
+  }
+
+  function providerInitials(name){
+    return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  }
+
+  function trackShopClick(provider, storeName){
+    if (typeof gtag === 'function') {
+      gtag('event', 'shop_click', {
+        provider: provider,
+        store: storeName
+      });
+    }
+  }
+
+  function trackReferralClick(provider){
+    if (typeof gtag === 'function') {
+      gtag('event', 'referral_signup_click', {
+        provider: provider
+      });
+    }
+  }
+
+  function trackSearch(storeName){
+    if (typeof gtag === 'function') {
+      gtag('event', 'search', {
+        search_term: storeName
+      });
+    }
+  }
+
+  let currentStoreName = null;
+
+  function getSpendAmount(){
+    const raw = document.getElementById('amountInput').value;
+    const val = parseFloat(raw);
+    return (!isNaN(val) && val > 0) ? val : null;
+  }
+
+  function renderCards(storeName){
+    const store = STORES[storeName];
+    if(!store) return;
+
+    if (store.offers.length === 0) {
+      cardListEl.innerHTML = `
+        <div class="empty" style="grid-column:1/-1;">
+          No verified cash back rate for ${escapeHtml(storeName)} right now.
+          We're still checking - please try again soon.
+        </div>
+      `;
+      return;
+    }
+
+    const sorted = [...store.offers].sort((a, b) => parseFloat(b.rate) - parseFloat(a.rate));
+    const amount = getSpendAmount();
+
+    cardListEl.innerHTML = sorted.map((offer, i) => {
+      const referral = REFERRAL_LINKS[offer.provider];
+      const referralHtml = referral
+        ? `<a class="referral-link" href="${referral.url}" target="_blank" rel="noopener" onclick="trackReferralClick('${escapeHtml(offer.provider)}')">${escapeHtml(referral.text)}</a>`
+        : '';
+      let dollarHtml = '';
+      if (amount !== null) {
+        const ratePct = parseFloat(offer.rate);
+        const dollarAmount = (amount * ratePct / 100).toFixed(2);
+        dollarHtml = `<div class="dollar-pill">= $${dollarAmount}</div>`;
+      }
+      return `
+      <div class="card ${i === 0 ? 'best' : ''}">
+        ${i === 0 ? '<div class="ribbon">Best rate</div>' : ''}
+        <div class="card-top">
+          <span class="provider-badge" style="background:${PROVIDER_COLORS[offer.provider] || '#6E56CF'}">${providerInitials(offer.provider)}</span>
+          <span class="provider-name">${escapeHtml(offer.provider)}</span>
+        </div>
+        <div class="rate">${offer.rate}</div>
+        <div class="rate-label">Cash back</div>
+        ${dollarHtml}
+        <div class="provider-meta">${escapeHtml(offer.meta)}</div>
+        <a class="go-btn" href="${getProviderLink(offer.provider, storeName)}" target="_blank" rel="noopener sponsored" onclick="trackShopClick('${escapeHtml(offer.provider)}', '${escapeHtml(storeName)}')">${i === 0 ? 'Shop & earn' : 'Activate'} ${offer.rate} →</a>
+        ${referralHtml}
+      </div>
+    `;
+    }).join('');
+  }
+
+  function runSearch(storeName, pushUrl = true){
+    const store = STORES[storeName];
+    if(!store) return;
+
+    trackSearch(storeName);
+
+    input.value = storeName;
+    clearBtn.classList.add('show');
+    suggestionsEl.classList.remove('show');
+    input.setAttribute('aria-expanded', 'false');
+    wrap.classList.add('active');
+
+    resultsStoreName.textContent = storeName;
+    resultsUpdated.textContent = formatFreshness(store.verified);
+    resultsUpdated.classList.toggle('unverified', !store.verified);
+
+    currentStoreName = storeName;
+    renderCards(storeName);
+
+    resultsEl.classList.add('show');
+
+    const newUrl = window.location.pathname + '?store=' + encodeURIComponent(storeName);
+    if (pushUrl && window.location.pathname + window.location.search !== newUrl) {
+      history.pushState({ store: storeName }, '', newUrl);
+    }
+    document.title = storeName + ' cash back rates - Savvli';
+  }
+
+  input.addEventListener('input', (e) => {
+    clearBtn.classList.toggle('show', !!e.target.value);
+    renderSuggestions(e.target.value);
+    if(!e.target.value){
+      wrap.classList.remove('active');
+      resultsEl.classList.remove('show');
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    const items = suggestionsEl.querySelectorAll('.suggestion-item');
+    if(e.key === 'ArrowDown'){
+      e.preventDefault();
+      if(items.length === 0) return;
+      highlightedIndex = (highlightedIndex + 1) % items.length;
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightedIndex));
+    } else if(e.key === 'ArrowUp'){
+      e.preventDefault();
+      if(items.length === 0) return;
+      highlightedIndex = (highlightedIndex - 1 + items.length) % items.length;
+      items.forEach((el, i) => el.classList.toggle('highlighted', i === highlightedIndex));
+    } else if(e.key === 'Enter'){
+      e.preventDefault();
+      if(highlightedIndex >= 0 && currentSuggestions[highlightedIndex]){
+        goToStore(currentSuggestions[highlightedIndex]);
+      } else if(currentSuggestions.length > 0){
+        goToStore(currentSuggestions[0]);
+      } else if(STORES[input.value]){
+        goToStore(input.value);
+      }
+    } else if(e.key === 'Escape'){
+      suggestionsEl.classList.remove('show');
+      input.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.classList.remove('show');
+    suggestionsEl.classList.remove('show');
+    wrap.classList.remove('active');
+    resultsEl.classList.remove('show');
+    input.focus();
+    history.pushState({}, '', window.location.pathname);
+    document.title = 'Savvli - Compare Cash Back Rates Across Every Platform';
+  });
+
+  let amountTrackTimer = null;
+  document.getElementById('amountInput').addEventListener('input', () => {
+    if(currentStoreName) renderCards(currentStoreName);
+    clearTimeout(amountTrackTimer);
+    amountTrackTimer = setTimeout(() => {
+      const amount = getSpendAmount();
+      if (amount !== null && typeof gtag === 'function') {
+        gtag('event', 'spend_amount_entered', { value: amount });
+      }
+    }, 1200);
+  });
+
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.search-shell')){
+      suggestionsEl.classList.remove('show');
+      input.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // --- hamburger menu ---
+  const menuBtn = document.getElementById('menuBtn');
+  const navMenu = document.getElementById('navMenu');
+
+  function closeMenu(){
+    menuBtn.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('show');
+  }
+  function toggleMenu(){
+    const isOpen = navMenu.classList.contains('show');
+    if(isOpen){ closeMenu(); }
+    else{
+      menuBtn.classList.add('open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      navMenu.classList.add('show');
+    }
+  }
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.nav-menu') && !e.target.closest('.menu-btn')){
+      closeMenu();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeMenu();
+  });
+
+  // Deep-link support: ?store=Name redirects to the real static page when
+  // one exists (old bookmarks/shared links converge on the one canonical
+  // URL), otherwise falls back to the inline "checking rates" view.
+  //
+  // Handles three cases:
+  // 1. Exact match with real offers -> redirect to the real store page
+  // 2. Exact/case-insensitive match with zero offers -> inline "checking
+  //    rates" message (store is known, just no verified rate yet)
+  // 3. No match at all, even case-insensitive -> real "we don't have
+  //    this store yet" message instead of silently doing nothing, which
+  //    is what happened before if someone typed a name with no
+  //    autocomplete matches and just hit Enter, or if JS failed to load
+  //    and the plain form submitted whatever they'd typed.
+  function findStoreKey(name) {
+    if (STORES[name]) return name;
+    const lower = name.toLowerCase();
+    return storeNames.find(n => n.toLowerCase() === lower) || null;
+  }
+
+  function renderNotFound(searchedName) {
+    wrap.classList.add('active');
+    resultsStoreName.textContent = searchedName;
+    resultsUpdated.textContent = '';
+    cardListEl.innerHTML = `
+      <div class="empty" style="grid-column:1/-1;">
+        We don't track "${escapeHtml(searchedName)}" yet.
+        <a href="suggest-store.html">Suggest this store</a> and we'll look into adding it.
+      </div>
+    `;
+    resultsEl.classList.add('show');
+    document.title = 'Store not found - Savvli';
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const storeParam = urlParams.get('store');
+  if (storeParam) {
+    const matchedKey = findStoreKey(storeParam);
+    if (matchedKey && STORES[matchedKey].offers.length > 0) {
+      window.location.replace(slugifyStore(matchedKey) + '-cash-back.html');
+    } else if (matchedKey) {
+      runSearch(matchedKey, false);
+    } else {
+      renderNotFound(storeParam);
+    }
+  }
+
+  // Support browser back/forward buttons
+  window.addEventListener('popstate', () => {
+    const params = new URLSearchParams(window.location.search);
+    const store = params.get('store');
+    if (store && STORES[store]) {
+      runSearch(store, false);
+    } else {
+      input.value = '';
+      clearBtn.classList.remove('show');
+      wrap.classList.remove('active');
+      resultsEl.classList.remove('show');
+      document.title = 'Savvli - Compare Cash Back Rates Across Every Platform';
+    }
+  });
+</script>
+
+</body>
+</html>
