@@ -91,34 +91,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .store-tips p{ font-size:13px; line-height:1.7; color:var(--ink-soft); }
   @media (max-width:640px){ .store-extra{ grid-template-columns:1fr; gap:24px; } }
   @media (max-width:480px){ .store-hero-row h1{ font-size:24px; } .store-logo{ width:42px; height:42px; } .store-logo img{ width:22px; height:22px; } .store-intro{ margin-left:0; } }
-  .amount-shell{ margin:0 0 24px 62px; }
+  .calc-bar{
+    background:var(--lav-soft);
+    border:1.5px solid var(--lav);
+    border-radius:var(--radius);
+    padding:18px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    margin:0 0 24px 0;
+    box-sizing:border-box;
+    max-width:100%;
+  }
+  .calc-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-width:0;
+  }
+  .calc-icon{
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    flex-shrink:0;
+  }
+  .calc-left h2{
+    font-family:'Fraunces', serif;
+    font-size:15px;
+    font-weight:700;
+    color:var(--lav-deep);
+    margin-bottom:2px;
+  }
+  .calc-left p{
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
   .amount-box{
     display:flex;
     align-items:center;
     gap:4px;
-    background:#F1F1F3;
-    border:1px solid #D9D9DB;
-    border-radius:999px;
-    padding:14px 16px;
-    white-space:nowrap;
-    width:fit-content;
-    max-width:100%;
+    background:white;
+    border:1.5px solid var(--lav);
+    border-radius:9px;
+    padding:11px 15px;
+    flex-shrink:0;
     box-sizing:border-box;
   }
   .amount-box span{
-    font-size:13px;
+    font-size:14px;
     color:var(--lav);
     font-weight:600;
   }
   .amount-box input{
-    width:140px;
+    width:100px;
     border:none;
     outline:none;
     background:transparent;
-    font-size:14px;
-    color:#4A4A4D;
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
   }
-  .amount-box input::placeholder{ color:#A5A5AA; }
+  .amount-box input::placeholder{ color:#A5A5AA; font-weight:400; }
   .dollar-pill{
     font-family:'IBM Plex Mono', monospace;
     font-size:13px;
@@ -135,7 +174,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--lav-soft);
     font-weight:600;
   }
-  @media (max-width:480px){ .amount-shell{ margin-left:0; width:100%; } .amount-box{ width:100%; } .amount-box input{ width:100%; } }
+  .calc-bar--stacked{ flex-direction:column; align-items:stretch; }
+  .calc-bar--stacked .amount-box{ width:100%; }
+  .calc-bar--stacked .amount-box input{ width:100%; }
+  @media (max-width:600px){
+    .calc-bar{ flex-direction:column; align-items:stretch; width:100% !important; }
+    .amount-box{ width:100%; }
+    .amount-box input{ width:100%; }
+  }
 </style>
 </head>
 
@@ -213,7 +259,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
   <p class="store-intro">Compare rates across Rakuten to get the most back at Alo.</p>
 
-  <div class="amount-shell">
+  <div class="calc-bar" id="calcBar">
+    <div class="calc-left">
+      <div class="calc-icon" aria-hidden="true">&#129518;</div>
+      <div>
+        <h2>See your savings</h2>
+        <p>Enter your purchase amount</p>
+      </div>
+    </div>
     <div class="amount-box">
       <span>$</span>
       <input id="amountInput" type="number" inputmode="decimal" placeholder="Purchase amount" aria-label="Optional: amount you're spending, to see dollar savings" min="0">
@@ -354,6 +407,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     input.addEventListener('input', updatePills);
     updatePills();
+
+    // Match the calc bar's width to the actual visual width of the card
+    // row below it. #cardList uses CSS Grid with auto-fill, and as a
+    // block-level grid container its own box always fills the full
+    // parent width regardless of how many cards exist - auto-fill only
+    // leaves the unused tracks empty, it doesn't shrink the container
+    // itself. So measuring #cardList.offsetWidth directly gives the
+    // wrong (always-full) number; this measures the actual first row
+    // of real .card elements instead, which is what's visually true.
+    const calcBar = document.getElementById('calcBar');
+    const cardList = document.getElementById('cardList');
+    const MIN_INLINE_WIDTH = 360; // below this, the icon+heading+input row has no room and wraps/overlaps
+    if (calcBar && cardList) {
+      function syncBarWidth(){
+        const cards = Array.from(cardList.querySelectorAll('.card'));
+        if (cards.length === 0) return;
+        const firstRowTop = cards[0].offsetTop;
+        const firstRow = cards.filter(c => c.offsetTop === firstRowTop);
+        const left = firstRow[0].offsetLeft;
+        const last = firstRow[firstRow.length - 1];
+        const right = last.offsetLeft + last.offsetWidth;
+        const target = right - left;
+
+        if (target < MIN_INLINE_WIDTH) {
+          // Too narrow to lay the bar out horizontally without its own
+          // content overlapping - use the same stacked layout as mobile
+          // instead of forcing a width that breaks the row.
+          calcBar.classList.add('calc-bar--stacked');
+          calcBar.style.width = Math.max(target, 240) + 'px';
+        } else {
+          calcBar.classList.remove('calc-bar--stacked');
+          calcBar.style.width = target + 'px';
+        }
+      }
+      syncBarWidth();
+      window.addEventListener('resize', syncBarWidth);
+    }
   })();
 </script>
 <script src="stores-data.js"></script>
