@@ -441,7 +441,7 @@
     padding-top:10px;
     border-top:1px solid var(--line);
     font-size:11px;
-    color:var(--ink-soft);
+    color:var(--lav);
     text-decoration:none;
   }
   .referral-link:hover{ color:var(--lav-deep); text-decoration:underline; }
@@ -459,9 +459,10 @@
 
   .faq-item{
     border-bottom:1px solid var(--line);
-    padding:10px 0;
+    padding:14px 0;
   }
   .faq-item:first-of-type{ padding-top:0; }
+  .faq-item:last-of-type{ border-bottom:none; }
   .faq-item summary{
     font-size:13px;
     font-weight:600;

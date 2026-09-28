@@ -308,6 +308,18 @@ def build_faq_jsonld(store_name, faq_answer_1, faq_answer_2):
     identical across every store page - the same near-duplicate-content
     risk that likely contributed to some of the site's early comparison
     pages landing in "Crawled - currently not indexed" in Search Console.
+
+    The third question below covers the "cash back" vs "cashback" spelling
+    variant - Search Console shows real impressions for one-word "cashback"
+    searches even though the site's own copy consistently uses two words.
+    Google already treats these as semantically equivalent (that's *why*
+    the impressions show up despite the spelling mismatch), so this isn't
+    about ranking - it's a small, genuine aside that can help exact-match
+    snippet bolding and costs nothing in voice consistency, since it's
+    explicitly about the spelling rather than pretending to be normal body
+    copy. The store name is woven into the answer so this question's text
+    isn't 100% identical across all 112 pages - same reasoning as the
+    category-aware tips template above.
     """
     return json.dumps({
         "@type": "FAQPage",
@@ -326,6 +338,20 @@ def build_faq_jsonld(store_name, faq_answer_1, faq_answer_2):
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": faq_answer_2,
+                },
+            },
+            {
+                "@type": "Question",
+                "name": "Is it \"cash back\" or \"cashback\"?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": (
+                        f"Both spellings mean the same thing. We write it as "
+                        f"\"cash back\" (two words) throughout this {store_name} "
+                        f"comparison, but you'll often see \"cashback\" (one word) "
+                        f"used interchangeably elsewhere - so search however feels "
+                        f"natural to you."
+                    ),
                 },
             },
         ],
@@ -409,11 +435,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background:var(--lav-soft);
     border:1.5px solid var(--lav);
     border-radius:var(--radius);
-    padding:18px 24px;
+    padding:10px 16px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:16px;
     margin:0 0 24px 0;
     box-sizing:border-box;
     max-width:100%;
@@ -425,26 +451,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     min-width:0;
   }}
   .calc-icon{{
-    width:34px;
-    height:34px;
-    border-radius:9px;
+    width:26px;
+    height:26px;
+    border-radius:7px;
     background:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:15px;
+    color:var(--lav);
     flex-shrink:0;
   }}
+  .calc-icon svg{{ width:15px; height:15px; }}
   .calc-left h2{{
     font-family:'Fraunces', serif;
-    font-size:15px;
+    font-size:14px;
     font-weight:700;
     color:var(--lav-deep);
-    margin-bottom:2px;
-  }}
-  .calc-left p{{
-    font-size:12.5px;
-    color:var(--ink-soft);
   }}
   .amount-box{{
     display:flex;
@@ -585,11 +607,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div class="calc-bar" id="calcBar">
     <div class="calc-left">
-      <div class="calc-icon" aria-hidden="true">&#129518;</div>
-      <div>
-        <h2>See your cash back</h2>
-        <p>Enter your purchase amount</p>
-      </div>
+      <div class="calc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="8" y1="7.5" x2="16" y2="7.5"/><circle cx="8.5" cy="12" r="0.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="0.6" fill="currentColor" stroke="none"/><circle cx="15.5" cy="12" r="0.6" fill="currentColor" stroke="none"/><circle cx="8.5" cy="16" r="0.6" fill="currentColor" stroke="none"/><circle cx="12" cy="16" r="0.6" fill="currentColor" stroke="none"/><circle cx="15.5" cy="16" r="0.6" fill="currentColor" stroke="none"/></svg></div>
+      <h2>Calculate your cash back</h2>
     </div>
     <div class="amount-box">
       <span>$</span>
@@ -607,13 +626,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="store-faq">
       <h2>FAQ</h2>
-      <details class="faq-item">
+      <details class="faq-item" open>
         <summary>How do I get {store_name} cash back?</summary>
         <p>{faq_answer_1}</p>
       </details>
-      <details class="faq-item">
+      <details class="faq-item" open>
         <summary>Which site pays the most for {store_name}?</summary>
         <p>{faq_answer_2}</p>
+      </details>
+      <details class="faq-item" open>
+        <summary>Is it "cash back" or "cashback"?</summary>
+        <p>Both spellings mean the same thing. We write it as "cash back" (two words) throughout this {store_name} comparison, but you'll often see "cashback" (one word) used interchangeably elsewhere - so search however feels natural to you.</p>
       </details>
     </div>
   </div>
@@ -662,6 +685,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="https://x.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></a>
       <a href="https://www.instagram.com/get_savvli" target="_blank" rel="noopener" aria-label="Savvli on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
       <a href="https://www.facebook.com/get.savvli" target="_blank" rel="noopener" aria-label="Savvli on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/><circle cx="12" cy="12" r="9"/></svg></a>
+      <a href="https://www.pinterest.com/savvli" target="_blank" rel="noopener" aria-label="Savvli on Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 17c1-3 1.7-5.6 2.2-7.7.3-1.2 2-1.1 2.3.1.4 1.7-.4 3.6-2.2 3.6-.9 0-1.6-.5-1.9-1.2"/></svg></a>
       <a href="https://www.producthunt.com/products/savvli" target="_blank" rel="noopener" aria-label="Savvli on Product Hunt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="9"/><path d="M10 8h2.5a2.5 2.5 0 0 1 0 5H10V8zM10 13v3"/></svg></a>
     </div>
   </div>
