@@ -1,11 +1,11 @@
 {
-  "run_at": "2026-11-07T15:17:35.855561+00:00",
+  "run_at": "2026-11-08T15:40:28.389175+00:00",
   "stores": {
     "Nike": {
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "TopCashback": "OK: 10%",
       "RebatesMe": "OK: 10%",
-      "Rakuten": "OK: 10%",
+      "Rakuten": "OK: 8%",
       "Mr Rebates": "OK: 8%"
     },
     "Old Navy": {
@@ -16,8 +16,8 @@
       "Mr Rebates": "OK: 3%"
     },
     "Lululemon": {
-      "Rakuten": "PARSE_FAILED (fetched 1932009 chars) - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 32844 chars) - kept previous value"
+      "Rakuten": "PARSE_FAILED (fetched 1932004 chars) - kept previous value",
+      "Mr Rebates": "PARSE_FAILED (fetched 34311 chars) - kept previous value"
     },
     "ASOS": {
       "TopCashback": "FETCH_FAILED - kept previous value",
@@ -37,7 +37,7 @@
       "Mr Rebates": "PARSE_FAILED (fetched 32055 chars) - kept previous value"
     },
     "Samsung": {
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 2%",
       "Mr Rebates": "OK: 1%"
@@ -45,7 +45,7 @@
     "Sephora": {
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 4%",
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "RebatesMe": "OK: 3.8%",
       "Mr Rebates": "OK: 3%"
     },
@@ -54,7 +54,7 @@
       "TopCashback": "OK: 4%",
       "RebatesMe": "OK: 6%",
       "Rakuten": "PARSE_FAILED (fetched 1775352 chars) - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 142090 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 129692 chars) - kept previous value"
     },
     "Target": {
       "TopCashback": "OK: 2%",
@@ -68,11 +68,11 @@
     },
     "Wayfair": {
       "RebatesMe": "PARSE_FAILED (fetched 66538 chars) - kept previous value",
-      "Capital One Shopping": "PARSE_FAILED (fetched 697049 chars) - kept previous value",
+      "Capital One Shopping": "PARSE_FAILED (fetched 696592 chars) - kept previous value",
       "Rakuten": "PARSE_FAILED (fetched 1924768 chars) - kept previous value",
-      "TopCashback": "PARSE_FAILED (fetched 195692 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 195798 chars) - kept previous value",
       "BeFrugal": "OK: 7%",
-      "Mr Rebates": "PARSE_FAILED (fetched 36963 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 34894 chars) - kept previous value"
     },
     "Home Depot": {
       "BeFrugal": "FETCH_FAILED - kept previous value",
@@ -83,7 +83,7 @@
     "Expedia": {
       "RebatesMe": "OK: 6%",
       "BeFrugal": "OK: 7%",
-      "Capital One Shopping": "PARSE_FAILED (fetched 901141 chars) - kept previous value",
+      "Capital One Shopping": "PARSE_FAILED (fetched 900965 chars) - kept previous value",
       "Rakuten": "OK: 6%",
       "Mr Rebates": "PARSE_FAILED (fetched 30821 chars) - kept previous value",
       "TopCashback": "OK: 7%"
@@ -120,12 +120,12 @@
     },
     "Etsy": {
       "Rakuten": "OK: 1%",
-      "Mr Rebates": "PARSE_FAILED (fetched 31774 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 32115 chars) - kept previous value"
     },
     "CVS": {
       "BeFrugal": "OK: 7%",
       "TopCashback": "FETCH_FAILED - kept previous value",
-      "Rakuten": "OK: 3%",
+      "Rakuten": "PARSE_FAILED (fetched 1786958 chars) - kept previous value",
       "Mr Rebates": "PARSE_FAILED (fetched 21620 chars) - kept previous value"
     },
     "Zappos": {
@@ -152,9 +152,9 @@
     },
     "Nordstrom": {
       "TopCashback": "OK: 2.4%",
-      "Rakuten": "PARSE_FAILED (fetched 1959683 chars) - kept previous value",
+      "Rakuten": "PARSE_FAILED (fetched 1959660 chars) - kept previous value",
       "RebatesMe": "OK: 3.8%",
-      "Mr Rebates": "PARSE_FAILED (fetched 32244 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 32193 chars) - kept previous value"
     },
     "Gap": {
       "RebatesMe": "PARSE_FAILED (fetched 66534 chars) - kept previous value",
@@ -237,7 +237,7 @@
     },
     "The North Face": {
       "Rakuten": "PARSE_FAILED (fetched 1775385 chars) - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 37514 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 37593 chars) - kept previous value"
     },
     "Patagonia": {
       "Rakuten": "OK: 2%",
@@ -303,7 +303,7 @@
     "Stila": {
       "Rakuten": "PARSE_FAILED (fetched 1775286 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "PARSE_FAILED (fetched 30688 chars) - kept previous value"
     },
@@ -316,10 +316,10 @@
     },
     "Upwork": {
       "Rakuten": "OK: 5%",
-      "TopCashback": "PARSE_FAILED (fetched 195200 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 195203 chars) - kept previous value",
       "RebatesMe": "OK: 8%",
       "BeFrugal": "OK: 7%",
-      "Mr Rebates": "PARSE_FAILED (fetched 35453 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 35076 chars) - kept previous value"
     },
     "e.l.f. Cosmetics": {
       "Rakuten": "PARSE_FAILED (fetched 1775374 chars) - kept previous value",
@@ -331,9 +331,9 @@
     "Quay": {
       "Rakuten": "PARSE_FAILED (fetched 1775275 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 36344 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 36564 chars) - kept previous value"
     },
     "Moen": {
       "Rakuten": "OK: 5%",
@@ -389,7 +389,7 @@
       "TopCashback": "OK: 6%",
       "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 32470 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 32518 chars) - kept previous value"
     },
     "AppSumo": {
       "Rakuten": "OK: 6%",
@@ -408,7 +408,7 @@
     "Vivid Seats": {
       "Rakuten": "PARSE_FAILED (fetched 1775352 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "OK: 2%"
     },
@@ -436,7 +436,7 @@
     "Sixt": {
       "Rakuten": "OK: 9%",
       "TopCashback": "OK: 8%",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "PARSE_FAILED (fetched 25300 chars) - kept previous value"
     },
@@ -457,14 +457,14 @@
     "Maui Jim": {
       "Rakuten": "PARSE_FAILED (fetched 1775319 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "OK: 5%"
     },
     "Blue Apron": {
       "Rakuten": "PARSE_FAILED (fetched 1775341 chars) - kept previous value",
-      "TopCashback": "PARSE_FAILED (fetched 207626 chars) - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 207629 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "OK: 15%"
     },
@@ -487,11 +487,11 @@
       "TopCashback": "FETCH_FAILED - kept previous value",
       "RebatesMe": "OK: 3%",
       "BeFrugal": "OK: 7%",
-      "Mr Rebates": "PARSE_FAILED (fetched 32115 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 32487 chars) - kept previous value"
     },
     "Instacart": {
       "Rakuten": "OK: 1%",
-      "TopCashback": "PARSE_FAILED (fetched 213372 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 213272 chars) - kept previous value",
       "RebatesMe": "OK: 8%",
       "BeFrugal": "OK: 7%",
       "Mr Rebates": "PARSE_FAILED (fetched 30895 chars) - kept previous value"
@@ -513,7 +513,7 @@
     "Merit Beauty": {
       "Rakuten": "PARSE_FAILED (fetched 1775363 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "PARSE_FAILED (fetched 28286 chars) - kept previous value"
     },
@@ -526,22 +526,22 @@
     },
     "Coach": {
       "Rakuten": "OK: 2%",
-      "TopCashback": "PARSE_FAILED (fetched 215658 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 215661 chars) - kept previous value",
       "RebatesMe": "PARSE_FAILED (fetched 66536 chars) - kept previous value",
       "BeFrugal": "OK: 7%",
       "Mr Rebates": "PARSE_FAILED (fetched 19651 chars) - kept previous value"
     },
     "Saatva": {
       "Rakuten": "OK: 2%",
-      "TopCashback": "PARSE_FAILED (fetched 195346 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 195349 chars) - kept previous value",
       "RebatesMe": "OK: 3%",
       "BeFrugal": "OK: 7%",
       "Mr Rebates": "PARSE_FAILED (fetched 20479 chars) - kept previous value"
     },
     "TJ Maxx": {
       "Rakuten": "PARSE_FAILED (fetched 1775308 chars) - kept previous value",
-      "TopCashback": "PARSE_FAILED (fetched 195330 chars) - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 195436 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "PARSE_FAILED (fetched 50578 chars) - kept previous value"
     },
@@ -562,16 +562,16 @@
     "Le Specs": {
       "Rakuten": "PARSE_FAILED (fetched 1775319 chars) - kept previous value",
       "TopCashback": "OK: 5%",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 27899 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 23335 chars) - kept previous value"
     },
     "Free People": {
       "Rakuten": "PARSE_FAILED (fetched 1775352 chars) - kept previous value",
-      "TopCashback": "PARSE_FAILED (fetched 206635 chars) - kept previous value",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 206638 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 34455 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 34162 chars) - kept previous value"
     },
     "Le Creuset": {
       "Rakuten": "PARSE_FAILED (fetched 1775341 chars) - kept previous value",
@@ -603,16 +603,16 @@
     },
     "Brooks Running": {
       "Rakuten": "PARSE_FAILED (fetched 1775385 chars) - kept previous value",
-      "TopCashback": "OK: 13%",
+      "TopCashback": "OK: 11%",
       "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "OK: 1%"
     },
     "Madewell": {
-      "Rakuten": "OK: 2%",
+      "Rakuten": "OK: 10%",
       "TopCashback": "OK: 3%",
       "RebatesMe": "OK: 1.5%",
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "Mr Rebates": "OK: 2%"
     },
     "On Running": {
@@ -620,20 +620,20 @@
       "TopCashback": "FETCH_FAILED - kept previous value",
       "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 30928 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 29673 chars) - kept previous value"
     },
     "Shutterfly": {
       "Rakuten": "OK: 15%",
       "TopCashback": "OK: 1%",
       "RebatesMe": "OK: 3%",
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "Mr Rebates": "OK: 1%"
     },
     "YOOX": {
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 3%",
       "RebatesMe": "PARSE_FAILED (fetched 66535 chars) - kept previous value",
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "Mr Rebates": "OK: 2%"
     },
     "Sunglass Hut": {
@@ -648,13 +648,13 @@
       "TopCashback": "FETCH_FAILED - kept previous value",
       "RebatesMe": "PARSE_FAILED (fetched 66533 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
-      "Mr Rebates": "PARSE_FAILED (fetched 33549 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 33009 chars) - kept previous value"
     },
     "Bluemercury": {
       "Rakuten": "OK: 2%",
       "TopCashback": "OK: 3%",
       "RebatesMe": "OK: 8%",
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "Mr Rebates": "OK: 6%"
     },
     "Jos. A. Bank": {
@@ -675,7 +675,7 @@
       "Rakuten": "OK: 4%",
       "TopCashback": "OK: 6%",
       "RebatesMe": "OK: 9%",
-      "BeFrugal": "OK: 7%",
+      "BeFrugal": "OK: 15%",
       "Mr Rebates": "OK: 6%"
     },
     "New Balance": {
@@ -688,12 +688,12 @@
     "Under Armour": {
       "Rakuten": "PARSE_FAILED (fetched 1775363 chars) - kept previous value",
       "TopCashback": "OK: 10%",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value",
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value",
       "Mr Rebates": "OK: 6%"
     },
     "DoorDash": {
-      "Rakuten": "PARSE_FAILED (fetched 1942257 chars) - kept previous value",
+      "Rakuten": "PARSE_FAILED (fetched 1942280 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
       "RebatesMe": "OK: 8%",
       "BeFrugal": "OK: 15%",
@@ -707,25 +707,25 @@
       "Mr Rebates": "PARSE_FAILED (fetched 27082 chars) - kept previous value"
     },
     "GameStop": {
-      "Rakuten": "PARSE_FAILED (fetched 1963000 chars) - kept previous value",
+      "Rakuten": "PARSE_FAILED (fetched 1963023 chars) - kept previous value",
       "TopCashback": "FETCH_FAILED - kept previous value",
       "BeFrugal": "OK: 15%",
       "RebatesMe": "OK: 8%",
-      "Mr Rebates": "PARSE_FAILED (fetched 32434 chars) - kept previous value"
+      "Mr Rebates": "PARSE_FAILED (fetched 32479 chars) - kept previous value"
     },
     "Urban Outfitters": {
       "Rakuten": "PARSE_FAILED (fetched 1792716 chars) - kept previous value",
-      "TopCashback": "PARSE_FAILED (fetched 204956 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 204959 chars) - kept previous value",
       "BeFrugal": "FETCH_FAILED - kept previous value"
     },
     "Foot Locker": {
       "Rakuten": "OK: 6%",
       "TopCashback": "OK: 4%",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value"
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value"
     },
     "Lowe's": {
       "Rakuten": "OK: 1%",
-      "TopCashback": "PARSE_FAILED (fetched 218379 chars) - kept previous value",
+      "TopCashback": "PARSE_FAILED (fetched 218279 chars) - kept previous value",
       "BeFrugal": "OK: 15%"
     },
     "Ace Hardware": {
@@ -782,7 +782,7 @@
       "BeFrugal": "OK: 15%"
     },
     "AliExpress": {
-      "Rakuten": "OK: 30%",
+      "Rakuten": "OK: 20%",
       "TopCashback": "OK: 5%",
       "BeFrugal": "OK: 15%"
     },
@@ -806,7 +806,7 @@
       "Rakuten": "OK: 3%",
       "TopCashback": "OK: 4%",
       "BeFrugal": "OK: 15%",
-      "RebatesMe": "PARSE_FAILED (fetched 200531 chars) - kept previous value"
+      "RebatesMe": "PARSE_FAILED (fetched 204788 chars) - kept previous value"
     },
     "Oriental Trading": {
       "Rakuten": "OK: 2%",
